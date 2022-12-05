@@ -27,10 +27,7 @@ print(" ")
 print(" ")
 print("When loading bar is done it will start the Software.")
 
-No external packages. A ready-made piece of code.
-You can customize bar progress symbol "#", bar size, text prefix etc.
 
-Python 3.3+
 import sys
 def progressbar(it, prefix="", size=60, out=sys.stdout): # Python3.3+
     count = len(it)
