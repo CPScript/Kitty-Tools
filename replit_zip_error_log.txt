@@ -1,0 +1,10 @@
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/an-array-of-english-words","time":"2022-12-05T01:39:15Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/beepbeep","time":"2022-12-05T01:39:15Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/dot-json","time":"2022-12-05T01:39:15Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/node","time":"2022-12-05T01:39:15Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/sshpk-conv","time":"2022-12-05T01:39:15Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/sshpk-sign","time":"2022-12-05T01:39:15Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/sshpk-verify","time":"2022-12-05T01:39:15Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/uuid","time":"2022-12-05T01:39:15Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/words","time":"2022-12-05T01:39:15Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/node/node_modules/.bin/node","time":"2022-12-05T01:39:32Z"}
