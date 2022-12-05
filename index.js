@@ -43,7 +43,7 @@ function Q() {
         'clear',
         'Creation Date-> 4/12/' ,
         '\x20\x0a\x0a         🁞 🅓 🅞 🅜 🅘 🅝 🅞   🅕 🅛 🅞 🅞 🅓 🅔 🅡 🁞 \x0a',
-        '>>\x20Press\x20enter\x20to\x20start\x20DominoFlooder\x20<<',
+        '>>\x20Press\x20enter\x20to\x20start\x20Flooder\x20<<',
         'question',
         'Is\x20the\x20',
         'host',
