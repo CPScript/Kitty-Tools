@@ -292,4 +292,6 @@ if choice == "?":
 time.sleep(10)
 print("For more hacks go to↓↓↓")
 print("https://mem.rip/kahoot/")
-
+print(" ")
+print(" ")
+print("Software Made by CPScript")
