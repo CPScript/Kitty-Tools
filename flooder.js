@@ -1,6 +1,3 @@
-//KahootFlood is not really open source anymore so
-//We just use replit to host it.
-
 var X = M;
 (function (E, K) {
     var j = M, k = E();
