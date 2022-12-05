@@ -2,6 +2,11 @@ import json
 import urllib.request
 import os
 
+print("   ▄▄ ▄████▄▐▄▄▄▌           ")
+print("  ▐  ████▀███▄█▄▌           ")
+print("▐ ▌  █▀▌  ▐▀▌▀█▀            ")
+print(" ▀   ▌ ▌  ▐ ▌               ")
+print("     █ █  ▐▌█               ")
 
 api = 'https://play.kahoot.it/rest/kahoots/'
 usrinput = input("Quiz ID >")
