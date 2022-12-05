@@ -150,7 +150,7 @@ print("                  ||                 -The-                 ||            
 print("                  ||                -Whole-                ||                     ")
 print("                  ||                -Family-               ||                     ")
 print("                   \\                                     //                      ")
-print("                     \===================================/
+print("                     \===================================/                        ")
 time.sleep(5)
 from subprocess import call
 call(["python", "kahoot.py"])
