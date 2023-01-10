@@ -1,7 +1,6 @@
 import os
 import platform
 import sys
-from scripts.banner import banner2,banner,clear
 from scripts.sprint import sprint
 from scripts.colors import ran,y,r,g,c
 import time
