@@ -5,7 +5,7 @@ from scripts.banner import banner2,banner,clear
 from scripts.sprint import sprint
 from scripts.colors import ran,y,r,g,c
 import time
-print("\n" * 128) ## tbh that's a few too many
+print("\n" * 128)
 print("                                                         ▄▄ ▄████▄▐▄▄▄▌           ")
 print("            ▄▀▄     ▄▀▄                                 ▐  ████▀███▄█▄▌           ")
 print("           ▄█░░▀▀▀▀▀░░█▄                              ▐ ▌  █▀▌  ▐▀▌▀█▀            ")
