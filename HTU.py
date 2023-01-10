@@ -1,3 +1,8 @@
+import os
+import platform
+import sys
+from scripts.sprint import sprint
+from scripts.colors import ran,y,r,g,c
 print("\n" * 32)
 print("────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────")
 print("─██████──██████─██████████████─██████──────────██████────██████████████────██████──██████─██████████████─██████████████─")
@@ -18,15 +23,15 @@ print("Its acctualy VERY simple...")
 print("Please READ")
 print(" ")
 print(" ")
-print("When it asks you for the 'Quiz ID' !!!DO NOT TYPE THE 6 to 8 digit code!!!")
-print("In the Search bar where it tells you the Website address it should have a 5 letter/number line of code...")
-print("IT LOOKS LIKE THIS--> quizId=285524a1-dd39-416a-b92e-2ccdf6d1b9d4")
-print("If you can see it on your teachers screen than type it, IF NOT than this wont work for you :(")
+sprint(f"{g} When it asks you for the {r} 'Quiz ID' {g} !!!DO NOT TYPE THE 6 to 8 digit code!!! ")
+sprint(f"{g} In the Search bar where it tells you the Website address it should have a 5 letter/number line of code... ")
+sprint(f"{g} IT LOOKS LIKE THIS--> {r} quizId=285524a1-dd39-416a-b92e-2ccdf6d1b9d4 ")
+sprint(f"{g} If you can see it on your teachers screen than type it, IF NOT than this wont work for you :(")
 print(" ")
-print("PS! if the quiz was assigned to you instead of hosted, it should be there so it should work :) ")
+sprint(f"{r} PS! if the quiz was assigned to you instead of hosted, it should be there so it should work :) ")
 print(" ")
 print(" ")
-print("When loading bar is done it will start the Software.")
+sprint(f" When loading bar is done it will start the Software.")
 
 
 import sys
