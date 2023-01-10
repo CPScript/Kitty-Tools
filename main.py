@@ -6,7 +6,6 @@ from scripts.sprint import sprint
 from scripts.colors import ran,y,r,g,c
 import time
 print("\n" * 128)
-sprint(f"\n\n{r}  {c} ")
 print("                                                         ▄▄ ▄████▄▐▄▄▄▌           ")
 print("            ▄▀▄     ▄▀▄                                 ▐  ████▀███▄█▄▌           ")
 print("           ▄█░░▀▀▀▀▀░░█▄                              ▐ ▌  █▀▌  ▐▀▌▀█▀            ")
