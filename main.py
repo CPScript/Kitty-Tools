@@ -43,7 +43,7 @@ print("[3] Start Hack")
 print("||| \--------/")
 choice = input("")
 
-if choice == "!":
+if choice == "3":
     print(" ")
     print("Starting...")
     time.sleep(1)
@@ -51,14 +51,14 @@ if choice == "!":
     from subprocess import call
     call(["python", "kahoot.py"])
 
-if choice == "?":
+if choice == "1":
     print(" ")
     print("Loading...")
     time.sleep(1)
     from subprocess import call
     call(["python", "HTU.py"])
 
-if choice == "&":
+if choice == "2":
     print(" ")
     print("Loading...")
     time.sleep(1)
