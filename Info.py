@@ -1,6 +1,6 @@
 import time
 from subprocess import call
-
+# NEED TO MAKE LOOP... ill do this later
 print(" ")
 print(" ")
 print(" ")
@@ -104,7 +104,7 @@ print(" ")
 print(" ")
 print(" ")
 print(" ")
-
+# create a info sheet
 print("Not yet done...")
 time.sleep(1)
 print("Loading...")
