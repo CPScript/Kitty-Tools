@@ -31,14 +31,20 @@ print("                   \\                                     //             
 print("                     \===================================/                        ")
 print(" ")
 print(" ")
-print("Please type ? or !")
+print("Please type ?, &, or !")
 print(" ")
 print("[?]How to use")
-print("or")
+print("|||\--------/")
+print(" ")
+print("[&]Information")
+print("|||\--------/")
+print(" ")
 print("[!]Start Hack")
+print("|||\--------/")
 choice = input("")
 
 if choice == "!":
+    print(" ")
     print("Starting...")
     time.sleep(1)
     print("\n" * 64) ## imo this makes more sense
@@ -46,10 +52,21 @@ if choice == "!":
     call(["python", "kahoot.py"])
 
 if choice == "?":
+    print(" ")
     print("Loading...")
     time.sleep(1)
     from subprocess import call
     call(["python", "HTU.py"])
+
+if choice == "&":
+    print(" ")
+    print("Loading...")
+    time.sleep(1)
+    from subprocess import call
+    call(["python", "Info.py"])
+
+
+
 
 time.sleep(10)
 print("For more hacks go to↓↓↓")
