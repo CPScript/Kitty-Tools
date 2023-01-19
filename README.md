@@ -1,5 +1,7 @@
 <div align="center">
 
+### im going to make this look better/clearner... if it doesn't work at some point of time, dont get mad... its getting edited
+
 # kitty tools
 scroll down to learn how to use
 
