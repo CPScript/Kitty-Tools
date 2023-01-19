@@ -49,21 +49,21 @@ if choice == "3":
     time.sleep(1)
     print("\n" * 64) ## imo this makes more sense
     from subprocess import call
-    call(["python", "kahoot.py"])
+    call(["python", "Kahoot/kahoot.py"])
 
 if choice == "1":
     print(" ")
     print("Loading...")
     time.sleep(1)
     from subprocess import call
-    call(["python", "HTU.py"])
+    call(["python", "Kahoot/HTU.py"])
 
 if choice == "2":
     print(" ")
     print("Loading...")
     time.sleep(1)
     from subprocess import call
-    call(["python", "Info.py"])
+    call(["python", "Kahoot/Info.py"])
 
 
 
