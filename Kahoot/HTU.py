@@ -52,4 +52,4 @@ for i in progressbar(range(500), "Loading: ", 35):
     time.sleep(0.1)
 print("\n" * 64)
 from subprocess import call
-call(["python", "kahoot.py"])
+call(["python", "Kahoot/kahoot.py"])
