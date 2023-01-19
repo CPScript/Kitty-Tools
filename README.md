@@ -1,8 +1,9 @@
 <div align="center">
 
-### im going to make this look better/clearner... if it doesn't work at some point of time, dont get mad... its getting edited
+
 
 # kitty tools
+## NOW with a better look
 scroll down to learn how to use
 
 <p align="center">
