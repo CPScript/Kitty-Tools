@@ -1,3 +1,8 @@
+import os
+import platform
+import sys
+from scripts.sprint import sprint
+from scripts.colors import ran,y,r,g,c
 import time
 from subprocess import call
 # NEED TO MAKE LOOP... ill do this later
