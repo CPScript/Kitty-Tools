@@ -110,11 +110,11 @@ print(" ")
 print(" ")
 print(" ")
 print(" ")
-print("      ▄▄ ▄████▄▐▄▄▄▌           ")
-print("     ▐  ████▀███▄█▄▌           ")
-print("   ▐ ▌  █▀▌  ▐▀▌▀█▀            ")
-print("    ▀   ▌ ▌  ▐ ▌               ")
-print("        █ █  ▐▌█               ")
+print("    ▄▄ ▄█████████████████████████████▄▐▄▄▄▌           ")
+print("   ▐  ████▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀███▄█▄▌           ")
+print(" ▐ ▌  █▀▌                           ▐▀▌▀█▀            ")
+print("  ▀   ▌ ▌                           ▐ ▌               ")
+print("      █ █                           ▐▌█               ")
 print"""$$\   $$\          $$\                            $$\     
 $$ | $$  |         $$ |                           $$ |    
 $$ |$$  / $$$$$$\  $$$$$$$\   $$$$$$\   $$$$$$\ $$$$$$\   
@@ -126,13 +126,31 @@ $$ | \$$\\$$$$$$$ |$$ |  $$ |\$$$$$$  |\$$$$$$  | \$$$$  |
 """)
 print("INFORMATION:")
 print(" ")
-print("ABOUT:")
-print("This tool was made becase most cheat tools are ither FAKE or extentions, even tho it isn't the best to use, and isn't the fastest... it still works.")
+print("""╔═╗┌┐ ┌─┐┬ ┬┌┬┐
+╠═╣├┴┐│ ││ │ │ 
+╩ ╩└─┘└─┘└─┘ ┴ 
+""")
+print("THis too, was made to help people Cheat on quizes... i always see fake cheats so i made a real one <3")
 print(" ")
-print("Please notice")
-print("I CPScript/Chai did not make this by myself, i also didn't write all the code... most of it was taked from some of my old repos, and got repurposed... you can see the people that helped me by pressing 4")
-print("There isn't much info to be had, but ill add some more in the future")
 print(" ")
+print("""╦ ╦┌─┐┌┬┐┌─┐┌┬┐┌─┐┌─┐
+║ ║├─┘ ││├─┤ │ ├┤ └─┐
+╚═╝┴  ─┴┘┴ ┴ ┴ └─┘└─┘
+""")
+print("Maded everything Look Cleaner")
+print(" ")
+print(" ")
+print("""╔═╗┌─┐┌─┐┌┐┌  ╦ ╦┌─┐┌┬┐┌─┐┌┬┐┌─┐┌─┐
+╚═╗│ ││ ││││  ║ ║├─┘ ││├─┤ │ ├┤ └─┐
+╚═╝└─┘└─┘┘└┘  ╚═╝┴  ─┴┘┴ ┴ ┴ └─┘└─┘
+""")
+print(" ")
+print(" ")
+print("""╦  ╦┌─┐┬─┐┌─┐┬┌─┐┌┐┌
+╚╗╔╝├┤ ├┬┘└─┐││ ││││
+ ╚╝ └─┘┴└─└─┘┴└─┘┘└┘
+""")
+print("Version: 1.5.7")
 print(" ")
 print(" ")
 print(" ")
