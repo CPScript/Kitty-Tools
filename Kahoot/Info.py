@@ -104,10 +104,81 @@ print(" ")
 print(" ")
 print(" ")
 print(" ")
-# create a info sheet
-print("Not yet done...")
-time.sleep(1)
-print("Loading...")
-time.sleep(10)
+print("{INFO}")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print("      ▄▄ ▄████▄▐▄▄▄▌           ")
+print("     ▐  ████▀███▄█▄▌           ")
+print("   ▐ ▌  █▀▌  ▐▀▌▀█▀            ")
+print("    ▀   ▌ ▌  ▐ ▌               ")
+print("        █ █  ▐▌█               ")
+print"""$$\   $$\          $$\                            $$\     
+$$ | $$  |         $$ |                           $$ |    
+$$ |$$  / $$$$$$\  $$$$$$$\   $$$$$$\   $$$$$$\ $$$$$$\   
+$$$$$  /  \____$$\ $$  __$$\ $$  __$$\ $$  __$$\\_$$  _|  
+$$  $$<   $$$$$$$ |$$ |  $$ |$$ /  $$ |$$ /  $$ | $$ |    
+$$ |\$$\ $$  __$$ |$$ |  $$ |$$ |  $$ |$$ |  $$ | $$ |$$\ 
+$$ | \$$\\$$$$$$$ |$$ |  $$ |\$$$$$$  |\$$$$$$  | \$$$$  |
+\__|  \__|\_______|\__|  \__| \______/  \______/   \____/ 
+""")
+print("INFORMATION:")
+print(" ")
+print("ABOUT:")
+print("This tool was made becase most cheat tools are ither FAKE or extentions, even tho it isn't the best to use, and isn't the fastest... it still works.")
+print(" ")
+print("Please notice")
+print("I CPScript/Chai did not make this by myself, i also didn't write all the code... most of it was taked from some of my old repos, and got repurposed... you can see the people that helped me by pressing 4")
+print("There isn't much info to be had, but ill add some more in the future")
+print(" ")
+print(" ")
+print(" ")
+print(" ")
+print("Please type 1, 2, 3, or 4")
+print(" ")
+print("[1] GO BACK")
+print("||| \-----/")
+print(" ")
+print("[2] More info")
+print("||| \-------/")
+print(" ")
+print("[3] Contributors")
+print("||| \----------/")
+print(" ")
+print("[4] Start hack")
+print("||| \--------/")
+choice = input("")
 
-call(["python", "main.py"])
+if choice == "1":
+    print(" ")
+    print("Loading...")
+    time.sleep(1)
+    print("\n" * 64) 
+    from subprocess import call
+    call(["python", "main.py"])
+    
+if choice == "2":
+    print(" ")
+    print("Loading...")
+    time.sleep(1)
+    print("\n" * 64) 
+    from subprocess import call
+    call(["python", "Kahoot/More.py"])
+    
+if choice == "3":
+    print(" ")
+    print("Loading...")
+    time.sleep(1)
+    print("\n" * 64) 
+    from subprocess import call
+    call(["python", "Kahoot/C.py"])
+    
+if choice == "4":
+    print(" ")
+    print("Loading...")
+    time.sleep(1)
+    print("\n" * 64) 
+    from subprocess import call
+    call(["python", "Kahoot/kahoot.py"])
