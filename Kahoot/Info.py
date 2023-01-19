@@ -130,14 +130,14 @@ print("""╔═╗┌┐ ┌─┐┬ ┬┌┬┐
 ╠═╣├┴┐│ ││ │ │ 
 ╩ ╩└─┘└─┘└─┘ ┴ 
 """)
-print("THis too, was made to help people Cheat on quizes... i always see fake cheats so i made a real one <3")
+print("This tool, was made to help people Cheat on quizes... I always see fake cheats so i made a real one <3")
 print(" ")
 print(" ")
 print("""╦ ╦┌─┐┌┬┐┌─┐┌┬┐┌─┐┌─┐
 ║ ║├─┘ ││├─┤ │ ├┤ └─┐
 ╚═╝┴  ─┴┘┴ ┴ ┴ └─┘└─┘
 """)
-print("Maded everything Look Cleaner")
+print("1.5.7 = Made everything Look Cleaner")
 print(" ")
 print(" ")
 print("""╔═╗┌─┐┌─┐┌┐┌  ╦ ╦┌─┐┌┬┐┌─┐┌┬┐┌─┐┌─┐
