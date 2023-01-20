@@ -7,6 +7,10 @@ import time
 print("Cool contributers")
 sprint(f"{r}Ccode-lang")
 sprint(f"{y}cheepling")
+time.sleep(3)
+print(" ")
+print(" ")
+sprint(f"{g}If you want to help me with this open an issue and i can tell you what you can do{r}<3{c}")
 
 time.sleep(5)
 
