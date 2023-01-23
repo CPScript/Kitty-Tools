@@ -26,12 +26,11 @@ print("                  ||                -Hacks-                ||            
 print("                  ||                 -For-                 ||                     ")
 print("                  ||                 -The-                 ||                     ")
 print("                  ||                -Whole-                ||                     ")
-print("                  ||                -Family-               ||                     ")
-print("                   \\                                     //                      ")
-print("                     \===================================/                        ")
+print("                   \\                -Family-             //                     ")
+print("                     \====================================/                        ")
 print(" ")
 print(" ")
-print("Please type 1, 2, or 3")
+print("Please type 1, 2, 3, or 4")
 print(" ")
 print("[1] How to use")
 print("||| \--------/")
@@ -39,15 +38,18 @@ print(" ")
 print("[2] Information")
 print("||| \---------/")
 print(" ")
-print("[3] Start Hack")
+print("[3] Flooder")
+print("||| \-----/")
+print(" ")
+print("[4] Start Hack")
 print("||| \--------/")
 choice = input("")
 
-if choice == "3":
+if choice == "4":
     print(" ")
     print("Starting...")
     time.sleep(1)
-    print("\n" * 64) ## imo this makes more sense
+    print("\n" * 64) ## imma this makes more sense
     from subprocess import call
     call(["python", "Kahoot/kahoot.py"])
 
@@ -64,8 +66,13 @@ if choice == "2":
     time.sleep(1)
     from subprocess import call
     call(["python", "Kahoot/Info.py"])
-
-
+    
+if choice == "3":
+    print(" ")
+    print("Loading...")
+    time.sleep(1)
+    from subprocess import call
+    call(["python", "Kahoot/flood/main.py"])
 
 
 time.sleep(10)
