@@ -6,6 +6,7 @@ from scripts.colors import ran,y,r,g,c
 import time
 print("Cool contributers")
 sprint(f"{r}Ccode-lang")
+sprint(f"{g}xTobyPlayZ")
 sprint(f"{y}cheepling")
 time.sleep(3)
 print(" ")
