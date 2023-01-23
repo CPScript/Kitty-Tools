@@ -40,21 +40,21 @@ print("""╦ ╦┌─┐┌┬┐┌─┐┌┬┐┌─┐┌─┐
 ║ ║├─┘ ││├─┤ │ ├┤ └─┐
 ╚═╝┴  ─┴┘┴ ┴ ┴ └─┘└─┘
 """)
-sprint(f"{r}1.5.7 = Made everything Look Cleaner")
+sprint(f"{r}1.6.2 = Added Flooder")
 print(" ")
 print(" ")
 print("""╔═╗┌─┐┌─┐┌┐┌  ╦ ╦┌─┐┌┬┐┌─┐┌┬┐┌─┐┌─┐
 ╚═╗│ ││ ││││  ║ ║├─┘ ││├─┤ │ ├┤ └─┐
 ╚═╝└─┘└─┘┘└┘  ╚═╝┴  ─┴┘┴ ┴ ┴ └─┘└─┘
 """)
-sprint(f"{c}Might add a Flooder setting")
+sprint(f"{c}None at the moment")
 print(" ")
 print(" ")
 print("""╦  ╦┌─┐┬─┐┌─┐┬┌─┐┌┐┌
 ╚╗╔╝├┤ ├┬┘└─┐││ ││││
  ╚╝ └─┘┴└─└─┘┴└─┘┘└┘
 """)
-sprint(f"{y}Version: 1.5.7")
+sprint(f"{y}Version: 1.6.2")
 print(" ")
 print(" ")
 print(" ")
