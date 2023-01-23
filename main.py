@@ -26,8 +26,8 @@ print("                  ||                -Hacks-                ||            
 print("                  ||                 -For-                 ||                     ")
 print("                  ||                 -The-                 ||                     ")
 print("                  ||                -Whole-                ||                     ")
-print("                   \\                -Family-             //                     ")
-print("                     \====================================/                        ")
+print("                   \\                -Family-             //                      ")
+print("                     \====================================/                       ")
 print(" ")
 print(" ")
 print("Please type 1, 2, 3, or 4")
@@ -72,7 +72,7 @@ if choice == "3":
     print("Loading...")
     time.sleep(1)
     from subprocess import call
-    call(["python", "Kahoot/flood/main.py"])
+    call(["python", "Kahoot/flood/Info.py"])
 
 
 time.sleep(10)
