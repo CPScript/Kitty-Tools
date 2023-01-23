@@ -136,14 +136,12 @@ for i in range(bot_amount_input):
     create_bot(tab_number, pin_input, bot_name_input)
     tab_number += 1
 
-# Once the bots have been delivered, let the user wait until they want to
-# delete them.
+
 print("Bots have been delivered")
 
 time.sleep(4)
 os.system(delet)
 
-print("Thank you for using Kahoot Flooder!")\
+print("Thank you for using Kahoot Flooder!")
 time.sleep(5)
-print("Loading...")
 call(["python", "main.py"])
