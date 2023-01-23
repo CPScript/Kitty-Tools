@@ -31,6 +31,10 @@ if choice == "yes":
     from subprocess import call
     call(["python", "Kahoot/flood/main.py"])
     
+    print("Thank you for using Kahoot Flooder!")
+    time.sleep(5)
+    call(["python", "main.py"])
+    
 if choice == "no":
     print(" ")
     print("Loading...")
