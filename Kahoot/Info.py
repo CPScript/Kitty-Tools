@@ -135,27 +135,28 @@ print("""╔═╗┌┐ ┌─┐┬ ┬┌┬┐
 ╠═╣├┴┐│ ││ │ │ 
 ╩ ╩└─┘└─┘└─┘ ┴ 
 """)
-print("This tool, was made to help people Cheat on quizes... I always see fake cheats so i made a real one <3")
+sprint(f"{y}This tool, was made to help people Cheat on quizes... I always see fake cheats so i made a real one <3")
 print(" ")
 print(" ")
 print("""╦ ╦┌─┐┌┬┐┌─┐┌┬┐┌─┐┌─┐
 ║ ║├─┘ ││├─┤ │ ├┤ └─┐
 ╚═╝┴  ─┴┘┴ ┴ ┴ └─┘└─┘
 """)
-print("1.5.7 = Made everything Look Cleaner")
+sprint(f"{r}1.5.7 = Made everything Look Cleaner")
 print(" ")
 print(" ")
 print("""╔═╗┌─┐┌─┐┌┐┌  ╦ ╦┌─┐┌┬┐┌─┐┌┬┐┌─┐┌─┐
 ╚═╗│ ││ ││││  ║ ║├─┘ ││├─┤ │ ├┤ └─┐
 ╚═╝└─┘└─┘┘└┘  ╚═╝┴  ─┴┘┴ ┴ ┴ └─┘└─┘
 """)
+sprint(f"{c}Might add a Flooder setting")
 print(" ")
 print(" ")
 print("""╦  ╦┌─┐┬─┐┌─┐┬┌─┐┌┐┌
 ╚╗╔╝├┤ ├┬┘└─┐││ ││││
  ╚╝ └─┘┴└─└─┘┴└─┘┘└┘
 """)
-print("Version: 1.5.7")
+sprint(f"{y}Version: 1.5.7")
 print(" ")
 print(" ")
 print(" ")
