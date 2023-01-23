@@ -38,9 +38,6 @@ print(" ")
 print("[2] Information")
 print("||| \---------/")
 print(" ")
-print("[3] Flooder")
-print("||| \-----/")
-print(" ")
 print("[4] Start Hack")
 print("||| \--------/")
 choice = input("")
@@ -67,12 +64,7 @@ if choice == "2":
     from subprocess import call
     call(["python", "Kahoot/Info.py"])
     
-if choice == "3":
-    print(" ")
-    print("Loading...")
-    time.sleep(1)
-    from subprocess import call
-    call(["python", "Kahoot/flood/Info.py"])
+
 
 
 time.sleep(10)
