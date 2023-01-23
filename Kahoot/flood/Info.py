@@ -79,3 +79,17 @@ print("Flooder is in upcoming update")
 time.sleep(5)
 from subprocess import call
 call(["python", "main.py"])
+
+
+
+
+
+
+# print("\n" * 128)
+# sprint(f"{r}!!!WARNING!!!")
+# sprint(f"{y}If this code is ran in a sandbox, it wont work correctly... and might not work at all...")
+# sprint(f"Please use the newest verison of PYTHON")
+# print(" ")
+# print("CASE SENSITIVE ANSWERS")
+# print("Start???")
+# print("yes | no")
