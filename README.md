@@ -10,7 +10,7 @@
 ```
 <div align="left">
 
-#### Now with a better look
+#### Now with a Flooder bot
 
 <div align="center">
  
