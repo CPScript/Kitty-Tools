@@ -1,6 +1,28 @@
 # not made by CPScript
 # Kahoot Flooder by xTobyPlayZ
 
+import time
+from time import sleep
+from os import system
+import socket    
+import requests,re,os
+from platform import platform
+from subprocess import call
+import os
+
+puk = platform()[0], platform()[1],  platform()[2], platform()[3], platform()[4], platform()[5], platform()[6]
+
+if puk == ('W', 'i', 'n', 'd', 'o', 'w', 's'):
+    delet = 'cls'
+    dr = '\\'
+else:
+    delet = 'clear'
+    dr = '/'
+    
+os.system('pip install selenium')
+os.system(delet)
+
+
 # Initial imports
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
