@@ -144,4 +144,11 @@ while end == "":
     else:
         print("That is not an option!")
         end = ""
-print("Thank you for using Kahoot Flooder!")
+        
+time.sleep(4)
+os.system(delet)
+
+print("Thank you for using Kahoot Flooder!")\
+time.sleep(5)
+print("Loading...")
+call(["python", "main.py"])
