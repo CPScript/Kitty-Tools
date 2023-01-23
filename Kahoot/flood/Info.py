@@ -12,6 +12,8 @@ time.sleep(2)
 
 print("\n" * 128)
 sprint(f"{r}!!!WARNING!!!")
+print(" ")
+print(" ")
 sprint(f"{r}CPScript {y}is not {r}responsible {y}for the {r}user's actions{y}, and {r}they agree to this{r} {y}by {r}typing yes {y}bellow")
 sprint(f"{y}If this code is ran in a sandbox, it wont work correctly, and might not work at all...")
 sprint(f"Please use the newest verison of PYTHON")
