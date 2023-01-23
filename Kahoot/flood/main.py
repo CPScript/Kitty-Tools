@@ -1,6 +1,10 @@
 # not made by CPScript
 # Kahoot Flooder by xTobyPlayZ
 
+import platform
+import sys
+from scripts.sprint import sprint
+from scripts.colors import ran,y,r,g,c
 import time
 from time import sleep
 from os import system
