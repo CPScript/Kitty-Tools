@@ -135,16 +135,7 @@ for i in range(bot_amount_input):
 # Once the bots have been delivered, let the user wait until they want to
 # delete them.
 print("Bots have been delivered")
-end = ""
-while end == "":
-    end = input("Type done to delete bots: ")
-    if end == "done":
-        driver.quit()
-        print("Bots have been deleted (may take a moment to update on screen)")
-    else:
-        print("That is not an option!")
-        end = ""
-        
+
 time.sleep(4)
 os.system(delet)
 
