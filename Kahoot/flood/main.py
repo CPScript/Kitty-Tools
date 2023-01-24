@@ -27,6 +27,48 @@ os.system('pip install selenium')
 os.system(delet)
 
 
+
+print("""                                                                           
+                                                                           
+                     .;c'                                                  
+                   'l0Kc                                                   
+                .:xXMWd.                            ..',;::;;,,'....       
+              .l0WMMMX:                          'cx0XNWWWWMWWNX0kxol,     
+             ;0WMMMMMO.                       .cONMMMMMMMMMN0dc,...        
+            ;KMMMMMMMx.                    .;xXWMMMMMMMMWXd,.              
+           .xWMMMMMMWo                   .cONMMMMMMMMMWKo.                 
+           '0MMMMMMMNc                 .l0WMMMMMMMMMW0c.                   
+           :XMMMMMMMX:              .;oKWMMMMMMMMMNO:.                     
+           cNMMMMMMMX;            'dXWMMMMMMMMMMNk;.                       
+           cNMMMMMMMK;          ,dXMMMMMMMMMMMNx,                          
+           lNMMMMMMMK,        ,xXMMMMMMMMMMMXd,                            
+           lWMMMMMMMK,      ,xNMMMMMMMMMMMXd'                              
+           lWMMMMMMMK,    ,xNMMMMMMMMMMMXd'                                
+           lWMMMMMMMK;  ,xXMMMMMMMMMMWXd'                                  
+           lNMMMMMMMXc,xXMMMMMMMMMMWOo;                                    
+           cNMMMMMMMWXXMMMMMMMMMMMMWX0Od,                                  
+           cNMMMMMMMMMMMMMMMMMMMMMMMMMMMNx'                                
+           cNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK:                               
+           cNMMMMMMMMMMMMMMMN00XWMMMMMMMMMMXl.                             
+           cNMMMMMMMMMMMMNOl'. 'xNMMMMMMMMMMNo.                            
+           cNMMMMMMMMWXOo,.     .dWMMMMMMMMMMNo.                           
+           cNMMMMMMMWx'          .kWMMMMMMMMMMNl                           
+           cNMMMMMMMX:            '0MMMMMMMMMMMX:                          
+           :NMMMMMMMX:             :XMMMMMMMMMMM0,                         
+           :NMMMMMMMX:              oXNMMMMMMMMMWk.                        
+           :XMMMMMMMX;              .:kWMMMMMMMMMNo.                       
+           :XMMMMMMMX;                ,KMMMMMMMMMMXc                       
+           :XMMMMMMMX;                 cNMMMMMMMMMMK;                      
+           :XMMMMMMMK,                 .dWMMMMMMMMMW0;                     
+           :XMMMMMMXc                   .kWMMMMMMMMMMXo.           .,'     
+           cNMMMMNk,                     'OWMMMMMMMMMMWKx:,....':looc'     
+          'OWMWXx;                        'kWMMMMMMMMMMMMMWXKKK0xc.        
+         .kWXkc.                           .lKWMMMMMMMMMMMWNOo;.           
+        ;k0o'                                .cxKNWMWWNKOo:'               
+       .;;.                                     .';:;,'.                   
+ """)
+
+
 # Initial imports
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
