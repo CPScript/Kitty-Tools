@@ -22,6 +22,12 @@
 
 # HOW 2 USE
 
+* TO runt he cript, downoad Python or have a sandbox
+* Downoad the files and add them to the Python terminal/Sandbox
+* Type Python main.py
+* Select one of the options
+ 
+## easyer way to explain it
 to run the script you ither have to have the python termainal on your PC or on a sandbox. The best one to use (the one that i use) is Virtual studio, but 
 there is a github virsion of it... its called codespace. SET IT UP HERE--> https://github.com/features/codespaces Once thats done scroll to the top of this 
 page and click code. it should have a code space option. click create on main. NEXT what you want to do is Type in the terminal >> python main.py <<. The code should start up then you have instructions on what to do there...
