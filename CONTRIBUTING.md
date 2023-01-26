@@ -1,9 +1,9 @@
-Ccode-lang
+# Ccode-lang
 Helped with some of the code in the "Scripts" Directory/Folder
 ---------------------------------------------------------------
-xTobyPlayZ
+# xTobyPlayZ
 Helped with the flooder, The bot might not work sometimes
 ---------------------------------------------------------------
-cheepling
+# cheepling
 Helped with some of the repeting lines of code
 ---------------------------------------------------------------
