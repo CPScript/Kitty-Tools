@@ -29,7 +29,7 @@ print("                  ||                -Whole-                ||            
 print("                   \\                -Family-             //                      ")
 print("                     \====================================/                       ")
 print(" ")
-sprint(f"{r}HEY!!!!! {y}Thanks for the 4000+ veiws, ik i shouldn't ask for this, but can you star this repositroy so we can become better, {r}For a Greater deed")
+sprint(f"{r}HEY!!!!! {y}Thanks for the 6000+ veiws, ik i shouldn't ask for this, but can you star this repositroy so we can become better, {r}For a Greater deed")
 sprint(f"{c}please {r}<3{y}")
 print(" ")
 print("Loading...")
