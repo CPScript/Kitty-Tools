@@ -40,21 +40,21 @@ print("""╦ ╦┌─┐┌┬┐┌─┐┌┬┐┌─┐┌─┐
 ║ ║├─┘ ││├─┤ │ ├┤ └─┐
 ╚═╝┴  ─┴┘┴ ┴ ┴ └─┘└─┘
 """)
-sprint(f"{r}1.6.2 = Added Flooder")
+sprint(f"{r}1.6.2 = Updated flooder")
 print(" ")
 print(" ")
 print("""╔═╗┌─┐┌─┐┌┐┌  ╦ ╦┌─┐┌┬┐┌─┐┌┬┐┌─┐┌─┐
 ╚═╗│ ││ ││││  ║ ║├─┘ ││├─┤ │ ├┤ └─┐
 ╚═╝└─┘└─┘┘└┘  ╚═╝┴  ─┴┘┴ ┴ ┴ └─┘└─┘
 """)
-sprint(f"{c}None at the moment")
+sprint(f"{c}All updates have been added... No more are coming")
 print(" ")
 print(" ")
 print("""╦  ╦┌─┐┬─┐┌─┐┬┌─┐┌┐┌
 ╚╗╔╝├┤ ├┬┘└─┐││ ││││
  ╚╝ └─┘┴└─└─┘┴└─┘┘└┘
 """)
-sprint(f"{y}Version: 1.6.2")
+sprint(f"{y}Version: 2.3.9")
 print(" ")
 print(" ")
 print(" ")
