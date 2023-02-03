@@ -47,7 +47,7 @@ print("[3] Flooder (Getting updated)")
 print("||| \-----/")
 print(" ")
 print(f"[4] {y}Start Hack")
-print(f"||| {g}\--------/")
+print(f"{c}||| {g}\--------/")
 choice = input("")
 
 if choice == "4":
