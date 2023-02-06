@@ -29,7 +29,7 @@ print("                  ||                -Whole-                ||            
 print("                   \\                -Family-             //                      ")
 print("                     \====================================/                       ")
 print(" ")
-sprint(f"{r}HEY! {y}Thanks for the 6000+ veiws, please st4r AND ILoveYou {r}<3")
+sprint(f"{r}HEY! {y}KittyTools 'LIGHT' will be coming soon in the nect month or two... please stay updated! {r}<3")
 print(" ")
 print("Loading...")
 print("=========================")
