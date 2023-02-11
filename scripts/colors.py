@@ -1,3 +1,4 @@
+import random
 import os
 
 try:
@@ -5,7 +6,6 @@ try:
 
 except ModuleNotFoundError:
     os.system("pip install colorama")
-import random
 
 all_col= [Style.BRIGHT+Fore.RED,Style.BRIGHT+Fore.CYAN,Style.BRIGHT+Fore.LIGHTCYAN_EX, Style.BRIGHT+Fore.LIGHTBLUE_EX, Style.BRIGHT+Fore.LIGHTCYAN_EX,Style.BRIGHT+Fore.LIGHTMAGENTA_EX,Style.BRIGHT+Fore.LIGHTYELLOW_EX]
 
