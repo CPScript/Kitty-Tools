@@ -1,9 +1,9 @@
-import os
-import platform
-import sys
+
 from scripts.sprint import sprint
-from scripts.colors import ran,y,r,g,c
+from scripts.colors import ran, y, r, g, c
+from subprocess import call
 import time
+
 print("\n" * 128)
 print("                                                         ▄▄ ▄████▄▐▄▄▄▌           ")
 print("            ▄▀▄     ▄▀▄                                 ▐  ████▀███▄█▄▌           ")
@@ -20,14 +20,14 @@ print("                       \\             |||             //                 
 print("                        \\            |||            //                           ")
 print("                         \\           |||           //                            ")
 print("                          \\          |||          //                             ")
-print("                     /===================================\                        ")
+print("                     /===================================\\                       ")
 print("                   //                -Fun-                \\                      ")
 print("                  ||                -Hacks-                ||                     ")
 print("                  ||                 -For-                 ||                     ")
 print("                  ||                 -The-                 ||                     ")
 print("                  ||                -Whole-                ||                     ")
 print("                   \\                -Family-             //                      ")
-print("                     \====================================/                       ")
+print("                    \\====================================/                       ")
 print(" ")
 sprint(f"{r}HEY! {y}KittyTools 'LIGHT' will be coming soon in the nect month or two... please stay updated! {r}<3")
 print(" ")
@@ -38,45 +38,41 @@ print(" ")
 sprint(f"{g}Please type 1, 2, 3, or 4")
 print(" ")
 print("[1] How to use")
-print("||| \--------/")
+print("||| \\--------/")
 print(" ")
 print("[2] Information")
-print("||| \---------/")
+print("||| \\---------/")
 print(" ")
 print("[3] Flooder (Getting updated)")
-print("||| \-----/")
+print("||| \\-----/")
 print(" ")
 print(f"[4] {y}Start Hack")
-print(f"{c}||| {g}\--------/")
+print(f"{c}||| {g}\\--------/")
 choice = input("")
 
 if choice == "4":
     print(" ")
     print("Starting...")
     time.sleep(1)
-    print("\n" * 64) ## imma this makes more sense
-    from subprocess import call
+    print("\n" * 64)  # imma this makes more sense
     call(["python", "Kahoot/kahoot.py"])
 
 if choice == "1":
     print(" ")
     print("Loading...")
     time.sleep(1)
-    from subprocess import call
     call(["python", "Kahoot/HTU.py"])
 
 if choice == "2":
     print(" ")
     print("Loading...")
     time.sleep(1)
-    from subprocess import call
     call(["python", "Kahoot/Info.py"])
-    
+
 if choice == "3":
     print(" ")
     print("Loading...")
     time.sleep(1)
-    from subprocess import call
     call(["python", "Kahoot/flood/Info.py"])
 
 
