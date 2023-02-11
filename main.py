@@ -29,7 +29,7 @@ print("                  ||                -Whole-                ||            
 print("                   \\                -Family-             //                      ")
 print("                    \\====================================/                       ")
 print(" ")
-sprint(f"{r}HEY! {y}KittyTools 'LIGHT' will be coming soon in the nect month or two... please stay updated! {r}<3")
+sprint(f"{r}HEY! {y}KittyTools 'LIGHT' will be coming soon in the next month or two... please stay updated! {r}<3")
 print(" ")
 print("Loading...")
 print("=========================")
@@ -50,12 +50,6 @@ print(f"[4] {y}Start Hack")
 print(f"{c}||| {g}\\--------/")
 choice = input("")
 
-if choice == "4":
-    print(" ")
-    print("Starting...")
-    time.sleep(1)
-    print("\n" * 64)  # imma this makes more sense
-    call(["python", "Kahoot/kahoot.py"])
 
 if choice == "1":
     print(" ")
@@ -75,6 +69,12 @@ if choice == "3":
     time.sleep(1)
     call(["python", "Kahoot/flood/Info.py"])
 
+if choice == "4":
+    print(" ")
+    print("Starting...")
+    time.sleep(1)
+    print("\n" * 64)  # imma this makes more sense
+    call(["python", "Kahoot/kahoot.py"])
 
 time.sleep(10)
 print("For more hacks go to↓↓↓")
