@@ -1,22 +1,28 @@
 # not made by CPScript
 # Kahoot Flooder by xTobyPlayZ
+# Edited by Zacky2613
 
-import platform
-import sys
-from scripts.sprint import sprint
 from scripts.colors import ran,y,r,g,c
-import time
-from time import sleep
-from os import system
-import socket    
-import requests,re,os
+from scripts.sprint import sprint
 from platform import platform
 from subprocess import call
+from time import sleep
+from os import system
+import platform
+import requests
+import socket    
+import time
+import sys
+import re
 import os
 
-puk = platform()[0], platform()[1],  platform()[2], platform()[3], platform()[4], platform()[5], platform()[6]
+user_os = platform().split("-")[0]  
+# Example Windows return: "Windows-10-10.0.00000-ABC"
+# the .split() will return this: ['Windows', '10', '10.0.00000', 'ABC']
+# We then get the first item which in this case is "Windows".
+# P.S: I used a linux vm and the code works perfectly fine and returns "Linux" 
 
-if puk == ('W', 'i', 'n', 'd', 'o', 'w', 's'):
+if user_os.lower() == "windows":
     delet = 'cls'
     dr = '\\'
 else:
@@ -25,7 +31,6 @@ else:
     
 os.system('pip install selenium')
 os.system(delet)
-
 
 
 print("""                                                                           
@@ -100,6 +105,7 @@ print("Welcome to Kahoot Flooder")
 pin_input = int(input("Game Pin: "))
 print("1) Custom names")
 print("2) Random names")
+
 name_choice = ""
 bot_name_input = ""
 random_names = False
@@ -113,6 +119,7 @@ while name_choice == "":
     else:
         print("That is not an option!")
         name_choice = ""
+
 bot_amount_input = int(input("Bot Amount: "))
 
 print(f"Sending {bot_amount_input} bots...")
