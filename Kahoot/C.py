@@ -5,9 +5,10 @@ from scripts.sprint import sprint
 from scripts.colors import ran,y,r,g,c
 import time
 print("Cool contributers")
-sprint(f"{r}Ccode-lang")
-sprint(f"{g}xTobyPlayZ")
-sprint(f"{y}cheepling")
+sprint(f"{g}THANKS! {r}Ccode-lang {g}for helping out.")
+sprint(f"{r}THANKS! {g}xTobyPlayZ {r}for Flooder!!!")
+sprint(f"{c}THANKS! {y}cheepling {c}for finding bugs.")
+sprint(f"{y}THANKS! {c}Zacky2613 {y}for helping and fixing issus!")
 time.sleep(3)
 print(" ")
 print(" ")
