@@ -78,9 +78,9 @@ if choice == "4":
     print("\n" * 64)  # imma this makes more sense
     call(["python", "Kahoot/kahoot.py"])
 
-time.sleep(10)
-print("For more hacks go to↓↓↓")
-print("https://mem.rip/kahoot/")
+time.sleep(25)
+print(" ")
+print(" ")
 print(" ")
 print(" ")
 print("Software Made by CPScript")
@@ -90,4 +90,3 @@ print("    ▀  ▀   ")
 print("  █▀▀▀▀▀█▄ ")
 print("  █░░░░░█ █")
 print("  ▀▄▄▄▄▄▀▀ ")
-print(">CPScript<")
