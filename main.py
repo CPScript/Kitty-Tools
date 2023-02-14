@@ -30,7 +30,7 @@ print("                   \\                -Family-             //             
 print("                    \\====================================/                       ")
 print(" ")
 print(f"{r}===========\ ")
-sprint(f"{r}NEWS: {y}HAPPY Valinines Day!!!{r} <3")
+sprint(f"{r}NEWS: {y}HAPPY Valinines Day!!!{r} <3      {g}Please star this repo... so more people can use it :) ")
 print(f"{r}===========/ ")
 print(" ")
 print(" ")
