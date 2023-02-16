@@ -39,7 +39,6 @@ page and click code. it should have a code space option. click create on main. N
 
 # EVEN MORE EASER EXPLINATION
 #### Very crappy Video tho ---> https://www.youtube.com/channel/UCpMPWg0TXBINqpCTeol4Yhg <---
-https://www.youtube.com/channel/UCpMPWg0TXBINqpCTeol4Yhg
 
  # THANKS
 have a good day!!!
