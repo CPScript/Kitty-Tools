@@ -38,7 +38,7 @@ page and click code. it should have a code space option. click create on main. N
 [Screen recording 2023-01-27 9.40.50 AM.webm](https://user-images.githubusercontent.com/83523587/215113636-ff6fad7b-a6f3-4a25-b55e-bd0bbbed64bd.webm)
 
 # EVEN MORE EASER EXPLINATION
-#### Very crappy Vedio tho
+#### Very crappy Video tho ---> https://www.youtube.com/channel/UCpMPWg0TXBINqpCTeol4Yhg <---
 https://www.youtube.com/channel/UCpMPWg0TXBINqpCTeol4Yhg
 
  # THANKS
