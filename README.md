@@ -16,7 +16,7 @@
 ```
 <div align="left">
 
-#### NOW UPDATE COMING SOON
+#### NEW UPDATE COMING SOON
 
 
 <div align="center">
