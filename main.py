@@ -30,7 +30,7 @@ print("                   \\                -Family-             //             
 print("                    \\====================================/                       ")
 print(" ")
 print(f"{r}=========================\ ")
-sprint(f"{r}NEWS: {y}Update Soon{r} <3      {g}Please star this repo... so more people can enjoy it :) ")
+sprint(f"{r}NEWS: {y}Update delayed (will be published soon){r} <3      {g}Please star this repo... so more people can enjoy it :) ")
 print(f"{r}=========================/ ")
 print(" ")
 print(" ")
