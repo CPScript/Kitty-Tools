@@ -1,9 +1,1 @@
-# Ccode-lang
-* Helped with some of the code in the "Scripts" Directory/Folder
----------------------------------------------------------------
-# xTobyPlayZ
-* Helped with the flooder, The bot might not work sometimes
----------------------------------------------------------------
-# cheepling
-* Helped with some of the repeting lines of code
----------------------------------------------------------------
+![Screenshot 2023-03-14 2 57 46 PM](https://user-images.githubusercontent.com/83523587/225109658-c8a99318-2f3a-4f3c-85db-df8840e10cec.png)
