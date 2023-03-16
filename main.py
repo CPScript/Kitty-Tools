@@ -30,7 +30,7 @@ print(f"                   \\                {r}-Family-           {g}  //      
 print("                    \\====================================/                       ")
 print(" ")
 print(f"{r}=========================\ ")
-sprint(f"{r}NEWS: {y}Update delayed (will be published soon){r} <3      {g}Please star this repo... so more people can enjoy it :) ")
+sprint(f"{r}NEWS: {y}New tool coming soon... Can be purchased here: https://giveme1taa.wixsite.com/orbit{r} <3      {g}Please star this repo... so more people can enjoy it :) ")
 print(f"{r}=========================/ ")
 print(" ")
 print(" ")
