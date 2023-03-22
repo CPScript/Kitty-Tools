@@ -16,8 +16,6 @@
 ```
 <div align="left">
 
-#### NEW UPDATE COMING SOON
-
 
 <div align="center">
  
