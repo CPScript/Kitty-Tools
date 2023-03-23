@@ -1,8 +1,10 @@
-
 from scripts.sprint import sprint
 from scripts.colors import ran, y, r, g, c
 from subprocess import call
 import time
+import os
+from os import system
+os.system('git clone https://github.com/CPScript/Kitty-Tools')
 
 print("\n" * 128)
 print(f"{g}                                                         {y}▄▄ ▄████▄▐▄▄▄▌           ")
