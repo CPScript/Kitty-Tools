@@ -32,7 +32,7 @@ print(f"                   \\                {r}-Family-           {g}  //      
 print("                    \\====================================/                       ")
 print(" ")
 print(f"{r}|=========================\ ")
-sprint(f"{r}|NEWS: {y}Want more? purchase my software here: https://giveme1taa.wixsite.com/orbit{r}  |||  {y}Please star this repo so more people can enjoy it <3")
+sprint(f"{r}|NEWS: {y}Your up to date on news{r}  |||  {y}Please star this repo so more people can enjoy it <3")
 print(f"{r}|=========================/ ")
 print(" ")
 print(" ")
