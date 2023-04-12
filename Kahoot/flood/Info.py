@@ -22,7 +22,7 @@ if choice == "yes":
     print("\nStarting...")
     time.sleep(1)
     print("\n" * 64)
-    execfile('index.js')
+    execfile('flood.js')
     
 if choice == "no":
     print("\nLoading...")
