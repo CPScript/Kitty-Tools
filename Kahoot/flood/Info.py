@@ -13,16 +13,16 @@ print(" ")
 sprint(f"{r}!!!WARNING!!!")
 print(f"{r}CPScript {y}is not responsible for the {r}user's actions{y}, and {r}they agree to this by typing {c}'yes' {y}below")
 print(f"{y}If this 'Flood' program doesn't work, please tell me via making an issue in the github repo.")
-
-print("Start???    | yes | no |")
+print(" ")
+print("Start???")
 print("yes | no")
 choice = input("").lower()
 
 if choice == "yes":
     print("\nStarting...")
     time.sleep(1)
-    print("\n" * 64)
-    execfile('flood.js')
+    print("Currently being edited... please wait!" * 64)
+    
     
 if choice == "no":
     print("\nLoading...")
