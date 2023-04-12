@@ -1,18 +1,18 @@
-console.log("Loading Hack Terminal")
+console.log("Loading...")
 //requires
 readline = require('readline-sync');
 console.log("Connecting to Kahoot")
 const Kahoot = require("kahoot.js-updated");
-console.log("Downloading required files onto your computer")
+console.log("Downloading requirements...")
 var words = require('an-array-of-english-words')
-console.log("Scraping Proxies To Use")
+console.log("Scraping Proxies...")
 const request = require('request');
-console.log("Required request")
+console.log("Required request...")
 var random = require('random-name')
-console.log("Random Name Generator Firing Up")
+console.log("Getting Random Names...")
 var setTitle = require('console-title');
-console.log("Console ready for use")
-setTitle('Kahoot flooder');
+console.log("Console ready...")
+setTitle('Flooder');
 var beep = require('beepbeep')
 console.log("Required beepbeep")
 
@@ -68,15 +68,12 @@ process.setMaxListeners(Number.POSITIVE_INFINITY)
 //ok lets go baby
 function ads() {
     console.clear()
-    console.log("Welcome To")
     console.log("------------------------------------")
-    console.log("Kahoot Flooder")
-    console.log("Made by ImKTKota")
-    console.log("Coded Using Python 3.1.2 - ")
+    console.log("Kitty Tools, Kahoot flooder")
+    console.log("Made by ImKTKota, reused by CPScript")
+    console.log("Version 1.4")
     console.log("-------------------------------------\n")
-    console.log("Get started")
-    console.log("Kahoot Bot")
-    console.log("Use at your own risk")
+    console.log("Use at your own risk!!!")
     console.log("_______________________________________")
  
     console.log("Answer the Following questions to begin")
@@ -84,7 +81,7 @@ function ads() {
 ads()
 
 //QUESTIONS TO START FLOODING
-antibotmode=readline.question('Use the new BETA antibot mode?  (y/n)> ');
+antibotmode=readline.question('Use the new antibot mode?  (y/n)> ');
 if(antibotmode=="y"){
     console.log("NOTE: I do not take responsibilty or anything done with this bot")
 }
@@ -119,9 +116,8 @@ if (usercontrolled=="y"){
 
 
 
-//poggers!
 //END QUESTIONS YAY
-console.clear()//its currently 12:30 what am i doing
+console.clear()
 
 repeattimes=0
 
@@ -136,7 +132,7 @@ function sendjoin(name,id) {
 function spam() {
     
       if(repeattimes==bots){
-        console.log("All bots have connected to the main server")
+        console.log("All bots have connected...")
       }else{
         repeattimes++
 
