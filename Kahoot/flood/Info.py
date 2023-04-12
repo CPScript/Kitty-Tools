@@ -29,7 +29,7 @@ if choice == "yes":
     print(" ")
     print("Restarting...")
     time.sleep(2)
-    call(["python", "Kahoot/Info.py"])
+    call(["python", "main.py"])
     
     
 if choice == "no":
