@@ -2,6 +2,8 @@ from scripts.sprint import sprint
 from scripts.colors import ran,y,r,g,c
 from subprocess import call
 import time
+import os
+from os import system
 time.sleep(2)
 
 
@@ -21,7 +23,13 @@ choice = input("").lower()
 if choice == "yes":
     print("\nStarting...")
     time.sleep(1)
-    print("Flooder is being updated...          " * 188)
+    print(f"{r}Flooder is being updated...          " * 188)
+    time.sleep(5)
+    print(" ")
+    print(" ")
+    print("Restarting...")
+    time.sleep(2)
+    call(["python", "Kahoot/Info.py"])
     
     
 if choice == "no":
