@@ -6,14 +6,15 @@ time.sleep(2)
 
 
 print("\n" * 128)
-sprint(f"{r}!!!REQUIRMENTS!!!")
-sprint(f"{r}MUST Have {y} Chrome Drivers installed, They can be found in the {r}Kahoot/flood/chromedriver' {y}Directory/file\n")
+print(f"""{r}
+LOGO""")
+print(" ")
+print(" ")
 sprint(f"{r}!!!WARNING!!!")
-sprint(f"{r}CPScript {y}is not responsible for the {r}user's actions{y}, and {r}they agree to this by typing {c}'yes' {y}below")
-sprint(f"{y}If this code is ran in a sandbox, it wont work correctly, and might not work at all...")
+print(f"{r}CPScript {y}is not responsible for the {r}user's actions{y}, and {r}they agree to this by typing {c}'yes' {y}below")
+print(f"{y}If this 'Flood' program doesn't work, please tell me via making an issue in the github repo.")
 
-sprint(f"Please use the newest verison of PYTHON\n")
-print("Start? (TYPE FULL WORD)")
+print("Start???    | yes | no |")
 print("yes | no")
 choice = input("").lower()
 
