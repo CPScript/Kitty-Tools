@@ -21,7 +21,7 @@ choice = input("").lower()
 if choice == "yes":
     print("\nStarting...")
     time.sleep(1)
-    print("Currently being edited... please wait!" * 64)
+    print("Flooder is being updated...          " * 188)
     
     
 if choice == "no":
