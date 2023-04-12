@@ -21,11 +21,7 @@ if choice == "yes":
     print("\nStarting...")
     time.sleep(1)
     print("\n" * 64)
-    call(["python", "Kahoot/flood/main.py"])
-    
-    print("Thank you for using Kahoot Flooder!")
-    time.sleep(5)
-    call(["python", "main.py"])
+    execfile('index.js')
     
 if choice == "no":
     print("\nLoading...")
