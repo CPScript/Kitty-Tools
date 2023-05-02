@@ -33,7 +33,7 @@ print("                    \\====================================/              
 print(" ")
 print(f"{r}|=========================\ ")
 sprint(f"{r}|NEWS: {y}Flooder: Under development{r}  |||  {y}Please star this repo so more people can enjoy it <3")
-print(f"{r}|{y}Follow me, or just take a look at my other progects: https://github.com/CPScript  <3")
+print(f"{r}|{y}Follow me, or atleast take a look at my other creations: https://github.com/CPScript  <3")
 print(f"{r}|=========================/ ")
 print(" ")
 print(" ")
