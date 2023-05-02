@@ -3,6 +3,7 @@ from scripts.colors import ran,y,r,g,c
 from subprocess import call
 import time
 import os
+import subprocess
 from os import system
 time.sleep(2)
 
@@ -23,17 +24,13 @@ choice = input("").lower()
 if choice == "yes":
     print("\nStarting...")
     time.sleep(1)
-    print(f"{r}Flooder is being updated...          " * 188)
-    time.sleep(5)
-    print(" ")
-    print(" ")
-    print("Restarting...")
+    print("\n" * 64)
     time.sleep(2)
-    call(["python", "main.py"])
+    subprocess.run(["node", "flood.js"])
     
     
 if choice == "no":
-    print("\nLoading...")
+    print("\nRestarting...")
     time.sleep(1)
     print("\n" * 64)
     call(["python", "main.py"])
