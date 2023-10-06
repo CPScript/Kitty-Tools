@@ -13,12 +13,14 @@
 # HOW 2 USE
 
 | Linux | Termux | Other |
-`pkg install python` or `apt install python`
-`pkg install git`
-`git https://github.com/CPScript/Kitty-Tools`
-`cd Kitty-Tools`
-`python main.py`
+* `pkg install python` or `apt install python`
+* `pkg install git`
+* `git https://github.com/CPScript/Kitty-Tools`
+* `cd Kitty-Tools`
+* `python main.py`
 
+---
+ 
 | Windows |
 1. Install python here: `https://www.python.org/downloads/` (make sure to install python with administrator)
 2. Open cmd and type: `pip install git`
