@@ -11,7 +11,7 @@
 | Linux | Termux | Other |
 * `pkg install python` or `apt install python`
 * `pkg install git`
-* `git https://github.com/CPScript/Kitty-Tools`
+* `git clone https://github.com/CPScript/Kitty-Tools`
 * `cd Kitty-Tools`
 * `python main.py`
 
@@ -20,7 +20,7 @@
 | Windows |
 1. Install python here: `https://www.python.org/downloads/` (make sure to install python with administrator)
 2. Open cmd and type: `pip install git`
-3. In cmd type: `git https://github.com/CPScript/Kitty-Tools`
+3. In cmd type: `git clone https://github.com/CPScript/Kitty-Tools`
 3. Gain access to the repo's dir: `cd Kitty-Tools`
 4. Using cmd type `python main.py` into the terminal
 (do all of this in the same terminal)
