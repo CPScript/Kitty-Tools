@@ -118,8 +118,7 @@ if finished:
         os.mkdir(os.path.join(dir_path, "quizzes"), 0o666)
 
     if not os.path.exists(data_path):
-        open(data_path, "x")
-        with open(data_path, 'w') as f:
+        with open(data_path, "x") as f:
             startconfig = {"answers": {}, "questions": {}, "images": {}}
             json.dump(startconfig, f, indent=4)
 
