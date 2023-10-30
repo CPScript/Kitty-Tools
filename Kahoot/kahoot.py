@@ -7,6 +7,10 @@ print("  ▐  ████▀███▄█▄▌           ")
 print("▐ ▌  █▀▌  ▐▀▌▀█▀            ")
 print(" ▀   ▌ ▌  ▐ ▌               ")
 print("     █ █  ▐▌█               ")
+print("--- Please support ---")
+print("Follow me on github: CPScript")
+print(" ")
+print("______________________________")
 
 api = 'https://play.kahoot.it/rest/kahoots/'
 usrinput = input("Quiz ID >")
