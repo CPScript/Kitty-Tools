@@ -1,3 +1,8 @@
+<div align=center>
+
+<img title="repo views" src="https://github.com/CPScript/Kitty-Tools">
+
+<div align=left>
 # scroll down to learn how to use | Please `Star` this repo
 
 <p align="center">
