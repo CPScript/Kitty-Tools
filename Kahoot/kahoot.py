@@ -2,13 +2,13 @@ import json
 import urllib.request
 import os
 
-print("   ▄▄ ▄████▄▐▄▄▄▌           ")
-print("  ▐  ████▀███▄█▄▌           ")
-print("▐ ▌  █▀▌  ▐▀▌▀█▀            ")
-print(" ▀   ▌ ▌  ▐ ▌               ")
-print("     █ █  ▐▌█               ")
-print("--- Please support ---")
-print("Follow me on github: CPScript")
+print("         ▄▄ ▄████▄▐▄▄▄▌           ")
+print("        ▐  ████▀███▄█▄▌           ")
+print("      ▐ ▌  █▀▌  ▐▀▌▀█▀            ")
+print("       ▀   ▌ ▌  ▐ ▌               ")
+print("           █ █  ▐▌█               ")
+print("    --- Please support ---        ")
+print("Follow me on github: CPScript   ")
 print(" ")
 print("______________________________")
 
