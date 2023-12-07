@@ -3,6 +3,11 @@
 
 <div align=left>
 
+
+### HEY!!!
+| Im sorry for asking but it would be great if you could donate, if so, send me 1$ on cashapp - $lovelydisease
+| sorry for asking <3
+
 # scroll down to learn how to use | Please `Star` this repo
 
 <p align="center">
