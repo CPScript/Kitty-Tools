@@ -5,8 +5,8 @@
 
 
 ### HEY!!!
-| Im sorry for asking but it would be great if you could donate, if so, send me 1$ on cashapp - $lovelydisease
-| sorry for asking <3
+> It would be great if you could donate... if so; send me 1$ on cashapp - $lovelydisease
+| btw sorry for asking <3
 
 # scroll down to learn how to use | Please `Star` this repo
 
