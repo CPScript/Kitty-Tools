@@ -38,5 +38,5 @@
  
 
 ----
-> this repo is under a licence. "CPScript" is not responsible for your actions... please use this tool whisly
+> this repo is under a licence. "CPScript" is not responsible for your actions... please use this tool wisly(sorry for any spelling errors in this readme)
 > Don't forget to follow `CPScript` for a cookie
