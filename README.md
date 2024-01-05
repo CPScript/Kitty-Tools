@@ -44,9 +44,16 @@
 * dir: directory (File location)
 
 ---
+
+<div align="left">
+
 | All old versions are here |
+
 ![Screenshot 2024-01-05 8 21 22 AM](https://github.com/CPScript/Kitty-Tools/assets/83523587/ea8f7306-ee2e-4ca7-8dfb-767df8bfa8cc)
 
+</div>
+
+<div align="left">
 
 ----
 > this repo is under a licence. "CPScript" is not responsible for your actions... please use this tool wisly (sorry for any spelling errors in this readme)
