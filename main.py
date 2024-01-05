@@ -28,12 +28,15 @@ time.sleep(5)
 # clear the Termianl
 os.system('clear')
 
-
-print(f" {y}   ▄▄ ▄████▄▐▄▄▄▌           ")
-print(f" {y}  ▐  ████▀███▄█▄▌           ")
-print(f" {y}▐ ▌  █▀▌  ▐▀▌▀█▀            ")
-print(f" {y} ▀   ▌ ▌  ▐ ▌               ")
-print(f" {y}     █ █  ▐▌█               ")
+print(f"                       ________________")
+print(f"                      |  Hello, Wolrd! |")
+print(f"                      |  ______________|")
+print(f"                      | /")
+print(f"                      |/")
+print(f" {y}       ▄▀▄     ▄▀▄")
+print(f" {y}      ▄█░░▀▀▀▀▀░░█▄")
+print(f" {y}  ▄▄  █░░░░░░░░░░░█  ▄▄")
+print(f" {y} █▄▄█ █░░▀░░┬░░▀░░█ █▄▄█")
 print(f"{y}| {r}Kahoot Terminal tool {y}|")
 print(" ")
 print(f"{y}--------------------")
@@ -42,7 +45,7 @@ print(f"{y}/2/ {g}Information {y}| {r}Credits, licence, and more{y}")
 print(f"{y}/3/ {g}Flooder {y}| {r}Flood a Kahoot game (Getting Updated!){y}")
 print(f"{y}/4/ {g}Answer Hack {y}| {r}Start the answer client{y}")
 print(f"{y}--------------------")
-choice = input(}"Make Selection > ")
+choice = input(}"Make Number Selection :")
 
 
 if choice == "1":
