@@ -2,11 +2,12 @@ import json
 import urllib.request
 import os
 
-print("   ▄▄ ▄████▄▐▄▄▄▌    ")
-print("  ▐  ████▀███▄█▄▌    ")
-print("▐ ▌  █▀▌  ▐▀▌▀█▀     ")
-print(" ▀   ▌ ▌  ▐ ▌        ")
-print("     █ █  ▐▌█        ")
+print("""
+        /|       へ    
+     ૮ - ՛ )    (` -7
+     / ⁻  ៸|      |、⁻〵
+ 乀 (ˍ, ل ل      じしˍ,)ノ
+""")
 print("-- Follow CPScript --")
 print("=====================")
 api = 'https://play.kahoot.it/rest/kahoots/'
