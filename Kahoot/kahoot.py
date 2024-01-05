@@ -2,16 +2,13 @@ import json
 import urllib.request
 import os
 
-print("                    ▄▄ ▄████▄▐▄▄▄▌           ")
-print("                   ▐  ████▀███▄█▄▌           ")
-print("                 ▐ ▌  █▀▌  ▐▀▌▀█▀            ")
-print("                  ▀   ▌ ▌  ▐ ▌               ")
-print("                      █ █  ▐▌█               ")
-print("               --- Please support ---                 ")
-print("Want to donate? Send me 1$ on cashapp - $LovelyDisease")
-print(" ")
-print("______________________________")
-
+print("   ▄▄ ▄████▄▐▄▄▄▌    ")
+print("  ▐  ████▀███▄█▄▌    ")
+print("▐ ▌  █▀▌  ▐▀▌▀█▀     ")
+print(" ▀   ▌ ▌  ▐ ▌        ")
+print("     █ █  ▐▌█        ")
+print("-- Follow CPScript --")
+print("=====================")
 api = 'https://play.kahoot.it/rest/kahoots/'
 usrinput = input("Quiz ID >")
 link = api + usrinput
