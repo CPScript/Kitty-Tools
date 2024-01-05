@@ -1,15 +1,19 @@
 import json
 import urllib.request
 import os
+from os import system
+
+# clear terminal
+os.system('clear')
 
 print("""
-        /|       へ    
-     ૮ - ՛ )    (` -7
-     / ⁻  ៸|      |、⁻〵
- 乀 (ˍ, ل ل      じしˍ,)ノ
-""")
-print("-- Follow CPScript --")
-print("=====================")
+        _____________________
+       || Enter your quiz ID||
+       || below!            ||
+       |//
+(｡>﹏<)
+-------------------------------""")
+
 api = 'https://play.kahoot.it/rest/kahoots/'
 usrinput = input("Quiz ID >")
 link = api + usrinput
@@ -97,7 +101,9 @@ try:
                 question += 1
 
 except Exception as err:
-    print("There was an error! It could be because the quiz id is incorrect.\n")
+    os.system('clear')
+    print("Womp Womp! ")
+    print("There was an error!  Mabey you typed the 'Quiz ID' incorrectly!\n")
     print(err)
 
 
@@ -128,19 +134,19 @@ if finished:
         config = json.load(f)
 
     for i, v in answers.items():
-        if "Could not find any answers" in v:
+        if "Woops! Could not find any answers" in v:
             config["answers"][i] = None
         else:
             config["answers"][i] = v
 
     for i, v in questions.items():
-        if "Could not find the question" in v:
+        if "Woops! Could not find the question" in v:
             config["questions"][i] = None
         else:
             config["questions"][i] = str(v).replace("T or F: ", '').replace("</b>", '').replace("<b>T or  F: ", '').replace('<b>', '')
 
     for i, v in images.items():
-        if "Could not find any images" in v:
+        if "Woops! Could not find any images" in v:
             config["images"][i] = None
         else:
             config["images"][i] = v
