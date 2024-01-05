@@ -42,7 +42,7 @@ print(f"{y}/2/ {g}Information {y}| {r}Credits, licence, and more{y}")
 print(f"{y}/3/ {g}Flooder {y}| {r}Flood a Kahoot game (Getting Updated!){y}")
 print(f"{y}/4/ {g}Answer Hack {y}| {r}Start the answer client{y}")
 print(f"{y}--------------------")
-choice = input(}Make Selection > ")
+choice = input(}"Make Selection > ")
 
 
 if choice == "1":
