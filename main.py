@@ -4,40 +4,45 @@ from subprocess import call
 import time
 import os
 from os import system
-os.system('git clone https://github.com/CPScript/Kitty-Tools')
+os.system('git clone https://github.com/CPScript/Kitty-Tools') # update
 
-print("\n" * 128)
-print(f"{g}                                                         {y}▄▄ ▄████▄▐▄▄▄▌           ")
-print(f"            {y}▄▀▄     ▄▀▄                                 {y}▐  ████▀███▄█▄▌           ")
-print(f"           {y}▄█░░▀▀▀▀▀░░█▄                              {y}▐ ▌  █▀▌  ▐▀▌▀█▀            ")
-print(f"       {y}▄▄  █░░░░░░░░░░░█  ▄▄        {g}//+++\\             {y}▀   ▌ ▌  ▐ ▌            ")
-print(f"      {y}█▄▄█ █░░▀░░┬░░▀░░█ █▄▄█     {g}//  ||| \\                {y}█ █  ▐▌█         {g}")
-print("██╗░░██╗██╗████████╗████████╗██╗░░░██╗|||████████╗░█████╗░░█████╗░██╗░░░░░░██████╗")
-print("██║░██╔╝██║╚══██╔══╝╚══██╔══╝╚██╗░██╔╝|||╚══██╔══╝██╔══██╗██╔══██╗██║░░░░░██╔════╝")
-print("█████═╝░██║░░░██║░░░░░░██║░░░░╚████╔╝░|||░░░██║░░░██║░░██║██║░░██║██║░░░░░╚█████╗░")
-print("██╔═██╗░██║░░░██║░░░░░░██║░░░░░╚██╔╝░░|||░░░██║░░░██║░░██║██║░░██║██║░░░░░░╚═══██╗")
-print("██║░╚██╗██║░░░██║░░░░░░██║░░░░░░██║░░░|||░░░██║░░░╚█████╔╝╚█████╔╝███████╗██████╔╝")
-print("╚═╝░░╚═╝╚═╝░░░╚═╝░░░░░░╚═╝░░░░░░╚═╝░░░|||░░░╚═╝░░░░╚════╝░░╚════╝░╚══════╝╚═════╝░")
-print("Kahoot Terminal tool   \\             |||             //                          ")
-print("                        -------------------------------                           ")
-print(f"{y}|======= {r}News{y} =======| ")
-print(f"|{r}HEY YOU! Can you help me??? I need people to maintain and update this script. if you would like to help than make an issue on the repo!{y}")
-print(f"{y}|=========================| ")
+# clear Terminal:
+os.system('clear')
+
+# Old "clear terminal" before my silly self realized i can use "os.system('clear')"
+# puk = platform()[0], platform()[1],  platform()[2], platform()[3], platform()[4], platform()[5], platform()[6]
+# if puk == ('W', 'i', 'n', 'd', 'o', 'w', 's'): 
+#    delet = 'cls'
+#    dr = '\\' 
+#else:
+#    delet = 'clear' 
+#    dr = '/' 
+#os.system(delet) 
+
+# tui
+print(f"|======= News =======| ")
+print(f" New Simple TUI(text-based user interfaces)")
+print(f"|====================| ")
+time.sleep(5) 
+
+# clear the Termianl
+os.system('clear')
+
+
+print(f" {y}   ▄▄ ▄████▄▐▄▄▄▌           ")
+print(f" {y}  ▐  ████▀███▄█▄▌           ")
+print(f" {y}▐ ▌  █▀▌  ▐▀▌▀█▀            ")
+print(f" {y} ▀   ▌ ▌  ▐ ▌               ")
+print(f" {y}     █ █  ▐▌█               ")
+print(f"{y}| {r}Kahoot Terminal tool {y}|")
 print(" ")
-sprint(f"{y}[!]Please type 1, 2, 3, or {r}4{y}")
-print(" ")
-print("[1] How to use")
-print("||| \\--------/")
-print(" ")
-print("[2] Information")
-print("||| \\---------/")
-print(" ")
-print("[3] Flooder (Getting Updated!)")
-print("||| \\-----/")
-print(" ")
-print(f"{y}[{r}4{y}] {r}Start Hack")
-print(f"{c}||| {y}\\--------/")
-choice = input("")
+print(f"{y}--------------------")
+print(f"{y}/1/ {g}How to use {y}| {r}Shows you how to use the tool{y}")
+print(f"{y}/2/ {g}Information {y}| {r}Credits, licence, and more{y}")
+print(f"{y}/3/ {g}Flooder {y}| {r}Flood a Kahoot game (Getting Updated!){y}")
+print(f"{y}/4/ {g}Answer Hack {y}| {r}Start the answer client{y}")
+print(f"{y}--------------------")
+choice = input(f"{b}Make Selection > ")
 
 
 if choice == "1":
@@ -67,7 +72,6 @@ if choice == "4":
 
 time.sleep(25)
 print(" ")
-print(" ")
 print("Program Made by CPScript")
 print(" ")
 print("   ▄▀ ▄▀   ")
@@ -75,3 +79,4 @@ print("    ▀  ▀   ")
 print("  █▀▀▀▀▀█▄ ")
 print("  █░░░░░█ █")
 print("  ▀▄▄▄▄▄▀▀ ")
+
