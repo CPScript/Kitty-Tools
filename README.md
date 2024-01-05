@@ -34,7 +34,8 @@
 
 ---
 
-Dont understand some words? Here is what they mean:
+| Dont understand some words? Here is what they mean |
+* apt: Advanced Package Tool (High level package installer)
 * pkg: Package
 * install git (Installs a github Repo via a terminal)
 * cd: Change directory (Used to go to a file via terminal)
