@@ -28,16 +28,13 @@ time.sleep(5)
 # clear the Termianl
 os.system('clear')
 
-print(f"                  ________________")
-print(f"                 |  Hello, World! |")
-print(f"                 |  ______________|")
-print(f"                 | /")
-print(f"                 |/")
-print(f"{y}      ▄▀▄     ▄▀▄")
-print(f"{y}     ▄█░░▀▀▀▀▀░░█▄")
-print(f"{y} ▄▄  █░░░░░░░░░░░█  ▄▄")
-print(f"{y}█▄▄█ █░░▀░░┬░░▀░░█ █▄▄█")
-print(f"{y}| {r}Kahoot Terminal tool {y}|")
+print(f"""
+ZZz   |\      _,,,---,,_
+   zz /,`.-'`'    -.  ;-;;,_
+     |,4-  ) )-,_. ,\ (  `'-'
+    '---''(_/--'  `-'\_)  Made by: CPScript 
+""")
+print(f"{y}| {r}Kahoot Cheating Client {y}|")
 print(" ")
 print(f"{y}--------------------")
 print(f"{y}/1/ {g}How to use {y}| {r}Shows you how to use the tool{y}")
