@@ -29,7 +29,7 @@ time.sleep(5)
 os.system('clear')
 
 print(f"                  ________________")
-print(f"                 |  Hello, Wolrd! |")
+print(f"                 |  Hello, World! |")
 print(f"                 |  ______________|")
 print(f"                 | /")
 print(f"                 |/")
