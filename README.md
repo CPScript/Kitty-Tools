@@ -4,6 +4,7 @@
 <div align=left>
 
 
+* New Terminal user interface (TUI)
 
 # Scroll down to learn how to use | Please `Star` this repo
 
