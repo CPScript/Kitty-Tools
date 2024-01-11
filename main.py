@@ -22,6 +22,7 @@ os.system('clear')
 # tui
 print(f"|======= News =======| ")
 print(f" New Simple TUI(text-based user interfaces)")
+print(f" Note: *STAR* this repo so I can get more support :p")
 print(f"|====================| ")
 time.sleep(5) 
 
