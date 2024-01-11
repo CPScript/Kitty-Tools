@@ -30,12 +30,11 @@ time.sleep(5)
 os.system('clear')
 
 print(f"""
-ZZz   |\      _,,,---,,_
-   zz /,`.-'`'    -.  ;-;;,_
-     |,4-  ) )-,_. ,\ (  `'-'
-    '---''(_/--'  `-'\_)  Made by: CPScript 
-""")
-print(f"{y}| {r}Kahoot Cheating Client {y}|")
+ ZZz   |\      _,,,---,,_
+    zz /,`.-'`'    -.  ;-;;,_
+      |,4-  ) )-,_. ,\ (  `'-'
+     '---''(_/--'  `-'\_)""")
+print(f"{y}>| {r}Kahoot Cheating Client {y}| {r}Made by - CPScript{y} |<")
 print(" ")
 print(f"{y}--------------------")
 print(f"{y}/1/ {g}How to use {y}| {r}Shows you how to use the tool{y}")
