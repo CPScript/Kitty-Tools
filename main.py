@@ -21,10 +21,10 @@ os.system('clear')
 
 # tui
 print(f"|======= News =======| ")
-print(f" New Simple TUI(text-based user interfaces)")
+print(f" News: we'll be right back with that!")
 print(f" Note: *STAR* this repo so I can get more support :p")
 print(f"|====================| ")
-time.sleep(5) 
+time.sleep(4) 
 
 # clear the Termianl
 os.system('clear')
@@ -34,7 +34,7 @@ print(f"""
     zz /,`.-'`'    -.  ;-;;,_
       |,4-  ) )-,_. ,\ (  `'-'
      '---''(_/--'  `-'\_)""")
-print(f"{y}>| {r}Kahoot Cheating Client {y}| {r}Made by - CPScript{y} |<")
+print(f"{y}>| {r}Kahoot Answer Client {y}| {r}Made by - CPScript{y} |<")
 print(" ")
 print(f"{y}--------------------")
 print(f"{y}/1/ {g}How to use {y}| {r}Shows you how to use the tool{y}")
