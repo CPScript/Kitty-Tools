@@ -4,7 +4,7 @@
 <div align=left>
 
 
-* New Terminal user interface (TUI)
+* New repo : https://github.com/CPScript/Awesome-Notes
 
 # Scroll down to learn how to use | Please `Star` this repo
 
