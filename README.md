@@ -4,7 +4,7 @@
 <div align=left>
 
 
-* New repo : https://github.com/CPScript/Awesome-Notes
+* HEY!! Your here already so why not support me by following my github account : https://github.com/CPScript
 
 # Scroll down to learn how to use | Please `Star` this repo
 
