@@ -21,8 +21,7 @@ os.system('clear')
 
 # tui
 print(f"|======= News =======| ")
-print(f" News: we'll be right back with that!")
-print(f" Note: *STAR* this repo so I can get more support :p")
+print(f" *STAR* this repo so I can get more support :p")
 print(f"|====================| ")
 time.sleep(4) 
 
