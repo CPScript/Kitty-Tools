@@ -72,7 +72,7 @@ if choice == "4":
 
 time.sleep(25)
 print(" ")
-print("Program Made by CPScript")
+print("Program Made by CPScript") # You are not allowed claim this software is yours unless it goes through major changes. 
 print(" ")
 print("""
 ⠀⠀⠀⠀⠀⢸⣿⣷⣶⣤⣀⣤⣴⣶⣶⣶⣶⣦⣤⣀⣤⣶⣾⣿⡇
