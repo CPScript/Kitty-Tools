@@ -33,9 +33,8 @@
 4. Using cmd type `python main.py` into the terminal
 (Do all of this in the same terminal)
 
-## If this doesn't work please follow this:
-![Screenshot 2024-02-06 10 50 49 AM](https://github.com/CPScript/Kitty-Tools/assets/83523587/3fac4037-20cd-46ea-ac97-a93c5f6009b5)
-
+|alternative way (downloading it from the repo)|
+Please wait, i will add this later
 ---
 
 <details closed>
