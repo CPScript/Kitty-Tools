@@ -36,8 +36,11 @@
 ## If this doesn't work please follow this:
 ![Screenshot 2024-02-06 10 50 49 AM](https://github.com/CPScript/Kitty-Tools/assets/83523587/3fac4037-20cd-46ea-ac97-a93c5f6009b5)
 
-
 ---
+
+<details closed>
+<summary>EXTRA {click me}</summary>
+<br>
 
 | Dont understand some words? Here is what they mean |
 * apt: Advanced Package Tool (High level package installer)
@@ -57,6 +60,8 @@
 ![Screenshot 2024-01-05 8 21 22 AM](https://github.com/CPScript/Kitty-Tools/assets/83523587/ea8f7306-ee2e-4ca7-8dfb-767df8bfa8cc)
 
 </div>
+
+</details>
 
 <div align="left">
 
