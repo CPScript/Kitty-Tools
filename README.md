@@ -1,10 +1,4 @@
-<div align=center>
-
-
 <div align=left>
-
-
-* HEY!! Your here already so why not support me by following my github account : https://github.com/CPScript
 
 # Scroll down to learn how to use | Please `Star` this repo
 
@@ -66,4 +60,4 @@ Please wait, i will add this later
 
 ----
 > this repo is under a licence. "CPScript" is not responsible for your actions... please use this tool wisly (sorry for any spelling errors in this readme)
-> Don't forget to follow `CPScript` for a cookie
+* HEY!! Your here already so why not support me by following my github account : https://github.com/CPScript
