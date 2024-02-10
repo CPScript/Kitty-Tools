@@ -10,7 +10,6 @@
 ## About Kitty Tools
 ##### kahoot utilities to overall modify the game experience
 <br>
-lol
 
 <p align="center">
   &copy; 2024 Kitty Tools. All rights reserved.
