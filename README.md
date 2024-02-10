@@ -9,7 +9,9 @@
 
 ## About Kitty Tools
 ##### kahoot utilities to overall modify the game experience
-<br>
+
+### How to use?
+see [this](https://github.com/Orphanlol/kitskid/blob/main/how2use.md)
 
 <p align="center">
   &copy; 2024 Kitty Tools. All rights reserved.
