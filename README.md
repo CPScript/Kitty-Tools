@@ -8,7 +8,7 @@
 <p align="center">
 
 ## About Kitty Tools
-##### kahoot utilities to overall modify the game experience
+##### python-based kahoot utilities to overall modify the game experience
 
 ### How to use?
 see [this](https://github.com/Orphanlol/kitskid/blob/main/how2use.md)
