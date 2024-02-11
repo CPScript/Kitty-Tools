@@ -12,4 +12,7 @@
 ---
 
 | All old versions are available here |
+
 ![Screenshot 2024-01-05 8 21 22 AM](https://github.com/CPScript/Kitty-Tools/assets/83523587/ea8f7306-ee2e-4ca7-8dfb-767df8bfa8cc)
+
+</div>
