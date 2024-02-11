@@ -4,11 +4,6 @@ from subprocess import call
 import time
 import os
 from os import system
-os.system('git clone https://github.com/CPScript/Kitty-Tools') # update
-
-# clear Terminal:
-os.system('clear')
-
 # Old "clear terminal" before my silly self realized i can use "os.system('clear')"
 # puk = platform()[0], platform()[1],  platform()[2], platform()[3], platform()[4], platform()[5], platform()[6]
 # if puk == ('W', 'i', 'n', 'd', 'o', 'w', 's'): 
