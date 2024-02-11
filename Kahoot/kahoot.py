@@ -3,9 +3,6 @@ import urllib.request
 import os
 from os import system
 
-# clear terminal
-os.system('clear')
-
 print("""
         _____________________
        || Enter your quiz ID||
