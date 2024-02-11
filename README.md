@@ -27,8 +27,6 @@
 4. Using cmd type `python main.py` into the terminal
 (Do all of this in the same terminal)
 
-|alternative way (downloading it from the repo)|
-Please wait, i will add this later
 ---
 
 <details closed>
@@ -59,5 +57,7 @@ Please wait, i will add this later
 <div align="left">
 
 ----
-> this repo is under a licence. "CPScript" is not responsible for your actions... please use this tool wisly (sorry for any spelling errors in this readme)
-* HEY!! Your here already so why not support me by following my github account : https://github.com/CPScript
+
+<p align="center">
+  &copy; 2024 Kitty Tools. All rights reserved.
+</p>
