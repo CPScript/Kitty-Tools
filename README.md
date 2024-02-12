@@ -17,14 +17,14 @@
 * `cd Kitty-Tools`
 * `python main.py`
 
-| Termux |
+| Termux | [Click me to veiw more!](https://github.com/CPScript/Kitty-Tools/LITE)
+
 * INSTALL TERMUX ON YOUR ANDROID PHONE
 * Install python: `pkg install python`
 * Install git: `pkg install git`
 * clone the repo: `git clone https://github.com/CPScript/Kitty-Tools`
 * Go to `LITE`'s dir: `cd Kitty-Tools/LITE`
 * Run script: `python lite.py`
-[Click me to veiw more!](https://github.com/CPScript/Kitty-Tools/LITE)
 
 
 
