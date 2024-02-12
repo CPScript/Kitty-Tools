@@ -26,18 +26,32 @@ def clear():
 print(f"You are using '{system}'") # OS Alert
 clear()
 
+# Banner
 print("""
 WELCOME TO - Kitty-Tools LITE v1.10
-=========== For Termux ===========
+=========== For Termux ============
 
-
-        Enter your Quiz ID below!
-       //
-(> ~ <)
-----------------------------------""")
+|-----------|
+|Enter your |
+|quiz ID    |
+|Below      |
+|___________|
+ (((((
+   (((⠀⠀⠀⠀⠀ ⣠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+     ((⠀⠀⠀⣠⠎⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+       ⣀⡀⠞⠁⠀⠀⠁⠁⠐⠒⠒⠋⡹⠀⠀⠀⠀
+      ⠈⢢⠀⠾⠃⠀⠀⠀⠀⠀⠀⠀⡰⠁⠀⠀⠀⠀
+      ⢰⠣⡄⠠⢄⠀⠾⠅⠀⠀⢠⣰⠁⠀⠀⠀⠀⠀
+      ⠀⠀⠐⢤⣀⠀⣀⣆⢰⠉⠢⡇⠀⢀⠤⠤⣀⠀
+      ⠀⠀⢸⠀⠀⠀⠀⠀⠙⠀⠈⠳⡀⠘⠤⡀⠀⢆
+      ⠀⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢄⡀⢸⠀⠸
+      ⠀⠀⠁⠀⢥⠀⠀⡇⠀⠀⠀⠀⠀⠀⣱⠼⠀⡘
+      ⠀⢀⡇⠀⠢⠄⢀⠃⠀⢐⠀⠀⠀⠀⡇⠤⠋⠀
+|------⠸⢄⣀⠜-⢸⡀⠴⠋-⠉⠁⠁-------------
+|""")
 
 api = 'https://play.kahoot.it/rest/kahoots/'
-usrinput = input("Quiz ID >")
+usrinput = input(f"| User Input >> ")
 link = api + usrinput
 finished = False
 
