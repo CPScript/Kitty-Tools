@@ -70,7 +70,7 @@ if choice == "1":
     print(" ")
     print("Loading...")
     time.sleep(1)
-    call(["python", "Kahoot/HTU.py"])
+    call(["python", "Kahoot/htu.py"])
 
 if choice == "2":
     print(" ")
