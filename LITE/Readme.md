@@ -1,6 +1,6 @@
 <div align=center>
 
-#  `Kitty-Tools LITE v1.8`
+#  `Kitty-Tools LITE v1.10`
 
 <div align="left">
 
@@ -23,5 +23,5 @@
 
 <p align="center">
   &copy; 2024 Kitty Tools LITE. All rights reserved.
-  | BETA v1.8
+  | BETA v1.10
 </p>
