@@ -2,8 +2,9 @@
 
 # Welcome to `Kitty-Tools LITE`
 
-<div align="left">
 This version of `Kitty-Tools` is ment to be ran on Termux for android!
+
+<div align="left">
 
 # How to use
 
