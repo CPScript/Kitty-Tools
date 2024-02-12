@@ -1,5 +1,3 @@
-this next update is going to be painful
-
 <div align=center>
 
 # Welcome to the `Kitty-Tools` repository
