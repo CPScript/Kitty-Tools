@@ -5,6 +5,8 @@ This Repo is not yours, most of the code here was made by me and i'dd like it if
 -------------------------------------------------------
 
 Dont be like @7ingz  (https://github.com/7ingz/Kitty-Tools)
+![Screenshot 2024-02-12 11 16 07 AM](https://github.com/CPScript/Kitty-Tools/assets/83523587/65ddc911-c937-4fb8-ae87-93fe33e649d4)
+
 
 -------------------------------------------------------
 
