@@ -27,7 +27,7 @@ print(f"You are using '{system}'") # OS Alert
 clear()
 
 print("""
-WELCOME TO - Kitty-Tools LITE v1.8
+WELCOME TO - Kitty-Tools LITE v1.10
 =========== For Termux ===========
 
 
