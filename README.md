@@ -10,12 +10,24 @@
  
 # HOW 2 USE
 
-| Linux | Termux | Mac |
+| Linux | Mac |
 * `pkg install python` or `apt install python`
 * `pkg install git`
 * `git clone https://github.com/CPScript/Kitty-Tools`
 * `cd Kitty-Tools`
 * `python main.py`
+
+| Termux |
+* INSTALL TERMUX ON YOUR ANDROID PHONE
+* Install python: `pkg install python`
+* Install git: `pkg install git`
+* clone the repo: `git clone https://github.com/CPScript/Kitty-Tools`
+* Go to `LITE`'s dir: `cd Kitty-Tools/LITE`
+* Run script: `python lite.py`
+[Click me to veiw more!](https://github.com/CPScript/Kitty-Tools/LITE)
+
+
+
 
 ---
  
