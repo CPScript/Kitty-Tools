@@ -1,6 +1,6 @@
 <div align=center>
 
-#  Welcome to `Kitty-Tools LITE`
+#  `Kitty-Tools LITE v1.8`
 
 <div align="left">
 
