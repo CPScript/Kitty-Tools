@@ -1,5 +1,3 @@
-# UPDATING, PLEASE WAIT
-> During the duration of this update the software might not work as expected, please be patient
 <div align=center>
 
 # Welcome to the `Kitty-Tools` repository
