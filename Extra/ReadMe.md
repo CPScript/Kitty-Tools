@@ -1,6 +1,12 @@
 <div align="left">
 
-| Dont understand some words? Here is what they mean |
+## Website
+{infomation here}
+
+## LITE
+This is a version of Kitty-Tools that is ment to run on slower systems as it doesn't have as many graphical effects so it should be faster, it also doesn't have as many non requires modules so it shouldn't run into any error!
+
+## Definitions
 * apt: Advanced Package Tool (High level package installer)
 * pkg: Package
 * install git: Installs a github Repo via a terminal
@@ -11,8 +17,7 @@
 
 ---
 
-| All old versions are available here |
-
+## Versions
 ![Screenshot 2024-01-05 8 21 22 AM](https://github.com/CPScript/Kitty-Tools/assets/83523587/ea8f7306-ee2e-4ca7-8dfb-767df8bfa8cc)
 
 </div>
