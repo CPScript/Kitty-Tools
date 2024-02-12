@@ -45,5 +45,5 @@
 [Click me to veiw more!](https://github.com/CPScript/Kitty-Tools/more/moreinfo.md)
 
 <p align="center">
-  &copy; 2024 Kitty Tools. All rights reserved.
+  &copy; 2024 Kitty-Tools. All rights reserved.
 </p>
