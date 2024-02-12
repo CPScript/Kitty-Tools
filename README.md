@@ -17,7 +17,7 @@
 * `cd Kitty-Tools`
 * `python main.py`
 
-| Termux | [Click me to veiw more!](https://github.com/CPScript/Kitty-Tools/LITE)
+| Termux | [Click me to veiw more!](https://github.com/CPScript/Kitty-Tools/tree/main/LITE)
 
 * INSTALL TERMUX ON YOUR ANDROID PHONE
 * Install python: `pkg install python`
