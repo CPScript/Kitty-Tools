@@ -1,6 +1,6 @@
 <div align=center>
 
-# Welcome to `Kitty-Tools LITE`
+##  Welcome to `Kitty-Tools LITE`
 
 This version of `Kitty-Tools` is ment to be ran on Termux for android!
 
@@ -8,6 +8,7 @@ This version of `Kitty-Tools` is ment to be ran on Termux for android!
 
 # How to use
 
+* INSTALL TERMUX ON YOUR ANDROID PHONE
 * Install python: `pkg install python`
 * Install git: `pkg install git`
 * clone the repo: `git clone https://github.com/CPScript/Kitty-Tools`
