@@ -44,6 +44,7 @@ print("done")
 # tui
 print(f"|======= News =======| ")
 print(f" *STAR* this repo so I can get more support :p")
+print(f" I will soon severely update this repo soon!")
 print(f"|====================| ")
 time.sleep(4) 
 
