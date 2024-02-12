@@ -1,12 +1,8 @@
 <div align=center>
 
-##  Welcome to `Kitty-Tools LITE`
+#  Welcome to `Kitty-Tools LITE`
 
 <div align="left">
-
-> This version of `Kitty-Tools` is ment to be ran on Termux for android!
-
-> Note: This is still in early development and might not work at some points of time
 
 # How to use
 
@@ -20,7 +16,10 @@
 ### Extra information
 [Click me to veiw more!](https://github.com/CPScript/Kitty-Tools/more/moreinfo.md)
 
-> Note: This is still in early development and might not work at some points of time
+> Note: This is still in early development and will have many larch changes!
+
+> This version of `Kitty-Tools` is ment to be ran on Termux for android!
+
 
 <p align="center">
   &copy; 2024 Kitty Tools LITE. All rights reserved.
