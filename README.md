@@ -1,3 +1,5 @@
+note : There are a couple issues when using this software on termux. I will resolve this issue soon 🙏
+
 <div align=center>
 
 # Welcome to the `Kitty-Tools` repository
