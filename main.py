@@ -30,7 +30,7 @@ def clear():
         print(f"For more info go to https://github.com/CPScript/Kitty-Tools/more/moreinfo.md")
 
 # Call the clear function
-print("Cheaking if Platform Supported!") # Warning
+print("Checking if Your Platform is Supported!") # Warning
 time.sleep(0.5)
 print(f"You are using '{system}'") # OS Alert
 time.sleep(1)
