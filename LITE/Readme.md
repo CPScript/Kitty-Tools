@@ -2,9 +2,11 @@
 
 ##  Welcome to `Kitty-Tools LITE`
 
-This version of `Kitty-Tools` is ment to be ran on Termux for android!
-
 <div align="left">
+
+> This version of `Kitty-Tools` is ment to be ran on Termux for android!
+
+> Note: This is still in early development and might not work at some points of time
 
 # How to use
 
@@ -18,7 +20,7 @@ This version of `Kitty-Tools` is ment to be ran on Termux for android!
 ### Extra information
 [Click me to veiw more!](https://github.com/CPScript/Kitty-Tools/more/moreinfo.md)
 
-> Note: This is still in early development and might not work at some points of time <3
+> Note: This is still in early development and might not work at some points of time
 
 <p align="center">
   &copy; 2024 Kitty Tools LITE. All rights reserved.
