@@ -7,15 +7,39 @@ import json
 import urllib.request
 import os
 from os import system
+import platform
+
+ef clear():
+    system = platform.system().lower()
+
+    if system == 'windows':
+        _ = os.system('cls')
+    elif system == 'linux' or system == 'darwin':
+        _ = os.system('clear')
+    elif system == 'android':
+        _ = subprocess.run(['termux-exec', 'sh', '-c', 'clear'], check=False)
+    else:
+        print(f"Unsupported platform, please use Kitty-Tools LITE '{system}'")
+        print(f"For more info go to https://github.com/CPScript/Kitty-Tools/more/moreinfo.md")
+
+# Call the clear function
+print("Cheaking if Platform Supported!") # Warning
+time.sleep(0.5)
+print(f"You are using '{system}'") # OS Alert
+time.sleep(1)
+print("Running test!") # testing if previouse script works
+print("1")
+clear()
 
 print("""
-WELCOME TO - Kitty-Tools LITE v0.4
+WELCOME TO - Kitty-Tools LITE v1.8
 =========== For Termux ===========
+
 
         Enter your Quiz ID below!
        //
 (> ~ <)
--------------------------------""")
+----------------------------------""")
 
 api = 'https://play.kahoot.it/rest/kahoots/'
 usrinput = input("Quiz ID >")
