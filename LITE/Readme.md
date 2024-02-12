@@ -13,6 +13,8 @@
 * Go to `LITE`'s dir: `cd Kitty-Tools/LITE`
 * Run script: `python lite.py`
 
+---
+
 ### Extra information
 [Click me to veiw more!](https://github.com/CPScript/Kitty-Tools/more/moreinfo.md)
 
@@ -20,6 +22,7 @@
 
 > This version of `Kitty-Tools` is ment to be ran on Termux for android!
 
+---
 
 <p align="center">
   &copy; 2024 Kitty Tools LITE. All rights reserved.
