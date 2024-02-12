@@ -1,15 +1,17 @@
+print("""If you see this message and there is an error below this message please re run the 'main.py' script and that would fix such issues!
+
+If you dont see any errors, please ignore this message!
+=======================================================
+""")
+import time
+time.sleep(0.1)
+
 from scripts.sprint import sprint
 from scripts.colors import ran, y, r, g, c
 from subprocess import call
-import time
 import os
 from os import system
 import platform
-
-print("Important, if you get an error about 'style is not defined' please re run main.py")
-print("Please wait...")
-time.sleep(5)
-print("")
 
 # Old "clear terminal"
 # puk = platform()[0], platform()[1],  platform()[2], platform()[3], platform()[4], platform()[5], platform()[6]
