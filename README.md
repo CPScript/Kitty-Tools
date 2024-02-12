@@ -1,5 +1,5 @@
-note : There are a couple issues when using this software on termux. I will resolve this issue soon 🙏
-
+# UPDATING, PLEASE WAIT
+> During the duration of this update the software might not work as expected, please be patient
 <div align=center>
 
 # Welcome to the `Kitty-Tools` repository
