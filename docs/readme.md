@@ -1,9 +1,12 @@
-## Welcome to `Kitty-Tool's` website dir | BETA
-> Created By - Kira
+<div align=center>
 
-> Version 1.5
+  ## Welcome to `Kitty-Tool's` website dir | BETA
 
-> Being updated soon
+<div align=left>
+
+  * Created By - Kira
+  * Version 1.5
+  * Being updated soon
 
 <p align="center">
   &copy; 2024 Kitty-Tools All rights reserved.
