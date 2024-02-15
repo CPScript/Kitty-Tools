@@ -1,8 +1,5 @@
-INFO:
-
-* The zip here contains the source code to a test website that will be used af referance.
-* This was made by Kira (a contributer) as a christmas present!
+Website! 
 
 <p align="center">
-  &copy; 2024 {site name here} All rights reserved.
+  &copy; 2024 Kitty-Tools All rights reserved.
 </p>
