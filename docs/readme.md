@@ -1,4 +1,4 @@
-`Kitty-Tool's website BETA V-1.2`
+`Kitty-Tool's website BETA V-1.4`
 
 > Created By - Kira
 
