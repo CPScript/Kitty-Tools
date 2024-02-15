@@ -44,6 +44,20 @@
 ### Extra information
 [Click me to veiw more!](https://github.com/CPScript/Kitty-Tools/blob/main/extra.md)
 
+---
+
+### To Do
+
+| TO DO | Done? | 
+| ------------------ | --- |
+| Add website | ✅ | 
+| GUI software | ✖️ |
+| Update readme.md's | ✅ | 
+| Make LITE smaller | ✖️ | 
+| Find Bugs | kinda done? |
+| Add more tools | ✖️ |
+| Fix Flooder | ✖️ |
+
 <p align="center">
   &copy; 2024 Kitty-Tools. All rights reserved.
 </p>
