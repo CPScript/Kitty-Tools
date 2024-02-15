@@ -1,6 +1,7 @@
-`Kitty-Tool's website BETA V-1.4`
-
+## Welcome to `Kitty-Tool's` website dir | BETA
 > Created By - Kira
+> Version 1.5
+> Being updated soon
 
 <p align="center">
   &copy; 2024 Kitty-Tools All rights reserved.
