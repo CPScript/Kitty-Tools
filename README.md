@@ -52,10 +52,7 @@
 
 | TO DO | Done? | 
 | ------------------ | --- |
-| Add website | ✅ | 
 | GUI software | ✖️ |
-| Update readme.md's | ✅ | 
-| Make LITE smaller | ✖️ | 
 | Find Bugs | kinda done? |
 | Add more tools | ✖️ |
 | Fix Flooder | ✖️ |
