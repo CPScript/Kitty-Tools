@@ -1,4 +1,13 @@
+Wanna support me??? Just click the link bellow and follow my account <3 (PLEASE!)
+
+[ CLICK ME! ](https://github.co/CPScript)
+
+
+---
+
+
 <div align=center>
+
 
 ###### HEY!!! This repo might look scary/complex BUT; its not! (scroll down to learn how to use)
 
