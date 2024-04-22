@@ -32,6 +32,8 @@ def clear():
         _ = os.system('clear')
     elif system == 'android':
         _ = subprocess.run(['termux-exec', 'sh', '-c', 'clear'], check=False)
+        print("Please use the 'LITE' version so kitty tools will run smoothly <3")
+        exit()
     else:
         print(f"Unsupported platform, please use Kitty-Tools LITE '{system}'")
         print(f"For more info go to https://github.com/CPScript/Kitty-Tools/more/moreinfo.md")
