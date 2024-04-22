@@ -26,7 +26,7 @@
 
 ---
 
-| Android | Replit| [Click for more info!](https://github.com/CPScript/Kitty-Tools/tree/main/LITE)
+| Android | Replit | [Click for more info!](https://github.com/CPScript/Kitty-Tools/tree/main/LITE)
 
 * INSTALL TERMUX ON YOUR ANDROID PHONE
 * Install python: `pkg install python`
