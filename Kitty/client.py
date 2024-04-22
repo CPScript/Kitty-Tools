@@ -1,157 +1,191 @@
-import json
-import urllib.request
 import os
+import time
 from os import system
+import platform
+print ("Attempting to check if imports are installed; colorama, pystyle.")
+time.sleep(4)
+def clear():
+    system = platform.system().lower()
 
-print("""
-        _____________________
-       || Enter your quiz ID||
-       || below!            ||
-       |//
-(｡>﹏<)
--------------------------------""")
-
-api = 'https://play.kahoot.it/rest/kahoots/'
-usrinput = input("Quiz ID >")
-link = api + usrinput
-finished = False
-
-answers = {}
-images = {}
-questions = {}
-
+    if system == 'windows':
+        _ = os.system('cls')
+    elif system == 'linux' or system == 'darwin':
+        _ = os.system('clear')
+    elif system == 'android':
+        System.Clear()
+        print("How are you here, leave!")
+        print("Please use the 'LITE' version so kitty tools will run smoothly <3")
+        exit()
+clear()
 try:
-    with urllib.request.urlopen(link) as url:
-        print("")
-        data = json.load(url)
-        quizlength = len(data['questions'])
+    import colorama 
+    import pystyle
+except ModuleNotFoundError:
+    #from scripts.check import try_install | Idk how to fix the error for line 16, its 2am so idc
+    print("Result: You dont have a certan import(s) installed, installing them now")
+    time.sleep(1)
+    os.system("pip install colorama")
+    os.system("pip install pystyle")
 
-        def is_a_question(dat):
-            try:
-                eval(dat)
-                return True
-            except KeyError:
-                return False
+from urllib.request import urlopen
+from urllib.error import HTTPError
+from urllib.parse import urlparse, parse_qs
+from json import load
+from http.client import InvalidURL
+import json, random, string, re, ctypes, threading
+from colorama import Fore, Style
+from pystyle import Write, System, Colors, Colorate, Anime
+from datetime import datetime
 
-        question = 0
-        for x in range(quizlength):
-            if is_a_question("data['questions'][question]['choices']"):
-                try:
-                    if data['questions'][question]['type'] == "quiz":
-                        if data['questions'][question]['choices'][0]['correct']:
-                            answers[f"Question {question + 1}"] = 'Red'
-                        elif data['questions'][question]['choices'][1]['correct']:
-                            answers[f"Question {question + 1}"] = 'Blue'
-                        elif data['questions'][question]['choices'][2]['correct']:
-                            answers[f"Question {question + 1}"] = 'Yellow'
-                        elif data['questions'][question]['choices'][3]['correct']:
-                            answers[f"Question {question + 1}"] = 'Green'
-                    elif data['questions'][question]['type'] == "jumble":
-                        length = len(data['questions'][question]['choices'])
-                        for y in range(length):
-                            if answers.get(f"Question {question + 1}") is None:
-                                answers[f"Question {question + 1}"] = ""
-                            answers[f"Question {question + 1}"] += str(data['questions'][question]['choices'][y]['answer']).upper()
+# Colors :D
+red = Fore.RED
+yellow = Fore.YELLOW
+green = Fore.GREEN
+blue = Fore.BLUE
+orange = Fore.RED + Fore.YELLOW
+pretty = Fore.LIGHTMAGENTA_EX + Fore.LIGHTCYAN_EX
+magenta = Fore.MAGENTA
+lightblue = Fore.LIGHTBLUE_EX
+cyan = Fore.CYAN
+gray = Fore.LIGHTBLACK_EX + Fore.WHITE
+reset = Fore.RESET
+pink = Fore.LIGHTGREEN_EX + Fore.LIGHTMAGENTA_EX
+dark_green = Fore.GREEN + Style.BRIGHT
 
-                    elif data['questions'][question]['type'] == "survey":
-                        answers[f"Question {question + 1}"] = "Could not find any answers"
+output_lock = threading.Lock()
+colorama.init()
 
-                    elif data['questions'][question]['type'] == "content":
-                        answers[f"Question {question + 1}"] = "Could not find any answers"
-
-                    elif data['questions'][question]['type'] == "multiple_select_quiz":
-                        multiselect = []
-                        for z in range(len(data['questions'][question]['choices'])):
-                            if data['questions'][question]['choices'][0]['correct']:
-                                multiselect.append("Blue")
-
-                            if data['questions'][question]['choices'][1]['correct']:
-                                multiselect.append("Red")
-
-                            if data['questions'][question]['choices'][2]['correct']:
-                                multiselect.append("Yellow")
-
-                            if data['questions'][question]['choices'][3]['correct']:
-                                multiselect.append("Green")
-
-                        answers[f"Question {question + 1}"] = list(dict.fromkeys(multiselect))
-                    else:
-                        answers[f"Question {question + 1}"] = 'Could not find any answers'
-
-                    questions[f"Question {question + 1}"] = data["questions"][question]["question"]
-
-                    if is_a_question('data["questions"][question]["image"]'):
-                        images[f"Question {question + 1}"] = data["questions"][question]["image"]
-                    else:
-                        images[f"Question {question + 1}"] = None
-
-                    question += 1
-                    if question + 1 == quizlength:
-                        finished = True
-                except Exception as err:
-                    print(err)
+api = "https://play.kahoot.it/rest/kahoots/"
+class Kahoot:
+    def __init__(self, uuid):
+        self.uuid = uuid
+        try:
+            if not re.fullmatch(r"^[A-Za-z0-9-]*$", uuid):
+                self.data = False
             else:
-                answers[f"Question {question + 1}"] = 'Could not find any answers'
-                images[f"Question {question + 1}"] = 'Could not find any images'
-                questions[f"Question {question + 1}"] = 'Could not find the question'
+                self.data = load(urlopen(f"https://play.kahoot.it/rest/kahoots/{uuid}"))
+        except HTTPError or InvalidURL:
+            self.data = False
 
-                question += 1
+    def get_quiz_details(self):
+        return {
+            "uuid": self.data["uuid"],
+            "creator_username": self.data["creator_username"],
+            "title": self.data["title"],
+            "description": self.data["description"],
+            "cover": self.data["cover"]}
 
-except Exception as err:
-    os.system('clear')
-    print("Womp Womp! ")
-    print("There was an error!  Mabey you typed the 'Quiz ID' incorrectly!\n")
-    print(err)
+    def get_questions(self):
+        return self.data["questions"]
 
+    def get_question_names(self):
+        questions = []
+        for i in range(self.get_quiz_length()):
+            if self.get_question_details(i)["type"] == "content":
+                questions.append(self.get_question_details(i)["title"])
+            else:
+                questions.append(self.get_question_details(i)["question"])
+        return questions
 
-def print_answers():
-    for key, value in answers.items():
-        if type(value) == list:
-            print(key, ':', f"{', '.join(value)}\n")
+    def get_quiz_length(self):
+        return len(self.data["questions"])
+
+    def get_question_details(self, question):
+        if self.data["questions"][question]["type"] == "content":
+            data = {
+                "type": "content",
+                "title": self.data["questions"][question]["title"],
+                "description": self.data["questions"][question]["description"]
+            }
         else:
-            print(key, ':', f"{value}\n")
+            data = {
+                "type": self.data["questions"][question]["type"],
+                "question": str(self.data["questions"][question]["question"]).replace('"', '\\"').replace("<p>", "").replace("</p>", "").replace("<strong>", "").replace("</strong>", "").replace("<br/>", "\n").replace("</span>", "").replace("</mo>", "").replace("</mrow>", "").replace("<mn>", "").replace("</mn>", "").replace("</annotation>", "").replace("</semantics>", "").replace("</math>", "").replace("<span>", "").replace("<math>", "").replace("<semantics>", "").replace("<mrow>", "").replace("<mo>", "").replace("<msup>", "").replace("<mi>", "").replace("</mi>", "").replace("</msup>", "").replace("<b>", "").replace("</b>", ""),
+                "choices": self.data["questions"][question]["choices"],
+                "amount_of_answers": len(self.data["questions"][question]["choices"]),
+                "amount_of_correct_answers": 0}
 
+            for i in range(len(self.data["questions"][question]["choices"])):
+                self.data["questions"][question]["choices"][i]["answer"] = self.data["questions"][question]["choices"][i]["answer"].replace('"', '\\"').replace("<p>", "").replace("</p>", "").replace("<strong>", "").replace("</strong>", "").replace("<br/>", "\n").replace("</span>", "").replace("</mo>", "").replace("</mrow>", "").replace("<mn>", "").replace("</mn>", "").replace("</annotation>", "").replace("</semantics>", "").replace("</math>", "").replace("<span>", "").replace("<math>", "").replace("<semantics>", "").replace("<mrow>", "").replace("<mo>", "").replace("<msup>", "").replace("<mi>", "").replace("</mi>", "").replace("</msup>", "").replace("<b>", "").replace("</b>", "")
 
-print_answers()
+            for i in range(len(self.data["questions"][question]["choices"])):
+                if self.data["questions"][question]["choices"][i]["correct"]:
+                    data["amount_of_correct_answers"] += 1
 
-if finished:
-    # try:
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-    data_path = os.path.join(dir_path, "quizzes", f"{usrinput}.json")
-
-    if not os.path.exists(os.path.join(dir_path, "quizzes")):
-        os.mkdir(os.path.join(dir_path, "quizzes"), 0o666)
-
-    if not os.path.exists(data_path):
-        with open(data_path, "x") as f:
-            startconfig = {"answers": {}, "questions": {}, "images": {}}
-            json.dump(startconfig, f, indent=4)
-
-    with open(data_path, "r") as f:
-        config = json.load(f)
-
-    for i, v in answers.items():
-        if "Woops! Could not find any answers" in v:
-            config["answers"][i] = None
+        if "layout" in self.data["questions"][question]:
+            data["layout"] = self.data["questions"][question]["layout"]
         else:
-            config["answers"][i] = v
+            data["layout"] = None
 
-    for i, v in questions.items():
-        if "Woops! Could not find the question" in v:
-            config["questions"][i] = None
+        if "image" in self.data["questions"][question]:
+            data["image"] = self.data["questions"][question]["image"]
         else:
-            config["questions"][i] = str(v).replace("T or F: ", '').replace("</b>", '').replace("<b>T or  F: ", '').replace('<b>', '')
+            data["image"] = None
 
-    for i, v in images.items():
-        if "Woops! Could not find any images" in v:
-            config["images"][i] = None
+        if "pointsMultiplier" in self.data["questions"][question]:
+            data["pointsMultiplier"] = self.data["questions"][question]["pointsMultiplier"]
         else:
-            config["images"][i] = v
+            data["pointsMultiplier"] = None
 
-    with open(data_path, "w+") as f:
-        json.dump(config, f, indent=4)
+        if "time" in self.data["questions"][question]:
+            data["time"] = self.data["questions"][question]["time"]
+        else:
+            data["time"] = None
 
-    # except Exception as err:
-    #     print(f"{err}\n")
+        return data
 
-input("Enter to exit...")
+    def get_answer(self, question):
+        answers = []
+        if self.get_question_details(question)["type"] == "content":
+            answers = None
+
+        elif self.get_question_details(question)["type"] == "jumble":
+            for i in self.get_question_details(question)["choices"]:
+                answers.append(str(i["answer"]).replace('"', '\\"').replace("<p>", "").replace("</p>", "").replace("<strong>", "").replace("</strong>", "").replace("<br/>", "\n").replace("</span>", "").replace("</mo>", "").replace("</mrow>", "").replace("<mn>", "").replace("</mn>", "").replace("</annotation>", "").replace("</semantics>", "").replace("</math>", "").replace("<span>", "").replace("<math>", "").replace("<semantics>", "").replace("<mrow>", "").replace("<mo>", "").replace("<msup>", "").replace("<mi>", "").replace("</mi>", "").replace("</msup>", "").replace("<b>", "").replace("</b>", ""))
+
+        else:
+            for i in self.get_question_details(question)["choices"]:
+                if i["correct"]:
+                    answers.append(str(i["answer"]).replace('"', '\\"').replace("<p>", "").replace("</p>", "").replace("<strong>", "").replace("</strong>", "").replace("<br/>", "\n").replace("</span>", "").replace("</mo>", "").replace("</mrow>", "").replace("<mn>", "").replace("</mn>", "").replace("</annotation>", "").replace("</semantics>", "").replace("</math>", "").replace("<span>", "").replace("<math>", "").replace("<semantics>", "").replace("<mrow>", "").replace("<mo>", "").replace("<msup>", "").replace("<mi>", "").replace("</mi>", "").replace("</msup>", "").replace("<b>", "").replace("</b>", ""))
+            if len(answers) == 0:
+                answers = None
+        return answers
+    
+def start_kahoot():
+    print("NOTICE: This version is under development and sometimes it might bug, please create an issue at 'https://github.com/CPScript/Kitty-tools/issues' and we will try to fix it <3")
+    Write.Print(f"""
+       _______________________
+      || Enter your quiz link||
+      || below! <3           ||
+      |//
+(>﹏<)
+--------------------------------------
+---- Kitty-Tools | By <> CPScript ----
+--------------------------------------
+    \n""", Colors.orange, interval=0.000)
+    Write.Print(f"┌─[Enter Kahoot-Link] <> [User-Input]\n", Colors.white, interval=0.000)
+    Write.Print(f"└─────► ", Colors.white, interval=0.000); link = input(pretty)
+    try:
+        parsed_url = urlparse(link)
+        query_params = parse_qs(parsed_url.query)
+        quiz_id = query_params.get("quizId", [])[0]
+        kahoot = Kahoot(quiz_id)
+        print(f"{pretty}{orange}({green}!{orange}) Fetching Answers From: {orange}[{reset}Quiz-ID: {quiz_id}{orange}]\n")
+        time.sleep(1)
+        for i in range(kahoot.get_quiz_length()):
+            if kahoot.get_answer(i) is not None:
+                if kahoot.get_question_details(i)['type'] == 'open_ended':
+                    with output_lock:
+                        print(f"{pretty}{orange}[{reset}Question{orange}]{green}--{orange}[{reset}{kahoot.get_question_names()[i]}{orange}]{reset}\n{pretty}{orange}[{reset}Answer{orange}]{green}--{orange}[{reset}{', '.join(kahoot.get_answer(i))}{orange}]{reset}\n")
+                else:
+                    with output_lock:
+                        print(f"{pretty}{orange}[{reset}Question{orange}]{green}--{orange}[{reset}{kahoot.get_question_names()[i]}{orange}]{reset}\n{pretty}{orange}[{reset}Answer{orange}]{green}--{orange}[{reset}{', '.join(kahoot.get_answer(i))}{orange}]{reset}\n")
+            time.sleep(0.010)
+    except:         
+        start_kahoot()
+
+Write.Print(f"""
+
+""", Colors.purple_to_blue, interval=0.000)
+start_kahoot()
+Write.Print(f"\nPress Enter to exit", interval=0.000); input(pretty)
