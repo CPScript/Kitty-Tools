@@ -52,13 +52,10 @@ clear()
 
 
 # tui
-print(f"|======= News =======| ")
+print(f"|======= Notic =======| ")
 print(f" *STAR* this repo so I can get more support :p")
-print(f" I will soon severely update this repo soon!")
-print(f"|====================| ")
+print(f"|=====================| ")
 time.sleep(4) 
-
-# clear the Termianl
 clear()
 
 print(f"""
@@ -68,7 +65,7 @@ print(f"""
      '---''(_/--'  `-'\_)""")
 print(f"{y}>| {r}Kahoot Client {y}| {r}Made by - CPScript{y} |<")
 print(" ")
-print(f"{y}-----Version-34.8-----")
+print(f"{y}-----Version-36.2-----")
 print(f"{y}/1/ {g}How to use {y}| {r}Shows you how to use the tool{y}")
 print(f"{y}/2/ {g}Information {y}| {r}Credits, licence, and more{y}")
 print(f"{y}/3/ {g}Flooder {y}| {r}Flood a Kahoot game (Getting Updated!){y}")
@@ -103,9 +100,3 @@ if choice == "4":
     call(["python", "Kitty/client.py"])
 
 time.sleep(25)
-print(" ")
-print("Program Made by CPScript") # You are not allowed claim this software is yours unless it goes through major changes. 
-print(" ")
-print("""
-Goodbye <3
-""")
