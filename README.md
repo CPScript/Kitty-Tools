@@ -17,7 +17,7 @@
  
 # HOW 2 USE
 
-| Linux | Mac | [Web(terminal)](https://github.com/codespaces)
+| Linux | Mac | [Github-Codespace](https://github.com/codespaces)
 * `pkg install python` or `apt install python`
 * `pkg install git`
 * `git clone https://github.com/CPScript/Kitty-Tools`
