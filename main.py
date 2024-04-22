@@ -36,7 +36,7 @@ def clear():
         exit()
     else:
         print(f"Unsupported platform, please use Kitty-Tools LITE '{system}'")
-        print(f"For more info go to https://github.com/CPScript/Kitty-Tools/more/moreinfo.md")
+        print(f"For more info go to https://github.com/CPScript/Kitty-Tools/extra.md")
 
 # Call the clear function
 print("Checking if Your Platform is Supported!") # Warning
