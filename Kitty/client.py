@@ -188,5 +188,12 @@ def start_kahoot():
 Write.Print(f"""
 
 """, Colors.purple_to_blue, interval=0.000)
+
 start_kahoot()
-Write.Print(f"\nPress Enter to exit", interval=0.000); input(pretty)
+
+print("\n")
+print("=======")
+print("Thanks for using Kitty-Tools <3")
+print("Please *STAR* this repo and follow the creator on github!")
+print("=======\n")
+print("Press Enter to exit")
