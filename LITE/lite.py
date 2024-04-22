@@ -9,24 +9,8 @@ import os
 from os import system
 import platform
 
-def clear():
-     system = platform.system().lower()
- 
-     if system == 'windows':
-         _ = os.system('cls')
-     elif system == 'linux' or system == 'darwin':
-         _ = os.system('clear')
-     elif system == 'android':
-         _ = subprocess.run(['termux-exec', 'sh', '-c', 'clear'], check=False)
-     else:
-         print(f"Unsupported platform, please use Kitty-Tools LITE '{system}'")
-         print(f"For more info go to https://github.com/CPScript/Kitty-Tools/more/moreinfo.md")
+print(f"'{system}'") # OS Alert
 
-# Call the clear function
-print(f"You are using '{system}'") # OS Alert
-clear()
-
-# Banner
 print("""
 WELCOME TO - Kitty-Tools LITE v1.10
 =========== For Termux ============
