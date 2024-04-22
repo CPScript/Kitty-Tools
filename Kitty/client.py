@@ -26,6 +26,7 @@ except ModuleNotFoundError:
     time.sleep(1)
     os.system("pip install colorama")
     os.system("pip install pystyle")
+    clear()
 
 from urllib.request import urlopen
 from urllib.error import HTTPError
