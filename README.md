@@ -1,8 +1,3 @@
-Wanna support me??? Just click the link bellow and follow my account <3 (PLEASE!)
-
-[ CLICK ME! ](https://github.co/CPScript)
-
-
 ---
 
 
