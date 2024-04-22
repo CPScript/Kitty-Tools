@@ -15,12 +15,7 @@
 
 ---
 
-### Extra information
-[Click me to veiw more!](https://github.com/CPScript/Kitty-Tools/more/moreinfo.md)
-
-> Note: This is still in early development and will have many larch changes!
-
-> This version of `Kitty-Tools` is ment to be ran on Termux for android!
+> This version of `Kitty-Tools` is ment to be ran on Android and Replit!
 
 ---
 
