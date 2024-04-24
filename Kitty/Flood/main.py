@@ -1,36 +1,53 @@
-from scripts.sprint import sprint
-from scripts.colors import ran,y,r,g,c
-from subprocess import call
+# THE CONTENT IN THIS FILE AND ITS SIMPLICITY IS UGLY AND MAKES MY MIND HURT
+
 import time
 import os
+import platform 
 import subprocess
 from os import system
-time.sleep(2)
+from subprocess import call
 
+def clear():
+    system = platform.system().lower()
 
-print("\n" * 128)
-print(f"""{r}
-LOGO""")
-print(" ")
-print(" ")
-sprint(f"{r}!!!WARNING!!!")
-print(f"{r}CPScript {y}is not responsible for the {r}user's actions{y}, and {r}they agree to this by typing {c}'yes' {y}below")
-print(f"{y}If this 'Flood' program doesn't work, please tell me via making an issue in the github repo.")
-print(" ")
+    if system == 'windows':
+        _ = os.system('cls')
+    elif system == 'linux' or system == 'darwin':
+        _ = os.system('clear')
+    elif system == 'android':
+        _ = subprocess.run(['termux-exec', 'sh', '-c', 'clear'], check=False)
+        print("Please use LITE!")
+        exit()
+    else:
+        print(f"Unsupported platform, please use Kitty-Tools LITE '{system}'")
+        print(f"For more info go to https://github.com/CPScript/Kitty-Tools/extra.md")
+clear() # call check
+
 print("Start???")
 print("yes | no")
 choice = input("").lower()
 
 if choice == "yes":
-    print("\nStarting...")
+    print("Starting...")
     time.sleep(1)
-    print("\n" * 64)
+    clear()
+    print("Checking if requirment exists: node")
+    try:
+        import node # does node exist
+    except ModuleNotFoundError:
+        print("Atempting to install node...")
+        time.sleep(2)
+        os.system("pip install node") # installation
+        clear()
+    clear()   
+    print("Exicuting!")
     time.sleep(2)
-    subprocess.run(["node", "flood.js"])
+    clear()
+    subprocess.run(["node", "Kitty/Flood/flood.js"])
     
     
 if choice == "no":
-    print("\nRestarting...")
-    time.sleep(1)
-    print("\n" * 64)
+    print("\nRe-Running main menu file!")
+    time.sleep(3)
+    clear()
     call(["python", "main.py"])
