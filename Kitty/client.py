@@ -153,12 +153,11 @@ class Kahoot:
             if len(answers) == 0:
                 answers = None
         return answers
-    
 def start_kahoot():
     print("NOTICE: This version is under development and sometimes it might bug, please create an issue at 'https://github.com/CPScript/Kitty-tools/issues' and we will try to fix it <3")
     Write.Print(f"""
        _______________________
-      || Enter your quiz link||
+      || Enter your quiz ID  ||
       || below! <3           ||
       |//
 (>﹏<)
@@ -166,27 +165,20 @@ def start_kahoot():
 ---- Kitty-Tools | By <> CPScript ----
 --------------------------------------
     \n""", Colors.orange, interval=0.000)
-    Write.Print(f"┌─[Enter Kahoot-Link] <> [User-Input]\n", Colors.white, interval=0.000)
-    Write.Print(f"└─────► ", Colors.white, interval=0.000); link = input(pretty)
-    try:
-        parsed_url = urlparse(link)
-        query_params = parse_qs(parsed_url.query)
-        quiz_id = query_params.get("quizId", [])[0]
-        kahoot = Kahoot(quiz_id)
-        print(f"{pretty}{orange}({green}!{orange}) Fetching Answers From: {orange}[{reset}Quiz-ID: {quiz_id}{orange}]\n")
-        time.sleep(1)
-        for i in range(kahoot.get_quiz_length()):
-            if kahoot.get_answer(i) is not None:
-                if kahoot.get_question_details(i)['type'] == 'open_ended':
-                    with output_lock:
-                        print(f"{pretty}{orange}[{reset}Question{orange}]{green}--{orange}[{reset}{kahoot.get_question_names()[i]}{orange}]{reset}\n{pretty}{orange}[{reset}Answer{orange}]{green}--{orange}[{reset}{', '.join(kahoot.get_answer(i))}{orange}]{reset}\n")
-                else:
-                    with output_lock:
-                        print(f"{pretty}{orange}[{reset}Question{orange}]{green}--{orange}[{reset}{kahoot.get_question_names()[i]}{orange}]{reset}\n{pretty}{orange}[{reset}Answer{orange}]{green}--{orange}[{reset}{', '.join(kahoot.get_answer(i))}{orange}]{reset}\n")
-            time.sleep(0.010)
-    except:         
-        start_kahoot()
-
+    Write.Print(f"┌─[Enter Kahoot-ID] <> [User-Input]\n", Colors.white, interval=0.000)
+    Write.Print(f"└─────► ", Colors.white, interval=0.000); quiz_id = input(pretty)
+    kahoot = Kahoot(quiz_id)
+    print(f"{pretty}{orange}({green}!{orange}) Fetching Answers From: {orange}[{reset}Quiz-ID: {quiz_id}{orange}]\n")
+    time.sleep(1)
+    for i in range(kahoot.get_quiz_length()):
+        if kahoot.get_answer(i) is not None:
+            if kahoot.get_question_details(i)['type'] == 'open_ended':
+                with output_lock:
+                    print(f"{pretty}{orange}[{reset}Question{orange}]{green}--{orange}[{reset}{kahoot.get_question_names()[i]}{orange}]{reset}\n{pretty}{orange}[{reset}Answer{orange}]{green}--{orange}[{reset}{', '.join(kahoot.get_answer(i))}{orange}]{reset}\n")
+            else:
+                with output_lock:
+                    print(f"{pretty}{orange}[{reset}Question{orange}]{green}--{orange}[{reset}{kahoot.get_question_names()[i]}{orange}]{reset}\n{pretty}{orange}[{reset}Answer{orange}]{green}--{orange}[{reset}{', '.join(kahoot.get_answer(i))}{orange}]{reset}\n")
+        time.sleep(0.010)
 Write.Print(f"""
 
 """, Colors.purple_to_blue, interval=0.000)
