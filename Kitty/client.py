@@ -167,27 +167,32 @@ def start_kahoot():
     \n""", Colors.orange, interval=0.000)
     Write.Print(f"┌─[Enter Kahoot-ID] <> [User-Input]\n", Colors.white, interval=0.000)
     Write.Print(f"└─────► ", Colors.white, interval=0.000); quiz_id = input(pretty)
-    kahoot = Kahoot(quiz_id)
-    print(f"{pretty}{orange}({green}!{orange}) Fetching Answers From: {orange}[{reset}Quiz-ID: {quiz_id}{orange}]\n")
-    time.sleep(1)
-    for i in range(kahoot.get_quiz_length()):
-        if kahoot.get_answer(i) is not None:
-            if kahoot.get_question_details(i)['type'] == 'open_ended':
-                with output_lock:
-                    print(f"{pretty}{orange}[{reset}Question{orange}]{green}--{orange}[{reset}{kahoot.get_question_names()[i]}{orange}]{reset}\n{pretty}{orange}[{reset}Answer{orange}]{green}--{orange}[{reset}{', '.join(kahoot.get_answer(i))}{orange}]{reset}\n")
-            else:
-                with output_lock:
-                    print(f"{pretty}{orange}[{reset}Question{orange}]{green}--{orange}[{reset}{kahoot.get_question_names()[i]}{orange}]{reset}\n{pretty}{orange}[{reset}Answer{orange}]{green}--{orange}[{reset}{', '.join(kahoot.get_answer(i))}{orange}]{reset}\n")
-        time.sleep(0.010)
-Write.Print(f"""
-
-""", Colors.purple_to_blue, interval=0.000)
+    try:
+        kahoot = Kahoot(quiz_id)
+        print(f"{pretty}{orange}({green}!{orange}) Fetching Answers From: {orange}[{reset}Quiz-ID: {quiz_id}{orange}]\n")
+        time.sleep(1)
+        for i in range(kahoot.get_quiz_length()):
+            if kahoot.get_answer(i) is not None:
+                if kahoot.get_question_details(i)['type'] == 'open_ended':
+                    with output_lock:
+                        print(f"{pretty}{orange}[{reset}Question{orange}]{green}--{orange}[{reset}{kahoot.get_question_names()[i]}{orange}]{reset}\n{pretty}{orange}[{reset}Answer{orange}]{green}--{orange}[{reset}{', '.join(kahoot.get_answer(i))}{orange}]{reset}\n")
+                else:
+                    with output_lock:
+                        print(f"{pretty}{orange}[{reset}Question{orange}]{green}--{orange}[{reset}{kahoot.get_question_names()[i]}{orange}]{reset}\n{pretty}{orange}[{reset}Answer{orange}]{green}--{orange}[{reset}{', '.join(kahoot.get_answer(i))}{orange}]{reset}\n")
+            time.sleep(0.010)
+    except Exception as err:
+        os.system('clear')
+        print("Womp Womp! ")
+        print("There was an error!  Mabey you typed the 'Quiz ID' incorrectly!\n")
+        print(err)
+    Write.Print(f"""
+||=========================================================
+||Thanks for using Kitty-Tools <3
+||Please *STAR* this repo and follow the creator on github!
+||=========================================================\n
+""", Colors.red_to_purple, interval=0.000)
 
 start_kahoot()
 
-print("\n")
-print("=======")
-print("Thanks for using Kitty-Tools <3")
-print("Please *STAR* this repo and follow the creator on github!")
-print("=======\n")
-print("Press Enter to exit")
+
+input("Press any key to exit...")
