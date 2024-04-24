@@ -28,7 +28,6 @@ print("yes | no")
 choice = input("").lower()
 
 if choice == "yes":
-    print("Starting...")
     time.sleep(1)
     clear()
     print("Checking if requirment exists: node")
