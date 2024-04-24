@@ -72,23 +72,26 @@ if choice == "1":
     print(" ")
     print("Loading...")
     time.sleep(1)
+    clear()
     call(["python", "Kitty/htu.py"])
 
 if choice == "2":
     print(" ")
     print("Loading...")
     time.sleep(1)
+    clear()
     call(["python", "Kitty/Info/main.py"])
 
 if choice == "3":
     print(" ")
     print("Loading...")
     time.sleep(1)
-    call(["python", "Kitty/flood/Info.py"])
+    clear()
+    call(["python", "Kitty/Flood/main.py"])
 
 if choice == "4":
     print(" ")
     print("Starting...")
     time.sleep(1)
-    print("\n" * 64)  # imma this makes more sense
+    clear()
     call(["python", "Kitty/client.py"])
