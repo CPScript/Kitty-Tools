@@ -1,27 +1,21 @@
-print("""If you see this message and there is an error below this message please re run the 'main.py' script and that would fix such issues!
-
-If you dont see any errors, please ignore this message!
-=======================================================
+print("""
+||| Error message : If you dont see any errors, please ignore this message! |||
+|
+|
+| If you see this message and there is an error below this message please re run the 'main.py' file!
+| If re-running said file doesn't fix the software please contact me via making an issue on the github repo
+| https://github.com/CPScript/Kitty-Tools
+===========================================================================================================
 """)
 import time
-time.sleep(0.1)
+time.sleep(0.001)
 
 from scripts.sprint import sprint
 from scripts.colors import ran, y, r, g, c
 from subprocess import call
 import os
 from os import system
-import platform
-
-# Old "clear terminal"
-# puk = platform()[0], platform()[1],  platform()[2], platform()[3], platform()[4], platform()[5], platform()[6]
-# if puk == ('W', 'i', 'n', 'd', 'o', 'w', 's'): 
-#    delet = 'cls'
-#    dr = '\\' 
-#else:
-#    delet = 'clear' 
-#    dr = '/' 
-#os.system(delet) 
+import platform 
 
 def clear():
     system = platform.system().lower()
@@ -52,9 +46,9 @@ clear()
 
 
 # tui
-print(f"|======= Notic =======| ")
-print(f" *STAR* this repo so I can get more support :p")
-print(f"|=====================| ")
+print(f"||================== Notice ====================|| ")
+print(f"|| *STAR* this repo so I can get more support <3|| ")
+print(f"||==============================================|| ")
 time.sleep(4) 
 clear()
 
@@ -68,7 +62,7 @@ print(" ")
 print(f"{y}-----Version-36.2-----")
 print(f"{y}/1/ {g}How to use {y}| {r}Shows you how to use the tool{y}")
 print(f"{y}/2/ {g}Information {y}| {r}Credits, licence, and more{y}")
-print(f"{y}/3/ {g}Flooder {y}| {r}Flood a Kahoot game (Getting Updated!){y}")
+print(f"{y}/3/ {g}Flooder {y}| {r}Flood a Kahoot game (Not working){y}")
 print(f"{y}/4/ {g}Answer Hack {y}| {r}Start the answer client{y}")
 print(f"{y}----------------------")
 choice = input("Make Number Selection :")
@@ -98,5 +92,3 @@ if choice == "4":
     time.sleep(1)
     print("\n" * 64)  # imma this makes more sense
     call(["python", "Kitty/client.py"])
-
-time.sleep(25)
