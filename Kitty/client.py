@@ -2,8 +2,10 @@ import os
 import time
 from os import system
 import platform
-print ("Attempting to check if imports are installed; colorama, pystyle.")
-time.sleep(4)
+
+print("Attempting to check if imports are installed; colorama, pystyle.")
+time.sleep(1)
+
 def clear():
     system = platform.system().lower()
 
@@ -14,9 +16,9 @@ def clear():
     elif system == 'android':
         System.Clear()
         print("How are you here, leave!")
-        print("Please use the 'LITE' version so kitty tools will run smoothly <3")
+        sprint(f"Please use the 'LITE' version so this kahoot client will run smoothly! {r}<3")
         exit()
-clear()
+clear() # Call clear func
 try:
     import colorama 
     import pystyle
