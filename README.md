@@ -1,9 +1,5 @@
 ---
-
-
 <div align=center>
-
-
 ###### HEY!!! This repo might look scary/complex BUT; its not! (scroll down to learn how to use)
 
 # Welcome to the `Kitty-Tools` repository
@@ -23,6 +19,18 @@
 * `git clone https://github.com/CPScript/Kitty-Tools`
 * `cd Kitty-Tools`
 * `python main.py`
+
+<details closed>
+<summary>Click me to see a example video!</summary>
+
+[Screen recording 2024-04-26 10.33.12 AM.webm](https://github.com/CPScript/Kitty-Tools/assets/83523587/c7ec5529-c29f-4623-9129-01cd96511e1b)
+
+
+This was done using Github CodeSpace.
+Codespace already has python and git installed!
+If you use a terminal on a Linux OS you will have to manualy install them.
+</details>
+
 
 ---
 
