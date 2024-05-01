@@ -1,7 +1,10 @@
+Hey! Check out the rest of the things I have made on my profile [here!](https://github.com/CPScript/) ( There are some other usefull things there <3 )
+
 ---
 <div align=center>
  
 ###### (scroll down to learn how to use)
+
 
 # Welcome to the `Kitty-Tools` repository
 [Click me to visit page!](cpscript.github.io/Kitty-Tools/)
