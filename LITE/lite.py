@@ -9,13 +9,13 @@ import platform
 print(f"'{system}'") # OS Alert
 
 print("""
-WELCOME TO - Kitty-Tools LITE v1.10
-====== For Termux and Replit ======
+ - Kitty-Tools LITE v1.10 - 
+======= For Termux =========
 
-     Please enter your quiz ID
+  Please enter your quiz ID
    /
 >.<
-
+----------------------------
 api = 'https://play.kahoot.it/rest/kahoots/'
 usrinput = input(f" Enter ID >> ")
 link = api + usrinput
