@@ -1,7 +1,4 @@
-# This is the LITE version of Kitty-Tools
-# This version is purly just a one file script with no extra fetures, this is purley the answer hack
-# This is ment to purley be used on Termux or replit so no extra modules get in your way <3
-# Any missues of this script is on the user and the developers have nothing to do with it (see more at https://github.com/CPScript/Kitty-Tools/blob/main/LICENSE)
+# This version is purly just a one file script with no extra fetures, the simpleist it can be!
 
 import json
 import urllib.request
@@ -13,29 +10,14 @@ print(f"'{system}'") # OS Alert
 
 print("""
 WELCOME TO - Kitty-Tools LITE v1.10
-=========== For Termux ============
+====== For Termux and Replit ======
 
-|-----------|
-|Enter your |
-|quiz ID    |
-|Below      |
-|___________|
- (((((
-   (((⠀⠀⠀⠀⠀ ⣠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-     ((⠀⠀⠀⣠⠎⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-       ⣀⡀⠞⠁⠀⠀⠁⠁⠐⠒⠒⠋⡹⠀⠀⠀⠀
-      ⠈⢢⠀⠾⠃⠀⠀⠀⠀⠀⠀⠀⡰⠁⠀⠀⠀⠀
-      ⢰⠣⡄⠠⢄⠀⠾⠅⠀⠀⢠⣰⠁⠀⠀⠀⠀⠀
-      ⠀⠀⠐⢤⣀⠀⣀⣆⢰⠉⠢⡇⠀⢀⠤⠤⣀⠀
-      ⠀⠀⢸⠀⠀⠀⠀⠀⠙⠀⠈⠳⡀⠘⠤⡀⠀⢆
-      ⠀⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢄⡀⢸⠀⠸
-      ⠀⠀⠁⠀⢥⠀⠀⡇⠀⠀⠀⠀⠀⠀⣱⠼⠀⡘
-      ⠀⢀⡇⠀⠢⠄⢀⠃⠀⢐⠀⠀⠀⠀⡇⠤⠋⠀
-|------⠸⢄⣀⠜-⢸⡀⠴⠋-⠉⠁⠁-------------
-|""")
+     Please enter your quiz ID
+   /
+>.<
 
 api = 'https://play.kahoot.it/rest/kahoots/'
-usrinput = input(f"| User Input >> ")
+usrinput = input(f" Enter ID >> ")
 link = api + usrinput
 finished = False
 
