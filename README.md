@@ -3,10 +3,11 @@ Hey! Check out the rest of the things I have made on my profile [here!](https://
 ---
 <div align=center>
  
-###### (scroll down to learn how to use)
 
 
 # Welcome to the `Kitty-Tools` repository
+###### (scroll down to learn how to use)
+
 [Click me to visit page!](cpscript.github.io/Kitty-Tools/)
 
 <p align="center">
@@ -17,30 +18,42 @@ Hey! Check out the rest of the things I have made on my profile [here!](https://
  
 # HOW 2 USE
 
-| Linux | Mac | [Github-Codespace](https://github.com/codespaces)
+<details closed>
+
+| Example videos
+
+<summary>Click me to extend!</summary>
+
+> NOTE: These videos don't fully explain to you on how to use the software.
+
+### Linux/Codespace
+[Screen recording 2024-04-26 10.33.12 AM.webm](https://github.com/CPScript/Kitty-Tools/assets/83523587/c7ec5529-c29f-4623-9129-01cd96511e1b)
+
+* Codespace already has python and git installed so dont worry about that!
+* If you use a terminal on a Linux OS you will have to manualy install them.
+
+### Replit
+[Screen recording 2024-05-10 1.01.43 PM.webm](https://github.com/CPScript/Kitty-Tools/assets/83523587/97b8e7e0-f0ec-455f-b89f-da7126bc84c3)
+
+* On replit you will get an error, all you need to do is re-run the script using the "Run" button <3
+
+### Windows
+
+* My pc is windoes pc blew up so i can't make a video for it yet
+</details>
+
+| Linux | Mac | [Github-Codespace](https://github.com/codespaces) | Replit
 * `pkg install python` or `apt install python`
 * `pkg install git`
 * `git clone https://github.com/CPScript/Kitty-Tools`
 * `cd Kitty-Tools`
 * `python main.py`
 
-<details closed>
-<summary>Click me to see a example video!</summary>
-
-[Screen recording 2024-04-26 10.33.12 AM.webm](https://github.com/CPScript/Kitty-Tools/assets/83523587/c7ec5529-c29f-4623-9129-01cd96511e1b)
-
-
-This was done using Github CodeSpace.
-Codespace already has python and git installed!
-If you use a terminal on a Linux OS you will have to manualy install them.
-</details>
-
-
 ---
 
-| Android | Replit | [Click for more info!](https://github.com/CPScript/Kitty-Tools/tree/main/LITE)
+| Android-Termux [Click for more info!](https://github.com/CPScript/Kitty-Tools/tree/main/LITE)
 
-* INSTALL TERMUX ON YOUR ANDROID PHONE
+* Install TERMUX on your phone from F-Droid
 * Install python: `pkg install python`
 * Install git: `pkg install git`
 * clone the repo: `git clone https://github.com/CPScript/Kitty-Tools`
@@ -49,7 +62,7 @@ If you use a terminal on a Linux OS you will have to manualy install them.
 
 ---
  
-| Windows |
+| Windows 
 1. Install python here: `https://www.python.org/downloads/` (Make sure to install python with administrator)
 2. Install git here: `https://git-scm.com/download/win`
 3. In cmd(The command prompt) type: `git clone https://github.com/CPScript/Kitty-Tools`
