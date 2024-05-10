@@ -15,7 +15,7 @@
 
 ---
 
-> This version of `Kitty-Tools` is ment to be ran on Android and Replit!
+> This version of `Kitty-Tools` is ment to be ran on Android!
 
 ---
 
