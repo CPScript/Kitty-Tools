@@ -17,11 +17,9 @@ Hey! Check out the rest of the things I have made on my profile [here!](https://
 <div align="left">
  
 # HOW 2 USE
+| Example videos |
 
 <details closed>
-
-| Example videos
-
 <summary>Click me to extend!</summary>
 
 > NOTE: These videos don't fully explain to you on how to use the software.
@@ -42,7 +40,9 @@ Hey! Check out the rest of the things I have made on my profile [here!](https://
 * My pc is windoes pc blew up so i can't make a video for it yet
 </details>
 
-| Linux | Mac | [Github-Codespace](https://github.com/codespaces) | Replit
+---
+
+| Linux | Mac | [Github-Codespace](https://github.com/codespaces) | Replit |
 * `pkg install python` or `apt install python`
 * `pkg install git`
 * `git clone https://github.com/CPScript/Kitty-Tools`
@@ -51,7 +51,7 @@ Hey! Check out the rest of the things I have made on my profile [here!](https://
 
 ---
 
-| Android-Termux [Click for more info!](https://github.com/CPScript/Kitty-Tools/tree/main/LITE)
+| Android-Termux [Click for more info!](https://github.com/CPScript/Kitty-Tools/tree/main/LITE) |
 
 * Install TERMUX on your phone from F-Droid
 * Install python: `pkg install python`
@@ -62,7 +62,7 @@ Hey! Check out the rest of the things I have made on my profile [here!](https://
 
 ---
  
-| Windows 
+| Windows |
 1. Install python here: `https://www.python.org/downloads/` (Make sure to install python with administrator)
 2. Install git here: `https://git-scm.com/download/win`
 3. In cmd(The command prompt) type: `git clone https://github.com/CPScript/Kitty-Tools`
