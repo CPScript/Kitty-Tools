@@ -1,4 +1,4 @@
-Hey! Go check out my new repo https://github.com/CPScript/rat
+Hey! Go check out my new profile https://github.com/CPScript
 
 ---
 <div align=center>
