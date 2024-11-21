@@ -13,6 +13,7 @@ def get_quiz_id(pin):
 
 def main(stdscr):
     curses.curs_set(0)  
+    curses.curs_set(0)
     stdscr.clear()
     stdscr.addstr(0, 0, "Enter Kahoot Quiz Pin:")
     stdscr.refresh()
