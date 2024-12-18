@@ -1,4 +1,4 @@
-Hey! Go check out my new profile https://github.com/CPScript
+Hey! Go check out my profile and follow me <3 (it really makes me happy) https://github.com/CPScript
 
 ---
 <div align=center>
@@ -6,9 +6,8 @@ Hey! Go check out my new profile https://github.com/CPScript
 
 
 # Welcome to the `Kitty-Tools` repository
+> The Best kahoot answer/cheating client
 ###### (scroll down to learn how to use)
-
-[Click me to visit page!](cpscript.github.io/Kitty-Tools/)
 
 <p align="center">
  <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fec027d5-943a-4543-994b-bd45f4b09ff1/ddc147q-4de5ed23-e4d1-4ecd-89d9-a6376915381e.png/v1/fill/w_1280,h_792,strp/minimalist_cat_art___minimalism___outline_lineart__by_deetees_ddc147q-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzkyIiwicGF0aCI6IlwvZlwvZmVjMDI3ZDUtOTQzYS00NTQzLTk5NGItYmQ0NWY0YjA5ZmYxXC9kZGMxNDdxLTRkZTVlZDIzLWU0ZDEtNGVjZC04OWQ5LWE2Mzc2OTE1MzgxZS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ZevPdeMRo9GoJE5Cn_JUZCgV0yEWxmc0vvdLbJgUSD0" />
@@ -37,10 +36,12 @@ Hey! Go check out my new profile https://github.com/CPScript
 
 ### Windows
 
-* My pc is windoes pc blew up so i can't make a video for it yet
+* My pc blew up so i can't make a video for it yet
 </details>
 
 ---
+
+> (WARNING) BE SMART = Dont get caught and READ HOW TO PROPERLY EXECUTE THIS SCRIPT, **ITS NOT HARD**. AND IF YOU RUN INTO AN ISSUE THE SCRIPT WILL TELL YOU HOW TO SOLVE SUCH ISSUE!
 
 | Linux | Mac | [Github-Codespace](https://github.com/codespaces) | Replit |
 * `pkg install python` or `apt install python`
