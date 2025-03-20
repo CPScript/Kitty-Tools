@@ -74,7 +74,7 @@ Hey! Go check out my profile and follow me <3 (it really makes me happy) https:/
 ---
 
 ### Extra information
-[Click me to veiw more!](https://github.com/CPScript/Kitty-Tools/blob/main/extra.md)
+[Click me to view more!](https://github.com/CPScript/Kitty-Tools/blob/main/extra.md)
 
 ---
 <p align="center">
