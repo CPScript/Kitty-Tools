@@ -278,7 +278,7 @@ class MenuManager:
     def execute_graphical(self):
         if self.is_src_available:
             # Enhanced version
-            subprocess.run([sys.executable, os.path.join(self.gui_dir, "client", "main.py")])
+            subprocess.run([sys.executable, os.path.join(self.gui_dir, "main.py")])
         else:
             # Standard version
             subprocess.run([sys.executable, os.path.join(self.kitty_dir, "client.py")])
