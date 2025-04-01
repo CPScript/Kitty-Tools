@@ -7,6 +7,7 @@ import subprocess
 from pathlib import Path
 from datetime import datetime
 
+# Terminal Control Constants
 class TermCtrl:
     RESET = "\033[0m"
     BOLD = "\033[1m"
@@ -203,7 +204,7 @@ class MenuManager:
             elif action_id == "answers":
                 self.execute_answers()
             elif action_id == "graphical":
-                self.execute_graphical
+                self.execute_graphical()
             elif action_id == "exit":
                 self.exit_requested = True
                 print(f"{TermCtrl.BRIGHT_GREEN}Thank you for using KITTY TOOLS{TermCtrl.RESET}")
@@ -298,10 +299,12 @@ class MenuManager:
 
 def main():
     try:
+        # Check for critical errors
         if not sys.version_info >= (3, 6):
             print(f"{TermCtrl.BRIGHT_RED}Error: Python 3.6 or higher is required to run KITTY TOOLS.{TermCtrl.RESET}")
             sys.exit(1)
             
+        # Ensure necessary directories exist
         menu_manager = MenuManager()
         menu_manager.run()
         
