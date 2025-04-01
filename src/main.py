@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-"""
-Kitty-Tools Kahoot Flooder - Enhanced Manager
-Author: CPScript (Original), Enhanced by Claude
-Description: Manages the execution of the Kahoot flooding system with improved
-             error handling, dependency management, and user experience.
-"""
 import os
 import sys
 import time
