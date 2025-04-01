@@ -7,7 +7,6 @@ import subprocess
 from pathlib import Path
 from datetime import datetime
 
-# Terminal Control Constants
 class TermCtrl:
     RESET = "\033[0m"
     BOLD = "\033[1m"
@@ -104,6 +103,7 @@ class MenuManager:
     def __init__(self):
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
         self.src_dir = os.path.join(self.base_dir, "src")
+        self.gui_dir = os.path.join(self.base_dir, "src", "client")
         self.kitty_dir = os.path.join(self.base_dir, "Kitty")
         
         # Check if src directory exists
@@ -120,6 +120,7 @@ class MenuManager:
             {"id": "info", "label": "Information", "description": "Credits, license, and additional information      "},
             {"id": "flood", "label": "Kahoot Flooder", "description": "Advanced Kahoot game flooding utility             "},
             {"id": "answers", "label": "Answer Hack", "description": "Obtain answers for Kahoot quizzes                 "},
+            {"id": "graphical", "label": "GUI", "description": "A graphical user interface for easy of use        "},
             {"id": "exit", "label": "Exit", "description": "Exit the application                              "}
         ]
     
@@ -175,7 +176,7 @@ class MenuManager:
 
     def get_user_selection(self):
         try:
-            choice = input("\n Make a selection (1-5): ")
+            choice = input("\n Make a selection (1-6): ")
             if choice.isdigit() and 1 <= int(choice) <= len(self.menu_items):
                 return int(choice) - 1
             return self.current_selection
@@ -201,6 +202,8 @@ class MenuManager:
                 self.execute_flood()
             elif action_id == "answers":
                 self.execute_answers()
+            elif action_id == "graphical":
+                self.execute_graphical
             elif action_id == "exit":
                 self.exit_requested = True
                 print(f"{TermCtrl.BRIGHT_GREEN}Thank you for using KITTY TOOLS{TermCtrl.RESET}")
@@ -270,6 +273,14 @@ class MenuManager:
         else:
             # Standard version
             subprocess.run([sys.executable, os.path.join(self.kitty_dir, "client.py")])
+            
+    def execute_graphical(self):
+        if self.is_src_available:
+            # Enhanced version
+            subprocess.run([sys.executable, os.path.join(self.gui_dir, "client", "main.py")])
+        else:
+            # Standard version
+            subprocess.run([sys.executable, os.path.join(self.kitty_dir, "client.py")])
     
     def run(self):
         while not self.exit_requested:
@@ -287,12 +298,10 @@ class MenuManager:
 
 def main():
     try:
-        # Check for critical errors
         if not sys.version_info >= (3, 6):
             print(f"{TermCtrl.BRIGHT_RED}Error: Python 3.6 or higher is required to run KITTY TOOLS.{TermCtrl.RESET}")
             sys.exit(1)
             
-        # Ensure necessary directories exist
         menu_manager = MenuManager()
         menu_manager.run()
         
