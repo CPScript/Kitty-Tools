@@ -2,9 +2,9 @@
 
 <div align="left">
 
-[![Version](https://img.shields.io/badge/Version-2.1.0-orange.svg)](https://github.com/CPScript/Kitty-Tools)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/CPScript/Kitty-Tools/blob/main/LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Cross--Platform-green.svg)](https://github.com/CPScript/Kitty-Tools)
+[![Version](https://img.shields.io/badge/Version-36.2-orange.svg)](https://github.com/CPScript/Kitty-Tools)
+[![License](https://img.shields.io/badge/License-CC0_1.0-blue.svg)](https://github.com/CPScript/Kitty-Tools/blob/main/LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows_|_Linux_|_Mobile-green.svg)](https://github.com/CPScript/Kitty-Tools)
 
 </div>
 
@@ -16,6 +16,8 @@ Kitty-Tools is a comprehensive suite of utilities designed for enhancing and ana
  
   ![Header Image](https://github.com/user-attachments/assets/329567e9-2de0-4cf8-92be-86b525365514)
   <img src="https://github.com/user-attachments/assets/74d15637-c774-41d7-9c6d-3e5316e0087d" width="80%" />
+  ![image](https://github.com/user-attachments/assets/36fa992b-6c7b-428e-ba83-722f9a8b52d0)
+
 </div>
 
 ## ✨ Key Features
