@@ -95,10 +95,17 @@ Kitty-Tools is a comprehensive suite of utilities designed for enhancing and ana
 <details>
 <summary><b>GitHub Codespace / Replit</b></summary>
 
-1. Create a new Codespace/Replit based on the repository
+#### Codespace
+1. Create a new Codespace based on the repository
 2. In the terminal, run:
    ```bash
    python main.py
+   ```
+
+#### Replit
+1. Use this replit link
+   ```bash
+   https://replit.com/@Kitty-Tools/Kitty-Tools
    ```
 </details>
 
