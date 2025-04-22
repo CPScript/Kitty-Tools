@@ -80,9 +80,9 @@ Kitty-Tools is a comprehensive suite of utilities designed for enhancing and ana
 </details>
 
 <details>
-<summary><b>Android (Termux)</b></summary>
+<summary><b>Mobile</b></summary>
 
-1. Install Termux from F-Droid (not Google Play)
+1. Install Termux by *F-Droid* **And** IOS using [iSH](https://ish.app/)
 2. Install requirements:
    ```bash
    pkg install python git
