@@ -20,6 +20,6 @@
 ---
 
 <p align="center">
-  &copy; 2024 Kitty Tools LITE. All rights reserved.
+  &copy; 2025 Kitty Tools LITE. All rights reserved.
   | BETA v1.10
 </p>
