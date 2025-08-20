@@ -1,4 +1,5 @@
 # Kitty-Tools - v36.2
+> Please go check out my other repositories. there might be something you like <3
 
 <div align="left">
 
