@@ -351,7 +351,7 @@ class KahootClientUI:
     @staticmethod
     def get_quiz_id():
         while True:
-            Write.Print(f"┌─[Enter Kahoot-ID or Game-PIN] <> [User-Input]\n", Colors.white, interval=0.000)
+            Write.Print(f"┌─[Enter Kahoot-ID] <> [User-Input]\n", Colors.white, interval=0.000)
             Write.Print(f"└─────► ", Colors.white, interval=0.000)
             user_input = input(ColorScheme.PRETTY)
             
