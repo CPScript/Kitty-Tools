@@ -228,7 +228,7 @@ class MenuManager:
             print(f"   Create multiple automated players in Kahoot games with customizable settings.")
             print(f"   You can control the bots collectively or let them act autonomously.")
             print(f"{TermCtrl.BRIGHT_CYAN}3. Answer Hack{TermCtrl.RESET}")
-            print(f"   Retrieve answers for a Kahoot quiz by providing either the Quiz ID or Game PIN.")
+            print(f"   Retrieve answers for a Kahoot quiz by providing the Quiz ID.")
             print(f"   Export answers to a file for future reference.\n")
             print(f"{TermCtrl.BRIGHT_YELLOW}Note: All features require an active internet connection.{TermCtrl.RESET}")
         else:
