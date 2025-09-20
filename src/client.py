@@ -7,6 +7,7 @@ import json
 import re
 import threading
 import random
+import ssl
 from urllib.request import urlopen, Request
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse, parse_qs
@@ -101,66 +102,171 @@ class PlatformManager:
             print("\n" * 100)
             print(f"Screen clearing failed: {e}")
 
+class SSLContextManager:
+    """Handle SSL certificate issues across platforms"""
+    
+    @staticmethod
+    def create_ssl_context():
+        """Create SSL context with fallback for certificate issues"""
+        try:
+            # Try to create default context first
+            context = ssl.create_default_context()
+            
+            # For macOS, try to use certifi if available
+            if platform.system() == 'Darwin':
+                try:
+                    import certifi
+                    context = ssl.create_default_context(cafile=certifi.where())
+                except ImportError:
+                    # certifi not available, use default
+                    pass
+            
+            return context
+        except Exception:
+            # If all else fails, create unverified context
+            print("Warning: Using unverified SSL context due to certificate issues")
+            return ssl._create_unverified_context()
+
+class RateLimiter:
+    """Rate limiter to avoid getting blocked"""
+    
+    def __init__(self, min_delay=1.0, max_delay=3.0):
+        self.min_delay = min_delay
+        self.max_delay = max_delay
+        self.last_request = None
+    
+    def wait(self):
+        """Wait appropriate time between requests"""
+        if self.last_request:
+            elapsed = time.time() - self.last_request
+            delay = random.uniform(self.min_delay, self.max_delay)
+            
+            if elapsed < delay:
+                sleep_time = delay - elapsed
+                time.sleep(sleep_time)
+        
+        self.last_request = time.time()
+
 # Kahoot API interaction
 class KahootAPI:    
     BASE_API_URL = "https://play.kahoot.it/rest/kahoots/"
     CHALLENGE_API_URL = "https://kahoot.it/rest/challenges/pin/"
-    REQUEST_TIMEOUT = 10  # seconds
+    REQUEST_TIMEOUT = 15  # seconds
     
-    @staticmethod
-    def create_request(url, headers=None):
-        default_headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-            'Accept': 'application/json'
-        }
+    def __init__(self):
+        self.rate_limiter = RateLimiter()
+        self.ssl_context = SSLContextManager.create_ssl_context()
+    
+    def _get_headers(self):
+        """Generate realistic browser headers"""
+        user_agents = [
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        ]
         
-        if headers:
-            default_headers.update(headers)
-            
-        return Request(url, headers=default_headers)
+        return {
+            'User-Agent': random.choice(user_agents),
+            'Accept': 'application/json, text/plain, */*',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'DNT': '1',
+            'Connection': 'keep-alive',
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache'
+        }
+    
+    def _make_request(self, url, max_retries=3):
+        """Make request with retry logic and proper error handling"""
+        for attempt in range(max_retries):
+            try:
+                # Apply rate limiting
+                self.rate_limiter.wait()
+                
+                # Create request with headers
+                headers = self._get_headers()
+                request = Request(url, headers=headers)
+                
+                # Make the request with SSL context
+                with urlopen(request, timeout=self.REQUEST_TIMEOUT, context=self.ssl_context) as response:
+                    return json.loads(response.read().decode('utf-8'))
+                    
+            except HTTPError as e:
+                if e.code == 403:
+                    print(f"Attempt {attempt + 1}: Access forbidden (403)")
+                    if attempt < max_retries - 1:
+                        wait_time = (attempt + 1) * 5
+                        print(f"Waiting {wait_time} seconds before retry...")
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        return {'error': 'Access forbidden. This could be due to rate limiting, geographic restrictions, or the quiz being private.'}
+                
+                elif e.code == 404:
+                    return {'error': 'Quiz not found. The ID may be incorrect.'}
+                
+                elif e.code == 429:  # Too Many Requests
+                    if attempt < max_retries - 1:
+                        wait_time = (attempt + 1) * 10
+                        print(f"Rate limited. Waiting {wait_time} seconds...")
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        return {'error': 'Rate limited by server. Please wait a few minutes and try again.'}
+                
+                else:
+                    return {'error': f'HTTP Error: {e.code} - {e.reason}'}
+                    
+            except URLError as e:
+                return {'error': f'Connection error: {e.reason}. Check your internet connection.'}
+                
+            except ssl.SSLError as e:
+                print(f"SSL Error on attempt {attempt + 1}: {e}")
+                if attempt < max_retries - 1:
+                    # Try with unverified context on next attempt
+                    self.ssl_context = ssl._create_unverified_context()
+                    print("Retrying with unverified SSL context...")
+                    continue
+                else:
+                    return {'error': f'SSL connection failed: {e}'}
+                    
+            except json.JSONDecodeError:
+                return {'error': 'Failed to parse the response from Kahoot servers.'}
+                
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    print(f"Attempt {attempt + 1} failed: {e}")
+                    time.sleep(2)
+                    continue
+                else:
+                    return {'error': f'Unexpected error: {str(e)}'}
+        
+        return {'error': 'All retry attempts failed'}
     
     @staticmethod
     def get_quiz_by_id(quiz_id):
         if not re.fullmatch(r"^[A-Za-z0-9-]*$", quiz_id):
             return {'error': 'Invalid quiz ID format'}
         
-        url = f"{KahootAPI.BASE_API_URL}{quiz_id}"
-        
-        try:
-            request = KahootAPI.create_request(url)
-            with urlopen(request, timeout=KahootAPI.REQUEST_TIMEOUT) as response:
-                return json.loads(response.read().decode('utf-8'))
-        except HTTPError as e:
-            if e.code == 404:
-                return {'error': 'Quiz not found. The ID may be incorrect.'}
-            return {'error': f'HTTP Error: {e.code} - {e.reason}'}
-        except URLError as e:
-            return {'error': f'Connection error: {e.reason}. Check your internet connection.'}
-        except InvalidURL:
-            return {'error': 'Invalid URL format for the Kahoot API.'}
-        except json.JSONDecodeError:
-            return {'error': 'Failed to parse the response from Kahoot servers.'}
-        except Exception as e:
-            return {'error': f'Unexpected error: {str(e)}'}
+        api = KahootAPI()
+        url = f"{api.BASE_API_URL}{quiz_id}"
+        return api._make_request(url)
     
     @staticmethod
     def get_quiz_id_from_pin(pin):
         if not pin.isdigit():
             return {'error': 'PIN must contain only digits'}
             
-        url = f"{KahootAPI.CHALLENGE_API_URL}{pin}"
+        api = KahootAPI()
+        url = f"{api.CHALLENGE_API_URL}{pin}"
+        result = api._make_request(url)
         
-        try:
-            request = KahootAPI.create_request(url)
-            with urlopen(request, timeout=KahootAPI.REQUEST_TIMEOUT) as response:
-                data = json.loads(response.read().decode('utf-8'))
-                return {'quiz_id': data.get('id')}
-        except HTTPError as e:
-            if e.code == 404:
-                return {'error': 'No active game found with this PIN.'}
-            return {'error': f'HTTP Error: {e.code} - {e.reason}'}
-        except Exception as e:
-            return {'error': f'Failed to fetch quiz ID from PIN: {str(e)}'}
+        if 'error' not in result and 'id' in result:
+            return {'quiz_id': result['id']}
+        elif 'error' not in result:
+            return {'error': 'No quiz ID found in response'}
+        
+        return result
 
 class KahootQuiz:    
     def __init__(self, quiz_data):
