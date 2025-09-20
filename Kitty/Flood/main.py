@@ -99,13 +99,13 @@ def create_package_json():
         "description": "Kahoot game flooding utility",
         "main": "flood.js",
         "dependencies": {
-            "readline-sync": "^1.4.10",
-            "kahoot.js-updated": "^3.1.3",
-            "an-array-of-english-words": "^2.0.0",
-            "request": "^2.88.2",
-            "random-name": "^0.1.2",
-            "console-title": "^1.1.0",
-            "beepbeep": "^1.3.0"
+            "readline-sync": "1.4.10",
+            "kahoot.js-updated": "3.1.2",
+            "an-array-of-english-words": "2.0.0",
+            "request": "2.88.2",
+            "random-name": "0.1.2",
+            "console-title": "1.1.0",
+            "beepbeep": "1.3.0"
         },
         "engines": {
             "node": ">=12.0.0"
@@ -131,10 +131,39 @@ def install_node_packages():
     if not create_package_json():
         return False
     
+    # Clean install to fix corrupted packages
+    print("Cleaning previous installations...")
+    node_modules_path = os.path.join(script_dir, 'node_modules')
+    package_lock_path = os.path.join(script_dir, 'package-lock.json')
+    
+    # Remove node_modules and package-lock.json if they exist
     try:
+        if os.path.exists(node_modules_path):
+            import shutil
+            shutil.rmtree(node_modules_path)
+            print("Removed old node_modules directory")
+        
+        if os.path.exists(package_lock_path):
+            os.remove(package_lock_path)
+            print("Removed old package-lock.json")
+    except Exception as e:
+        print(f"Warning: Could not clean old files: {e}")
+    
+    try:
+        # Clear npm cache
+        print("Clearing npm cache...")
+        subprocess.run(
+            ['npm', 'cache', 'clean', '--force'],
+            cwd=script_dir,
+            capture_output=True,
+            text=True,
+            check=False
+        )
+        
         # Try installing from package.json
+        print("Installing packages from package.json...")
         result = subprocess.run(
-            ['npm', 'install', '--no-fund', '--no-audit'],
+            ['npm', 'install', '--no-fund', '--no-audit', '--force'],
             cwd=script_dir,
             capture_output=True,
             text=True,
@@ -149,9 +178,57 @@ def install_node_packages():
             return False
             
     except subprocess.CalledProcessError as e:
-        print(f"Package installation failed: {e}")
-        print("Error output:", e.stderr)
-        return False
+        print(f"Package installation failed, trying individual installation...")
+        
+        # Try installing packages individually with specific versions
+        packages_with_versions = [
+            "readline-sync@1.4.10",
+            "kahoot.js-updated@3.1.2", 
+            "an-array-of-english-words@2.0.0",
+            "request@2.88.2",
+            "random-name@0.1.2",
+            "console-title@1.1.0",
+            "beepbeep@1.3.0"
+        ]
+        
+        success_count = 0
+        for package in packages_with_versions:
+            try:
+                print(f"Installing {package}...")
+                subprocess.run(
+                    ['npm', 'install', package, '--no-fund', '--no-audit', '--force'],
+                    cwd=script_dir,
+                    capture_output=True,
+                    text=True,
+                    check=True
+                )
+                print(f"Successfully installed {package}")
+                success_count += 1
+            except subprocess.CalledProcessError:
+                print(f"Failed to install {package}")
+                
+                # Special handling for kahoot.js-updated
+                if "kahoot.js-updated" in package:
+                    print("Trying alternative Kahoot package...")
+                    try:
+                        subprocess.run(
+                            ['npm', 'install', 'kahoot.js@3.0.4', '--no-fund', '--no-audit', '--force'],
+                            cwd=script_dir,
+                            capture_output=True,
+                            text=True,
+                            check=True
+                        )
+                        print("Successfully installed alternative kahoot.js package")
+                        success_count += 1
+                    except subprocess.CalledProcessError:
+                        print("Failed to install alternative Kahoot package")
+        
+        if success_count >= 6:  # Allow one failure
+            print("Most packages installed successfully")
+            return True
+        else:
+            print("Too many packages failed to install")
+            return False
     except Exception as e:
         print(f"Unexpected error during package installation: {e}")
         return False
@@ -161,19 +238,54 @@ def verify_installation():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     test_script = '''
-try {
-    require('readline-sync');
-    require('kahoot.js-updated');
-    require('an-array-of-english-words');
-    require('request');
-    require('random-name');
-    require('console-title');
-    require('beepbeep');
-    console.log('VERIFICATION_SUCCESS');
-} catch (error) {
-    console.log('VERIFICATION_FAILED:', error.message);
-    process.exit(1);
+const modules = [
+    'readline-sync',
+    'an-array-of-english-words',
+    'request',
+    'random-name',
+    'console-title',
+    'beepbeep'
+];
+
+// Special handling for Kahoot module with fallback
+const kahootModules = ['kahoot.js-updated', 'kahoot.js'];
+
+let success = 0;
+let failed = 0;
+
+// Test regular modules
+for (const moduleName of modules) {
+    try {
+        require(moduleName);
+        console.log(`SUCCESS: ${moduleName}`);
+        success++;
+    } catch (error) {
+        console.log(`FAILED: ${moduleName} - ${error.message}`);
+        failed++;
+    }
 }
+
+// Test Kahoot module with fallback
+let kahootSuccess = false;
+for (const kahootModule of kahootModules) {
+    try {
+        require(kahootModule);
+        console.log(`SUCCESS: ${kahootModule}`);
+        kahootSuccess = true;
+        success++;
+        break;
+    } catch (error) {
+        console.log(`FAILED: ${kahootModule} - ${error.message}`);
+    }
+}
+
+if (!kahootSuccess) {
+    console.log('FAILED: No working Kahoot module found');
+    failed++;
+}
+
+console.log(`SUMMARY: ${success} success, ${failed} failed`);
+process.exit(failed > 0 ? 1 : 0);
 '''
     
     test_file = os.path.join(script_dir, 'test_modules.js')
@@ -184,14 +296,19 @@ try {
         
         result = subprocess.run(['node', test_file], capture_output=True, text=True, cwd=script_dir)
         
-        if 'VERIFICATION_SUCCESS' in result.stdout:
-            print("All modules verified successfully")
-            os.remove(test_file)
-            return True
-        else:
-            print(f"Module verification failed: {result.stdout}")
-            os.remove(test_file)
-            return False
+        # Parse output
+        for line in result.stdout.split('\n'):
+            if line.startswith('SUCCESS:'):
+                print(f"✓ Module verified: {line.split(': ')[1]}")
+            elif line.startswith('FAILED:'):
+                print(f"✗ Module failed: {line.split(': ')[1]}")
+            elif line.startswith('SUMMARY:'):
+                print(line)
+        
+        # Clean up test file
+        os.remove(test_file)
+        
+        return result.returncode == 0
             
     except Exception as e:
         print(f"Verification failed: {e}")
