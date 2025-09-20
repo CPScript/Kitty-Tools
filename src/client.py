@@ -169,7 +169,6 @@ class KahootAPI:
             'User-Agent': random.choice(user_agents),
             'Accept': 'application/json, text/plain, */*',
             'Accept-Language': 'en-US,en;q=0.9',
-            'Accept-Encoding': 'gzip, deflate, br',
             'DNT': '1',
             'Connection': 'keep-alive',
             'Cache-Control': 'no-cache',
