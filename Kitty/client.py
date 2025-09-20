@@ -2,6 +2,15 @@ import os
 import time
 from os import system
 import platform
+import json
+import re
+import ssl
+import random
+import threading
+from urllib.request import urlopen, Request
+from urllib.error import HTTPError, URLError
+from urllib.parse import urlparse, parse_qs
+from http.client import InvalidURL
 
 print("Attempting to check if imports are installed; colorama, pystyle.")
 time.sleep(1)
@@ -14,17 +23,17 @@ def clear():
     elif system == 'linux' or system == 'darwin':
         _ = os.system('clear')
     elif system == 'android':
-        System.Clear()
+        _ = os.system('clear')
         print("How are you here, leave!")
-        sprint(f"Please use the 'LITE' version so this kahoot client will run smoothly! {r}<3")
+        print("Please use the 'LITE' version so this kahoot client will run smoothly!")
         exit()
 clear() # Call clear func
+
 try:
     import colorama 
     import pystyle
 except ModuleNotFoundError:
-    #from scripts.check import try_install | Idk how to fix the error for line 16, its 2am so idc
-    print("Result: You dont have a certan import(s) installed, installing them now")
+    print("Result: You dont have a certain import(s) installed, installing them now")
     time.sleep(1)
     os.system("pip install colorama")
     os.system("pip install pystyle")
@@ -58,17 +67,162 @@ dark_green = Fore.GREEN + Style.BRIGHT
 output_lock = threading.Lock()
 colorama.init()
 
+class SSLContextManager:
+    """Handle SSL certificate issues across platforms"""
+    
+    @staticmethod
+    def create_ssl_context():
+        """Create SSL context with fallback for certificate issues"""
+        try:
+            # Try to create default context first
+            context = ssl.create_default_context()
+            
+            # For macOS, try to use certifi if available
+            if platform.system() == 'Darwin':
+                try:
+                    import certifi
+                    context = ssl.create_default_context(cafile=certifi.where())
+                except ImportError:
+                    # certifi not available, use default
+                    pass
+            
+            return context
+        except Exception:
+            # If all else fails, create unverified context
+            print("Warning: Using unverified SSL context due to certificate issues")
+            return ssl._create_unverified_context()
+
+class RateLimiter:
+    """Rate limiter to avoid getting blocked"""
+    
+    def __init__(self, min_delay=1.0, max_delay=3.0):
+        self.min_delay = min_delay
+        self.max_delay = max_delay
+        self.last_request = None
+    
+    def wait(self):
+        """Wait appropriate time between requests"""
+        if self.last_request:
+            elapsed = time.time() - self.last_request
+            delay = random.uniform(self.min_delay, self.max_delay)
+            
+            if elapsed < delay:
+                sleep_time = delay - elapsed
+                time.sleep(sleep_time)
+        
+        self.last_request = time.time()
+
+# Enhanced Kahoot API
 api = "https://play.kahoot.it/rest/kahoots/"
+
 class Kahoot:
     def __init__(self, uuid):
         self.uuid = uuid
+        self.rate_limiter = RateLimiter()
+        self.ssl_context = SSLContextManager.create_ssl_context()
+        
         try:
             if not re.fullmatch(r"^[A-Za-z0-9-]*$", uuid):
                 self.data = False
             else:
-                self.data = load(urlopen(f"https://play.kahoot.it/rest/kahoots/{uuid}"))
+                self.data = self._fetch_quiz_data(uuid)
         except HTTPError or InvalidURL:
             self.data = False
+
+    def _get_headers(self):
+        """Generate realistic browser headers"""
+        user_agents = [
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        ]
+        
+        return {
+            'User-Agent': random.choice(user_agents),
+            'Accept': 'application/json, text/plain, */*',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'DNT': '1',
+            'Connection': 'keep-alive',
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache'
+        }
+
+    def _fetch_quiz_data(self, uuid):
+        """Fetch quiz data with enhanced error handling"""
+        max_retries = 3
+        
+        for attempt in range(max_retries):
+            try:
+                # Apply rate limiting
+                self.rate_limiter.wait()
+                
+                url = f"https://play.kahoot.it/rest/kahoots/{uuid}"
+                headers = self._get_headers()
+                request = Request(url, headers=headers)
+                
+                with urlopen(request, timeout=15, context=self.ssl_context) as response:
+                    return load(response)
+                    
+            except HTTPError as e:
+                if e.code == 403:
+                    print(f"Attempt {attempt + 1}: Access forbidden (403)")
+                    if attempt < max_retries - 1:
+                        wait_time = (attempt + 1) * 5
+                        print(f"Waiting {wait_time} seconds before retry...")
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        print("Error: Access forbidden. This could be due to rate limiting or geographic restrictions.")
+                        return False
+                
+                elif e.code == 404:
+                    print("Error: Quiz not found. Please verify the Quiz ID is correct.")
+                    return False
+                
+                elif e.code == 429:  # Too Many Requests
+                    if attempt < max_retries - 1:
+                        wait_time = (attempt + 1) * 10
+                        print(f"Rate limited. Waiting {wait_time} seconds...")
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        print("Error: Rate limited by server. Please wait a few minutes and try again.")
+                        return False
+                
+                else:
+                    print(f"HTTP Error {e.code}: {e.reason}")
+                    return False
+                    
+            except URLError as e:
+                print(f"Connection error: {e.reason}")
+                return False
+                
+            except ssl.SSLError as e:
+                print(f"SSL Error on attempt {attempt + 1}: {e}")
+                if attempt < max_retries - 1:
+                    # Try with unverified context on next attempt
+                    self.ssl_context = ssl._create_unverified_context()
+                    print("Retrying with unverified SSL context...")
+                    continue
+                else:
+                    print(f"SSL connection failed: {e}")
+                    return False
+                    
+            except json.JSONDecodeError:
+                print("Error: Failed to parse the response from Kahoot servers.")
+                return False
+                
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    print(f"Attempt {attempt + 1} failed: {e}")
+                    time.sleep(2)
+                    continue
+                else:
+                    print(f"Unexpected error: {str(e)}")
+                    return False
+        
+        return False
 
     def get_quiz_details(self):
         return {
@@ -153,6 +307,7 @@ class Kahoot:
             if len(answers) == 0:
                 answers = None
         return answers
+
 def start_kahoot():
     print("NOTICE: This version is under development and sometimes it might bug, please create an issue at 'https://github.com/CPScript/Kitty-tools/issues' and we will try to fix it <3")
     Write.Print(f"""
@@ -169,6 +324,12 @@ def start_kahoot():
     Write.Print(f"└─────► ", Colors.white, interval=0.000); quiz_id = input(pretty)
     try:
         kahoot = Kahoot(quiz_id)
+        
+        if not kahoot.data:
+            print(f"{red}Error: Failed to fetch quiz data. Please check the Quiz ID and try again.{reset}")
+            input("Press any key to exit...")
+            return
+            
         print(f"{pretty}{orange}({green}!{orange}) Fetching Answers From: {orange}[{reset}Quiz-ID: {quiz_id}{orange}]\n")
         time.sleep(1)
         for i in range(kahoot.get_quiz_length()):
@@ -183,8 +344,13 @@ def start_kahoot():
     except Exception as err:
         os.system('clear')
         print("Womp Womp! ")
-        print("There was an error!  Mabey you typed the 'Quiz ID' incorrectly!\n")
-        print(err)
+        print("There was an error!  Maybe you typed the 'Quiz ID' incorrectly!\n")
+        print(f"Error details: {err}")
+        print("\nTroubleshooting tips:")
+        print("1. Check your internet connection")
+        print("2. Verify the Quiz ID is correct")
+        print("3. The quiz might be private or restricted")
+        print("4. Try again in a few minutes")
     Write.Print(f"""
 ||=========================================================
 ||Thanks for using Kitty-Tools <3
@@ -193,6 +359,5 @@ def start_kahoot():
 """, Colors.red_to_purple, interval=0.000)
 
 start_kahoot()
-
 
 input("Press any key to exit...")
