@@ -1,9 +1,10 @@
-console.log("Initializing Kahoot Flooder");
+// Enhanced Kahoot Flooder with improved error handling and module loading
+console.log("Initializing Kahoot Flooder - Enhanced Version...");
 
-// Required modules with error handling
+// Required modules with error handling and fallbacks
 const requiredModules = [
     { name: 'readline-sync', varName: 'readline' },
-    { name: 'kahoot.js-updated', varName: 'Kahoot' },
+    { name: 'kahoot.js-updated', varName: 'Kahoot', fallback: 'kahoot.js' },
     { name: 'an-array-of-english-words', varName: 'words' },
     { name: 'request', varName: 'request' },
     { name: 'random-name', varName: 'random' },
@@ -15,7 +16,7 @@ const requiredModules = [
 const modules = {};
 let initializationSuccess = true;
 
-// Enhanced module loading with better error handling
+// Enhanced module loading with better error handling and fallbacks
 function loadRequiredModules() {
     console.log("Loading required Node.js modules...");
     
@@ -25,17 +26,34 @@ function loadRequiredModules() {
             modules[module.varName] = require(module.name);
             console.log(`Successfully loaded ${module.name}`);
         } catch (error) {
-            console.error(`CRITICAL ERROR: Failed to load ${module.name}`);
+            console.error(`ERROR: Failed to load ${module.name}`);
             console.error(`Error details: ${error.message}`);
+            
+            // Try fallback if available
+            if (module.fallback) {
+                try {
+                    console.log(`Trying fallback module: ${module.fallback}...`);
+                    modules[module.varName] = require(module.fallback);
+                    console.log(`Successfully loaded fallback module: ${module.fallback}`);
+                    continue;
+                } catch (fallbackError) {
+                    console.error(`Fallback also failed: ${fallbackError.message}`);
+                }
+            }
+            
             console.error("");
             console.error("SOLUTION:");
             console.error(`Run: npm install ${module.name}`);
+            if (module.fallback) {
+                console.error(`Or try: npm install ${module.fallback}`);
+            }
             console.error("Or run: npm install (to install all dependencies)");
             console.error("");
             console.error("If the error persists:");
             console.error("1. Delete node_modules folder");
             console.error("2. Delete package-lock.json file");  
-            console.error("3. Run: npm install");
+            console.error("3. Run: npm cache clean --force");
+            console.error("4. Run: npm install --force");
             console.error("");
             initializationSuccess = false;
         }
@@ -44,7 +62,15 @@ function loadRequiredModules() {
     if (!initializationSuccess) {
         console.error("MODULE LOADING FAILED!");
         console.error("Cannot proceed without required modules.");
-        console.error("Please install the missing modules and try again.");
+        console.error("");
+        console.error("QUICK FIX ATTEMPT:");
+        console.error("Try running these commands in the terminal:");
+        console.error("cd " + __dirname);
+        console.error("rm -rf node_modules package-lock.json");
+        console.error("npm cache clean --force");
+        console.error("npm install --force");
+        console.error("");
+        console.error("Then run the flooder again.");
         process.exit(1);
     }
     
