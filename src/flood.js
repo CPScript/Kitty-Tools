@@ -1,5 +1,4 @@
-// Enhanced Kahoot Flooder with improved error handling and module loading
-console.log("Initializing Kahoot Flooder - Enhanced Version...");
+console.log("Initializing Kahoot Flooder");
 
 // Required modules with error handling
 const requiredModules = [
