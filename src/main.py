@@ -90,9 +90,9 @@ class NodeJSManager:
                 text=True,
                 check=False
             )
-            return result.returncode == 0
+            return result.returncode == 0, result.stdout.strip() if result.returncode == 0 else None
         except Exception:
-            return False
+            return False, None
     
     @staticmethod
     def check_npm_installed():
@@ -104,57 +104,230 @@ class NodeJSManager:
                 text=True,
                 check=False
             )
-            return result.returncode == 0
+            return result.returncode == 0, result.stdout.strip() if result.returncode == 0 else None
         except Exception:
-            return False
+            return False, None
     
     @staticmethod
-    def install_node_packages():
-        ColorOutput.info("Installing required Node.js packages...")
-        
-        for package in NodeJSManager.REQUIRED_PACKAGES:
-            ColorOutput.info(f"Installing {package}...")
-            try:
-                subprocess.run(
-                    ["npm", "install", package, "--no-fund", "--no-audit"],
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    check=True
-                )
-                ColorOutput.success(f"Successfully installed {package}")
-            except subprocess.CalledProcessError as e:
-                ColorOutput.error(f"Failed to install {package}: {e}")
-                return False
-            except Exception as e:
-                ColorOutput.error(f"Unexpected error installing {package}: {e}")
-                return False
-        
-        return True
-    
-    @staticmethod
-    def suggest_node_installation():
+    def install_nodejs_guide():
+        """Show Node.js installation guide"""
         platform_name = PlatformManager.detect_platform()
         
         ColorOutput.error("Node.js is required but not found on your system.")
         ColorOutput.info("Please install Node.js using the following instructions:")
+        print()
         
         if platform_name == "windows":
-            ColorOutput.info("1. Download the installer from https://nodejs.org/")
-            ColorOutput.info("2. Run the installer and follow the installation wizard")
-            ColorOutput.info("3. Restart your computer after installation")
-        elif platform_name == "linux":
-            ColorOutput.info("Install Node.js using your package manager:")
-            ColorOutput.info("  Ubuntu/Debian: sudo apt update && sudo apt install nodejs npm")
-            ColorOutput.info("  Fedora: sudo dnf install nodejs npm")
-            ColorOutput.info("  Arch: sudo pacman -S nodejs npm")
+            ColorOutput.info("Windows Installation:")
+            print("1. Download the installer from https://nodejs.org/")
+            print("2. Run the installer and follow the installation wizard")
+            print("3. Make sure to check 'Add to PATH' during installation")
+            print("4. Restart your computer after installation")
+            print()
+            ColorOutput.info("Alternative - Using Chocolatey:")
+            print("choco install nodejs")
+            
         elif platform_name == "macos":
-            ColorOutput.info("1. Install Homebrew if not already installed:")
-            ColorOutput.info("   /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"")
-            ColorOutput.info("2. Install Node.js: brew install node")
+            ColorOutput.info("macOS Installation:")
+            print("Option 1 - Using Homebrew (recommended):")
+            print("  brew install node")
+            print()
+            print("Option 2 - Official installer:")
+            print("  1. Download from https://nodejs.org/")
+            print("  2. Run the .pkg installer")
+            print()
+            print("Option 3 - Using MacPorts:")
+            print("  sudo port install nodejs18")
+            
+        elif platform_name == "linux":
+            ColorOutput.info("Linux Installation:")
+            print("Ubuntu/Debian:")
+            print("  sudo apt update && sudo apt install nodejs npm")
+            print()
+            print("Fedora:")
+            print("  sudo dnf install nodejs npm")
+            print()
+            print("Arch Linux:")
+            print("  sudo pacman -S nodejs npm")
+            print()
+            print("CentOS/RHEL:")
+            print("  sudo yum install nodejs npm")
+            print()
+            print("Using Node Version Manager (recommended):")
+            print("  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash")
+            print("  nvm install node")
+            
         elif platform_name == "android":
-            ColorOutput.info("In Termux, run: pkg install nodejs")
+            ColorOutput.info("Android (Termux) Installation:")
+            print("pkg install nodejs")
+            
         else:
-            ColorOutput.info("Please visit https://nodejs.org/ for installation instructions for your platform")
+            ColorOutput.info("For other platforms, please visit: https://nodejs.org/")
+        
+        print()
+        ColorOutput.warning("After installation, restart your terminal and run this script again.")
+    
+    @staticmethod
+    def create_package_json(script_dir):
+        """Create package.json file"""
+        package_json_path = os.path.join(script_dir, 'package.json')
+        
+        package_data = {
+            "name": "kitty-tools-kahoot-flooder",
+            "version": "2.0.0",
+            "description": "Enhanced Kahoot game flooding utility",
+            "main": "flood.js",
+            "scripts": {
+                "start": "node flood.js",
+                "install-deps": "npm install"
+            },
+            "keywords": ["kahoot", "flooder", "educational", "testing"],
+            "author": "CPScript",
+            "license": "MIT",
+            "dependencies": {
+                "readline-sync": "^1.4.10",
+                "kahoot.js-updated": "^3.1.3",
+                "an-array-of-english-words": "^2.0.0", 
+                "request": "^2.88.2",
+                "random-name": "^0.1.2",
+                "console-title": "^1.1.0",
+                "beepbeep": "^1.3.0"
+            },
+            "engines": {
+                "node": ">=12.0.0",
+                "npm": ">=6.0.0"
+            }
+        }
+        
+        try:
+            with open(package_json_path, 'w', encoding='utf-8') as f:
+                json.dump(package_data, f, indent=2, ensure_ascii=False)
+            ColorOutput.success(f"Created package.json")
+            return True
+        except Exception as e:
+            ColorOutput.error(f"Failed to create package.json: {e}")
+            return False
+    
+    @staticmethod
+    def install_node_packages(script_dir):
+        """Install required Node.js packages"""
+        ColorOutput.info("Installing required Node.js packages...")
+        
+        # Create package.json first
+        if not NodeJSManager.create_package_json(script_dir):
+            return False
+        
+        try:
+            # Try installing from package.json first
+            result = subprocess.run(
+                ["npm", "install", "--no-fund", "--no-audit"],
+                cwd=script_dir,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                check=True
+            )
+            ColorOutput.success("Successfully installed all Node.js packages")
+            return True
+            
+        except subprocess.CalledProcessError as e:
+            ColorOutput.warning("Package installation from package.json failed, trying individual installation...")
+            
+            # Try installing packages individually
+            success_count = 0
+            for package in NodeJSManager.REQUIRED_PACKAGES:
+                try:
+                    ColorOutput.info(f"Installing {package}...")
+                    subprocess.run(
+                        ["npm", "install", package, "--no-fund", "--no-audit"],
+                        cwd=script_dir,
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE,
+                        check=True
+                    )
+                    ColorOutput.success(f"Installed {package}")
+                    success_count += 1
+                except subprocess.CalledProcessError:
+                    ColorOutput.error(f"Failed to install {package}")
+            
+            if success_count == len(NodeJSManager.REQUIRED_PACKAGES):
+                ColorOutput.success("All packages installed successfully")
+                return True
+            elif success_count > 0:
+                ColorOutput.warning(f"{success_count}/{len(NodeJSManager.REQUIRED_PACKAGES)} packages installed")
+                return True
+            else:
+                ColorOutput.error("No packages were installed successfully")
+                return False
+        
+        except Exception as e:
+            ColorOutput.error(f"Unexpected error during package installation: {e}")
+            return False
+    
+    @staticmethod
+    def verify_installation(script_dir):
+        """Verify that all required modules can be loaded"""
+        ColorOutput.info("Verifying Node.js module installation...")
+        
+        test_script = '''
+const requiredModules = [
+    'readline-sync',
+    'kahoot.js-updated', 
+    'an-array-of-english-words',
+    'request',
+    'random-name',
+    'console-title',
+    'beepbeep'
+];
+
+let success = 0;
+let failed = 0;
+
+for (const moduleName of requiredModules) {
+    try {
+        require(moduleName);
+        console.log(`SUCCESS: ${moduleName}`);
+        success++;
+    } catch (error) {
+        console.log(`FAILED: ${moduleName} - ${error.message}`);
+        failed++;
+    }
+}
+
+console.log(`SUMMARY: ${success} success, ${failed} failed`);
+process.exit(failed > 0 ? 1 : 0);
+'''
+        
+        test_file = os.path.join(script_dir, 'test_modules.js')
+        
+        try:
+            with open(test_file, 'w') as f:
+                f.write(test_script)
+            
+            result = subprocess.run(
+                ['node', test_file],
+                cwd=script_dir,
+                capture_output=True,
+                text=True
+            )
+            
+            # Parse output
+            for line in result.stdout.split('\n'):
+                if line.startswith('SUCCESS:'):
+                    ColorOutput.success(f"Module verified: {line.split(': ')[1]}")
+                elif line.startswith('FAILED:'):
+                    ColorOutput.error(f"Module failed: {line.split(': ')[1]}")
+                elif line.startswith('SUMMARY:'):
+                    print(line)
+            
+            # Clean up test file
+            os.remove(test_file)
+            
+            return result.returncode == 0
+            
+        except Exception as e:
+            ColorOutput.error(f"Verification failed: {e}")
+            return False
     
     @staticmethod
     def run_flood_script(script_path):
@@ -163,6 +336,8 @@ class NodeJSManager:
             return False
         
         try:
+            ColorOutput.info("Starting Kahoot flooder...")
+            
             # Run the process and forward output to console
             process = subprocess.Popen(
                 ["node", script_path],
@@ -192,113 +367,123 @@ class NodeJSManager:
             ColorOutput.error(f"Error running flood script: {e}")
             return False
 
+class NodeJSSetup:
+    """Node.js setup and verification system"""
+    
+    def __init__(self):
+        self.script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+    def run_setup(self):
+        """Run complete Node.js setup"""
+        ColorOutput.info("Kitty-Tools Node.js Setup")
+        print("=" * 50)
+        
+        # Check Node.js installation
+        node_installed, node_version = NodeJSManager.check_node_installed()
+        npm_installed, npm_version = NodeJSManager.check_npm_installed()
+        
+        if not node_installed:
+            ColorOutput.error("Node.js not found")
+            NodeJSManager.install_nodejs_guide()
+            return False
+        else:
+            ColorOutput.success(f"Node.js found: {node_version}")
+        
+        if not npm_installed:
+            ColorOutput.error("NPM not found")
+            ColorOutput.info("NPM is usually installed with Node.js. Please reinstall Node.js.")
+            return False
+        else:
+            ColorOutput.success(f"NPM found: {npm_version}")
+        
+        # Install packages
+        if not NodeJSManager.install_node_packages(self.script_dir):
+            ColorOutput.error("Failed to install required packages")
+            return False
+        
+        # Verify installation
+        if not NodeJSManager.verify_installation(self.script_dir):
+            ColorOutput.warning("Some modules failed verification, but the flooder might still work")
+        else:
+            ColorOutput.success("All modules verified successfully")
+        
+        return True
+
 class FloodManager:    
     def __init__(self):
         """Initialize the flood manager."""
         self.script_dir = os.path.dirname(os.path.abspath(__file__))
         self.flood_js_path = os.path.join(self.script_dir, "flood.js")
+        self.setup = NodeJSSetup()
         
-        # Create package.json if it doesn't exist to help with npm installs
-        self.ensure_package_json()
-    
-    def ensure_package_json(self):
-        package_json_path = os.path.join(self.script_dir, "package.json")
+    def verify_nodejs_ready(self):
+        """Verify Node.js and dependencies are ready"""
+        # Check if Node.js is installed
+        node_installed, _ = NodeJSManager.check_node_installed()
+        npm_installed, _ = NodeJSManager.check_npm_installed()
         
-        if not os.path.exists(package_json_path):
-            package_data = {
-                "name": "kitty-tools-kahoot-flooder",
-                "version": "1.0.0",
-                "description": "Kahoot game flooding utility",
-                "main": "flood.js",
-                "author": "CPScript",
-                "license": "MIT",
-                "dependencies": {
-                    "readline-sync": "^1.4.10",
-                    "kahoot.js-updated": "^3.0.0",
-                    "an-array-of-english-words": "^2.0.0",
-                    "request": "^2.88.2",
-                    "random-name": "^0.1.2",
-                    "console-title": "^1.1.0",
-                    "beepbeep": "^1.3.0"
-                }
-            }
-            
-            try:
-                with open(package_json_path, 'w') as f:
-                    json.dump(package_data, f, indent=2)
-            except Exception as e:
-                ColorOutput.warning(f"Failed to create package.json: {e}")
-    
-    def check_prerequisites(self):
-        if not NodeJSManager.check_node_installed():
-            NodeJSManager.suggest_node_installation()
-            return False
+        if not node_installed or not npm_installed:
+            ColorOutput.warning("Node.js or NPM not found. Running setup...")
+            return self.setup.run_setup()
         
-        if not NodeJSManager.check_npm_installed():
-            ColorOutput.error("npm is required but not found on your system.")
-            return False
-        
+        # Check if flood.js exists
         if not os.path.exists(self.flood_js_path):
             ColorOutput.error(f"Flood script not found at: {self.flood_js_path}")
             return False
         
-        return True
-    
-    def install_dependencies(self):
-        # Try using package.json first (preferred method)
-        try:
-            ColorOutput.info("Installing dependencies from package.json...")
-            result = subprocess.run(
-                ["npm", "install", "--no-fund", "--no-audit"],
-                cwd=self.script_dir,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                check=True
-            )
-            if result.returncode == 0:
-                ColorOutput.success("Successfully installed dependencies")
-                return True
-        except Exception as e:
-            ColorOutput.warning(f"Failed to install from package.json: {e}")
+        # Check if node_modules directory exists
+        node_modules_path = os.path.join(self.script_dir, "node_modules")
+        if not os.path.exists(node_modules_path):
+            ColorOutput.warning("Node modules not found. Installing dependencies...")
+            return NodeJSManager.install_node_packages(self.script_dir)
         
-        # Fallback to installing packages individually
-        return NodeJSManager.install_node_packages()
+        # Quick verification of key modules
+        try:
+            test_result = subprocess.run(
+                ["node", "-e", "require('kahoot.js-updated'); console.log('OK');"],
+                cwd=self.script_dir,
+                capture_output=True,
+                text=True,
+                timeout=5
+            )
+            
+            if test_result.returncode != 0:
+                ColorOutput.warning("Dependencies verification failed. Reinstalling...")
+                return NodeJSManager.install_node_packages(self.script_dir)
+            
+        except Exception:
+            ColorOutput.warning("Could not verify dependencies. Reinstalling...")
+            return NodeJSManager.install_node_packages(self.script_dir)
+        
+        return True
     
     def run(self):
         PlatformManager.clear_screen()
         
-        ColorOutput.info("Welcome to Kitty-Tools Kahoot Flooder - Enhanced Version")
-        ColorOutput.info("===============================================")
+        ColorOutput.info("Kitty-Tools Kahoot Flooder - Enhanced Version")
+        print("=" * 50)
         ColorOutput.warning("DISCLAIMER: This tool is for educational purposes only.")
         ColorOutput.warning("Using this tool may violate Kahoot's terms of service.")
         ColorOutput.warning("The authors are not responsible for any misuse of this tool.")
-        ColorOutput.info("===============================================")
+        print("=" * 50)
         
-        print("\nStart?")
+        print("\nStart flooder?")
         print("yes | no")
-        choice = input("").lower()
+        choice = input(">> ").lower()
         
         if choice == "yes":
             time.sleep(1)
             PlatformManager.clear_screen()
             
-            # Check prerequisites
-            ColorOutput.info("Checking if required dependencies exist...")
-            if not self.check_prerequisites():
-                ColorOutput.error("Prerequisites check failed")
-                input("\nPress Enter to return to the main menu...")
-                return self.return_to_main_menu()
-            
-            # Install dependencies
-            ColorOutput.info("Installing required dependencies...")
-            if not self.install_dependencies():
-                ColorOutput.error("Failed to install required dependencies")
+            # Verify Node.js is ready
+            ColorOutput.info("Verifying Node.js installation and dependencies...")
+            if not self.verify_nodejs_ready():
+                ColorOutput.error("Node.js setup failed. Cannot run flooder.")
                 input("\nPress Enter to return to the main menu...")
                 return self.return_to_main_menu()
             
             # Execute the flood script
-            ColorOutput.success("All dependencies installed successfully")
-            ColorOutput.info("Executing flooder...")
+            ColorOutput.success("Node.js setup verified. Starting flooder...")
             time.sleep(2)
             PlatformManager.clear_screen()
             
@@ -309,7 +494,7 @@ class FloodManager:
         
         elif choice == "no":
             print("\nReturning to main menu...")
-            time.sleep(3)
+            time.sleep(2)
             PlatformManager.clear_screen()
             return self.return_to_main_menu()
         
