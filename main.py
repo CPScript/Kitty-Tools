@@ -100,6 +100,41 @@ class SystemManager:
         except:
             return False
 
+class DependencyChecker:
+    """Check and install Python dependencies"""
+    
+    @staticmethod
+    def check_python_version():
+        """Check if Python version is compatible"""
+        if sys.version_info < (3, 6):
+            print(f"{TermCtrl.BRIGHT_RED}Error: Python 3.6 or higher is required.{TermCtrl.RESET}")
+            print(f"Current version: {sys.version}")
+            return False
+        return True
+    
+    @staticmethod
+    def install_missing_packages():
+        """Install missing Python packages"""
+        packages_to_check = ['colorama', 'pystyle']
+        missing_packages = []
+        
+        for package in packages_to_check:
+            try:
+                __import__(package)
+            except ImportError:
+                missing_packages.append(package)
+        
+        if missing_packages:
+            print(f"{TermCtrl.BRIGHT_YELLOW}Installing missing packages: {', '.join(missing_packages)}{TermCtrl.RESET}")
+            for package in missing_packages:
+                try:
+                    subprocess.check_call([sys.executable, '-m', 'pip', 'install', package])
+                    print(f"{TermCtrl.BRIGHT_GREEN}Successfully installed {package}{TermCtrl.RESET}")
+                except subprocess.CalledProcessError:
+                    print(f"{TermCtrl.BRIGHT_RED}Failed to install {package}{TermCtrl.RESET}")
+        
+        return True
+
 class MenuManager:
     def __init__(self):
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -121,7 +156,7 @@ class MenuManager:
             {"id": "info", "label": "Information", "description": "Credits, license, and additional information      "},
             {"id": "flood", "label": "Kahoot Flooder", "description": "Advanced Kahoot game flooding utility             "},
             {"id": "answers", "label": "Answer Hack", "description": "Obtain answers for Kahoot quizzes                 "},
-            {"id": "graphical", "label": "GUI", "description": "A graphical user interface for easy of use        "},
+            {"id": "graphical", "label": "GUI", "description": "A graphical user interface for ease of use        "},
             {"id": "exit", "label": "Exit", "description": "Exit the application                              "}
         ]
     
@@ -171,9 +206,9 @@ class MenuManager:
         
         # Check if enhanced version is available
         if self.is_src_available:
-            print(f" {TermCtrl.BRIGHT_BLACK}Mode:   {TermCtrl.RESET}{TermCtrl.BRIGHT_GREEN}Using Enhanced Version (available){TermCtrl.RESET}")
+            print(f" {TermCtrl.BRIGHT_BLACK}Mode:   {TermCtrl.RESET}{TermCtrl.BRIGHT_GREEN}Enhanced Version Available{TermCtrl.RESET}")
         else:
-            print(f" {TermCtrl.BRIGHT_BLACK}Mode:   {TermCtrl.RESET}{TermCtrl.YELLOW}Using Standard Version{TermCtrl.RESET}")
+            print(f" {TermCtrl.BRIGHT_BLACK}Mode:   {TermCtrl.RESET}{TermCtrl.YELLOW}Standard Version{TermCtrl.RESET}")
 
     def get_user_selection(self):
         try:
@@ -186,8 +221,36 @@ class MenuManager:
         except:
             return self.current_selection
     
+    def check_dependencies_for_action(self, action_id):
+        """Check if dependencies are available for the selected action"""
+        if action_id in ["flood", "answers", "graphical"]:
+            # Check Python dependencies
+            try:
+                import colorama
+                import pystyle
+            except ImportError:
+                print(f"{TermCtrl.BRIGHT_YELLOW}Installing required Python packages...{TermCtrl.RESET}")
+                DependencyChecker.install_missing_packages()
+            
+            # For flooder, check Node.js
+            if action_id == "flood":
+                node_available = SystemManager.is_dependency_installed("node")
+                npm_available = SystemManager.is_dependency_installed("npm")
+                
+                if not node_available or not npm_available:
+                    print(f"{TermCtrl.BRIGHT_RED}Node.js is required for the Kahoot Flooder.{TermCtrl.RESET}")
+                    print("The setup script will guide you through installation.")
+                    time.sleep(2)
+        
+        return True
+    
     def execute_selected_action(self, selection):
         action_id = self.menu_items[selection]["id"]
+        
+        # Check dependencies before executing
+        if not self.check_dependencies_for_action(action_id):
+            input(f"\n{TermCtrl.BRIGHT_YELLOW}Press Enter to return to the main menu...{TermCtrl.RESET}")
+            return
         
         # Prepare to execute selected action
         print(f"\n {TermCtrl.BRIGHT_BLUE}Launching {self.menu_items[selection]['label']}...{TermCtrl.RESET}")
@@ -212,8 +275,12 @@ class MenuManager:
                 
             input(f"\n{TermCtrl.BRIGHT_YELLOW}Press Enter to return to the main menu...{TermCtrl.RESET}")
             
+        except KeyboardInterrupt:
+            print(f"\n{TermCtrl.BRIGHT_YELLOW}Operation cancelled by user{TermCtrl.RESET}")
+            input(f"\n{TermCtrl.BRIGHT_YELLOW}Press Enter to return to the main menu...{TermCtrl.RESET}")
         except Exception as e:
             print(f"\n{TermCtrl.BRIGHT_RED}Error executing {action_id}: {str(e)}{TermCtrl.RESET}")
+            print(f"{TermCtrl.DIM}If this error persists, please report it on GitHub{TermCtrl.RESET}")
             input(f"\n{TermCtrl.BRIGHT_YELLOW}Press Enter to return to the main menu...{TermCtrl.RESET}")
     
     def execute_howto(self):
@@ -227,13 +294,22 @@ class MenuManager:
             print(f"{TermCtrl.BRIGHT_CYAN}2. Kahoot Flooder{TermCtrl.RESET}")
             print(f"   Create multiple automated players in Kahoot games with customizable settings.")
             print(f"   You can control the bots collectively or let them act autonomously.")
+            print(f"   Note: Requires Node.js installation")
             print(f"{TermCtrl.BRIGHT_CYAN}3. Answer Hack{TermCtrl.RESET}")
             print(f"   Retrieve answers for a Kahoot quiz by providing the Quiz ID.")
-            print(f"   Export answers to a file for future reference.\n")
+            print(f"   Export answers to a file for future reference.")
+            print(f"{TermCtrl.BRIGHT_CYAN}4. GUI{TermCtrl.RESET}")
+            print(f"   Use the graphical user interface for easier interaction.")
+            print(f"   Requires PyQt5 installation.\n")
             print(f"{TermCtrl.BRIGHT_YELLOW}Note: All features require an active internet connection.{TermCtrl.RESET}")
+            print(f"{TermCtrl.BRIGHT_YELLOW}Troubleshooting: If you encounter SSL errors, the tools will attempt to fix them automatically.{TermCtrl.RESET}")
         else:
             # Standard version
-            subprocess.run([sys.executable, os.path.join(self.kitty_dir, "htu.py")])
+            try:
+                subprocess.run([sys.executable, os.path.join(self.kitty_dir, "htu.py")])
+            except Exception as e:
+                print(f"Error running how-to guide: {e}")
+                print("Please check the Kitty directory for the htu.py file")
     
     def execute_info(self):
         if self.is_src_available:
@@ -254,34 +330,88 @@ class MenuManager:
             print(f"Use at your own risk. The authors are not responsible for any misuse.")
             print(f"Please read the complete license in the repository for more details.\n")
             
+            print(f"{TermCtrl.UNDERLINE}Recent Fixes:{TermCtrl.RESET}")
+            print(f"- Fixed SSL certificate issues on macOS")
+            print(f"- Fixed HTTP 403 Forbidden errors with better headers")
+            print(f"- Fixed Node.js module loading issues")
+            print(f"- Added automatic dependency installation")
+            print(f"- Improved error handling and user feedback\n")
+            
             print(f"{TermCtrl.BRIGHT_GREEN}Thank you for using KITTY TOOLS!{TermCtrl.RESET}")
         else:
             # Standard version
-            subprocess.run([sys.executable, os.path.join(self.kitty_dir, "Info", "main.py")])
+            try:
+                subprocess.run([sys.executable, os.path.join(self.kitty_dir, "Info", "main.py")])
+            except Exception as e:
+                print(f"Error running info module: {e}")
+                print("Please check the Kitty/Info directory")
     
     def execute_flood(self):
         if self.is_src_available:
             # Enhanced version
-            subprocess.run([sys.executable, os.path.join(self.src_dir, "main.py")])
+            try:
+                subprocess.run([sys.executable, os.path.join(self.src_dir, "main.py")])
+            except Exception as e:
+                print(f"Error running enhanced flooder: {e}")
+                print("Falling back to standard version...")
+                try:
+                    subprocess.run([sys.executable, os.path.join(self.kitty_dir, "Flood", "main.py")])
+                except Exception as e2:
+                    print(f"Error running standard flooder: {e2}")
         else:
             # Standard version
-            subprocess.run([sys.executable, os.path.join(self.kitty_dir, "Flood", "main.py")])
+            try:
+                subprocess.run([sys.executable, os.path.join(self.kitty_dir, "Flood", "main.py")])
+            except Exception as e:
+                print(f"Error running flooder: {e}")
+                print("Please check the Kitty/Flood directory")
     
     def execute_answers(self):
         if self.is_src_available:
             # Enhanced version
-            subprocess.run([sys.executable, os.path.join(self.src_dir, "client.py")])
+            try:
+                subprocess.run([sys.executable, os.path.join(self.src_dir, "client.py")])
+            except Exception as e:
+                print(f"Error running enhanced client: {e}")
+                print("Falling back to standard version...")
+                try:
+                    subprocess.run([sys.executable, os.path.join(self.kitty_dir, "client.py")])
+                except Exception as e2:
+                    print(f"Error running standard client: {e2}")
         else:
             # Standard version
-            subprocess.run([sys.executable, os.path.join(self.kitty_dir, "client.py")])
+            try:
+                subprocess.run([sys.executable, os.path.join(self.kitty_dir, "client.py")])
+            except Exception as e:
+                print(f"Error running client: {e}")
+                print("Please check the Kitty directory")
             
     def execute_graphical(self):
         if self.is_src_available:
-            # Enhanced version
-            subprocess.run([sys.executable, os.path.join(self.gui_dir, "main.py")])
+            # Enhanced version - try GUI first, fallback to client
+            try:
+                # Check if PyQt5 is available
+                import PyQt5
+                subprocess.run([sys.executable, os.path.join(self.gui_dir, "main.py")])
+            except ImportError:
+                print(f"{TermCtrl.BRIGHT_YELLOW}PyQt5 not found. Installing...{TermCtrl.RESET}")
+                try:
+                    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'PyQt5'])
+                    print(f"{TermCtrl.BRIGHT_GREEN}PyQt5 installed successfully. Starting GUI...{TermCtrl.RESET}")
+                    subprocess.run([sys.executable, os.path.join(self.gui_dir, "main.py")])
+                except subprocess.CalledProcessError:
+                    print(f"{TermCtrl.BRIGHT_RED}Failed to install PyQt5. Using console client instead.{TermCtrl.RESET}")
+                    subprocess.run([sys.executable, os.path.join(self.src_dir, "client.py")])
+            except Exception as e:
+                print(f"Error running GUI: {e}")
+                print("Falling back to console client...")
+                subprocess.run([sys.executable, os.path.join(self.src_dir, "client.py")])
         else:
-            # Standard version
-            subprocess.run([sys.executable, os.path.join(self.kitty_dir, "client.py")])
+            # Standard version - just run the client
+            try:
+                subprocess.run([sys.executable, os.path.join(self.kitty_dir, "client.py")])
+            except Exception as e:
+                print(f"Error running client: {e}")
     
     def run(self):
         while not self.exit_requested:
@@ -297,13 +427,25 @@ class MenuManager:
                 self.current_selection = selection
                 self.execute_selected_action(selection)
 
+def check_system_requirements():
+    """Check system requirements and dependencies"""
+    print(f"{TermCtrl.BRIGHT_CYAN}Checking system requirements...{TermCtrl.RESET}")
+    
+    # Check Python version
+    if not DependencyChecker.check_python_version():
+        sys.exit(1)
+    
+    # Install missing Python packages
+    DependencyChecker.install_missing_packages()
+    
+    print(f"{TermCtrl.BRIGHT_GREEN}System requirements check completed.{TermCtrl.RESET}")
+    time.sleep(1)
+
 def main():
     try:
-        # Check for critical errors
-        if not sys.version_info >= (3, 6):
-            print(f"{TermCtrl.BRIGHT_RED}Error: Python 3.6 or higher is required to run KITTY TOOLS.{TermCtrl.RESET}")
-            sys.exit(1)
-            
+        # Check system requirements first
+        check_system_requirements()
+        
         # Ensure necessary directories exist
         menu_manager = MenuManager()
         menu_manager.run()
