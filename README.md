@@ -16,8 +16,6 @@ Kitty-Tools is a comprehensive suite of utilities designed for enhancing and ana
 <div align="center">
  
   ![Header Image](https://github.com/user-attachments/assets/329567e9-2de0-4cf8-92be-86b525365514)
-  <img src="https://github.com/user-attachments/assets/74d15637-c774-41d7-9c6d-3e5316e0087d" width="80%" />
-  ![image](https://github.com/user-attachments/assets/36fa992b-6c7b-428e-ba83-722f9a8b52d0)
 
 </div>
 
@@ -119,8 +117,10 @@ The Answer Viewer module allows you to retrieve answers for Kahoot quizzes:
 1. Start the application with `python main.py`
 2. Select "Answer Hack" from the main menu
 3. Enter the Kahoot Quiz ID or Game PIN
-4. View answers displayed in an organized format
-5. Optionally export answers to a text file
+<img width="499" height="29" alt="image" src="https://github.com/user-attachments/assets/a2870491-0e08-415c-95a0-ac0151ee9bf8" />
+
+5. View answers displayed in an organized format
+6. Optionally export answers to a text file
 
 ### 2. Kahoot Flooder
 
