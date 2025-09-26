@@ -126,7 +126,7 @@ The Answer Viewer module allows you to retrieve answers for Kahoot quizzes:
 
 The Flooder creates multiple bot participants in a Kahoot game:
 
-1. Start the application with `python main.py`
+1. Start the application with `python main.py` (**Won't work in codespace**)
 2. Select "Kahoot Flooder" from the main menu
 3. Configure bot settings:
    - Game PIN
