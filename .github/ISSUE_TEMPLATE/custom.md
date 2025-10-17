@@ -1,7 +1,11 @@
+> Before you make an issue, make sure that there isnt an answer for it in [FAQ](https://github.com/CPScript/Kitty-Tools/blob/main/.github/FAQ/readme.md)
+
 ---
-name: {your_username}
-about: Create a report to help us improve
-title: 'issue you found'
+
+Quick Issue Info | ...
+---|---
+about: | Create a report to help us improve
+title: | issue you found
 
 ---
 
@@ -13,7 +17,7 @@ title: 'issue you found'
 * Steps to reproduce the behavior:
  - Please tell us what you ran in the terminal to get such error
 
-##  **3.** Screenshots (**YOU MUST PROVIDE A SCREENSHOT OR YOUR ISSUE WILL BE IGNORED UNTIL DONE SO**)
+##  **3.** Screenshots
 * If applicable, add screenshots to help explain your problem.
 
 ## **4.** Desktop (please complete the following information):
