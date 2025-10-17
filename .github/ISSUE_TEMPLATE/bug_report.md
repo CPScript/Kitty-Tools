@@ -1,7 +1,11 @@
+> Before you make an issue, make sure that there isnt an answer for it in [FAQ](https://github.com/CPScript/Kitty-Tools/blob/main/.github/FAQ/readme.md)
+
 ---
-name: {your_username}
-about: Create a report to help us improve
-title: 'issue you found'
+
+Quick Issue Info | ...
+---|---
+about: | Create a report to help us improve
+title: | issue you found
 
 ---
 
