@@ -6,6 +6,7 @@
 - [Network Repsonces](#network)
 - [Bot issues](#bot)
 - [Script issues](#extra)
+- [Contributing & Issues](#contributing)
 
 ## Network
 
@@ -24,3 +25,6 @@ There are some isses with the current bot implementation.
 ## Extra
 
 * **NPM: Not found** ~ You will need to install NPM properly. This project will automate the full process.
+
+## **Contributing**
+* Contributing to this project helps me out a lot. **All pull requests and issues are looked over by yours truely**
