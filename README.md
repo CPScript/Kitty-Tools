@@ -5,7 +5,7 @@
 
 [![Version](https://img.shields.io/badge/Version-36.2-orange.svg)](https://github.com/CPScript/Kitty-Tools)
 [![License](https://img.shields.io/badge/License-CC0_1.0-blue.svg)](https://github.com/CPScript/Kitty-Tools/blob/main/LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Windows_|_Linux_|_Web_|_Android_|_IOS|_MACos|_Mobile-orange.svg)](https://github.com/CPScript/Kitty-Tools)
+[![Platform](https://img.shields.io/badge/Platform-Windows_|_Linux_|_Web_|_Android_|_IOS_|_MACos_|_Mobile-orange.svg)](https://github.com/CPScript/Kitty-Tools)
 
 </div>
 
