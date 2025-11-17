@@ -116,7 +116,7 @@ The Answer Viewer module allows you to retrieve answers for Kahoot quizzes:
 
 1. Start the application with `python main.py`
 2. Select "Answer Hack" from the main menu
-3. Enter the Kahoot Quiz ID or Game PIN
+3. Enter the Kahoot Quiz ID (not the Game PIN)
 <img width="499" height="29" alt="image" src="https://github.com/user-attachments/assets/a2870491-0e08-415c-95a0-ac0151ee9bf8" />
 
 5. View answers displayed in an organized format
