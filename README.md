@@ -21,7 +21,7 @@ Kitty-Tools is a comprehensive suite of utilities designed for enhancing and ana
 
 ## ✨ Key Features
 
-- **Answer Retrieval System** - Obtain answers for any Kahoot quiz using Quiz ID or Game PIN
+- **Answer Retrieval System** - Obtain answers for any Kahoot quiz using Quiz ID
 - **Multi-bot Participation** - Create multiple automated quiz participants with configurable behaviors **NOTE; YOU CAN NOT USE THIS OPTION IN GITHUB CODESPACE**
 - **Cross-Platform Support** - Works on Windows, macOS, Linux, and Android (via Termux)
 - **Modern GUI Interface** - Sleek, intuitive graphical user interface with dark theme
